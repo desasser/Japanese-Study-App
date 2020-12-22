@@ -12,7 +12,7 @@
 
 <body>
 
-    <!---This is a Navbar with title, page links, drop-down menu, and 2 tester buttons.-->
+    <!---This is a Navbar with title, page links, drop-down menu, and 2 tester buttons-->
     <nav class="navbar is-light" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="https://bulma.io">
@@ -76,34 +76,73 @@
         </div>
     </nav>
 
-    <!--Here lives the word Input Form and Submit Button-->
+    <!--Here lives the English word Input Form/Submit Button-->
 
-    
+    <input class="input" id="user-input" type="text" placeholder="Text input">
+    <button class="button is-warning is-hovered" id="submit-button">Hover</button>
 
-    <!--Container test 1-->
-    <!--Containers made using Magic Tiles-->
+
+
+    <!--Containers made using Magic Tiles for the home page-->
 
 
     <main class="tile is-ancestor">
-        <div class="tile is-4 is-vertical is-parent">
-          <div class="tile is-child box">
-            <p class="title">One</p>
-          </div>
 
-          <div class="tile is-child box">
-            <p class="title">Two</p>
-          </div>
+        <!--Image/Glyph-->
+        <div class="tile is-4 is-vertical is-parent" id="kanji-base">
+            <div class="tile is-child box">
+                <p class="title">One</p>
+            </div>
+
+            <!--Media-->
+            <div class="tile is-child box" id="media-base">
+                <p class="title">Two</p>
+            </div>
         </div>
 
-        <div class="tile is-parent">
-          <div class="tile is-child box">
-            <p class="title">Three</p>
-          </div>
+        <!--Image-->
+        <div class="tile is-parent" id="image-base">
+            <div class="tile is-child box">
+                <p class="title">Three</p>
+            </div>
         </div>
+
+        <!--Search History-->
+        <div class="tile is-child box" id="search-history">
+            <div class="tile is-child box">
+                <p class="title">Four</p>
+            </div>
+        </div>
+
     </main>
+
+    <!--Game Page-->
+
+
+
+    <!--Kanji Game Base-->
+    <main class="container">
+        <div class="tile is-4 is-vertical is-parent" id="kanji-game-base">
+            <div class="tile is-child box">
+                <p class="title">Kanji Game Base</p>
+            </div>
+
+            <!---Options Buttons-->
+
+            <!---Score Card-->
+    </main>
+
+
+    <!--Game Over Page -->
+
+    <main class="container">
+
+
+    <!---Review Answers-->
+
+    </main>
+
     
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
