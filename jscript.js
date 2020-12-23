@@ -110,7 +110,15 @@ var queryURL = "https://api.unsplash.com/photos/random?client_id=" + authKey + "
       console.log(picture);
       
       console.log(picture.urls.small);
-      
+	  //TODO: apply img to app
+
+	  var newImage = $("<img>")
+
+	  var selectedImg = picture.urls.small
+	  newImage.attr("src", selectedImg)
+	
+	  $("#image-base").append(newImage)
+
       console.log()
       
       
