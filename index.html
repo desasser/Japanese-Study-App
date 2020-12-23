@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
 
+    <!---Font Links-->
+
 </head>
 
 <body>
-
     <!---This is a Navbar with title, page links, drop-down menu, and 2 tester buttons-->
     <nav class="navbar is-light" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
@@ -76,46 +77,52 @@
         </div>
     </nav>
 
+<section class="section">
+
     <!--Here lives the English word Input Form/Submit Button-->
 
     <input class="input" id="user-input" type="text" placeholder="Text input">
-    <button class="button is-warning is-hovered" id="submit-button">Hover</button>
+    <button class="button is-warning is-hovered" id="submit-button">Search</button>
+
+</section>
+
+    <!--Containers for the home page-->
 
 
+<main class="section">
 
-    <!--Containers made using Magic Tiles for the home page-->
-
-
-    <main class="section is-ancestor">
-
-        <!--Image/Glyph-->
-        <div class="section is-4 is-vertical is-parent" id="kanji-base">
-            <div class="tile is-child box">
-                <p class="title">One</p>
+        <div class="column left">
+    
+            <!--Image/Glyph-->
+            <div class="container level-left is-6" id="kanji-base">
+                    <p class="title">Kanji Base</p>
+                </div>
             </div>
+
 
             <!--Media-->
-            <div class="section is-4 is-child box" id="media-base">
-                <p class="title">Two</p>
+            <div class="container level-left is-4" id="media-base">
+                    <p class="title">Media Base</p>
+                </div>
             </div>
+        
+        </div>
 
+        <div class="column right">
 
             <!--Image-->
-            <div class="section is-6 is-parent" id="image-base">
-                <div class="section is-child box">
-                    <p class="title">Three</p>
+            <div class="container level-right is-6" id="image-base">
+                    <p class="title">Image Base</p>
                 </div>
             </div>
 
             <!--Search History-->
-            <div class="section is-6 is-child box" id="search-history">
-                <p class="section is-child box">
-                <p class="title">Four</p>
+            <div class="container level-right is-4" id="search-history">
+                <p class="title">Search History</p>
             </div>
         </div>
 
-    </main>  
-    
+</main>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
