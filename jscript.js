@@ -38,53 +38,17 @@ $.ajax(settings).done(function (response) {
 	
 	$.ajax(settingsTwo).done(function (responseTwo) {
 		console.log(responseTwo);
+
+
+
+
+
+
+
 	});
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//TODO:create call to unsplash
+// create call to unsplash
 
 
 //TODO: variables ???
@@ -92,8 +56,9 @@ $.ajax(settings).done(function (response) {
 var authKey = "Uc5pwx1S972kG1H6z2IAy-29aDh3dWeqJpNz9UCF2v8";
 
 // var queryTerm = ""
-
+//TODO: make search dynamic from user input
 var queryURL = "https://api.unsplash.com/photos/random?client_id=" + authKey + "&query=water";
+var queryURLtwo = "https://api.unsplash.com/photos/random?client_id=" + authKey;
 
 //TODO: create functions
 //var numResults =""
@@ -101,66 +66,47 @@ var queryURL = "https://api.unsplash.com/photos/random?client_id=" + authKey + "
 //function runQuery(numResults, queryURL){
   
 //ajax call to unsplash to get photo
-  $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(picture){
-      //TODO: get first search data from api 
-     
-      console.log(picture);
-      
-      console.log(picture.urls.small);
-	  //TODO: apply img to app
-
-	  var newImage = $("<img>")
-
-	  var selectedImg = picture.urls.small
-	  newImage.attr("src", selectedImg)
-	
-	  $("#image-base").append(newImage)
-
-      console.log()
-      
-      
-      
-      
-    
-    })
-//}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$("#searchBtn").on("click", function(event) {
+	//TODO: create button to grab info from user input
+$("#submit-button").on("click", function(event) {
 	event.preventDefault()
+	  $("#image-base").empty()
   
-  
-	  queryTerm = $("#searchplz").val();
+	  queryTerm = $("#user-input").val();
 	  
 	  console.log(queryTerm);
   
-	  var newURL = queryURL + "&q=" + queryTerm;
+	  var newURL = queryURLtwo + "&query=" + queryTerm;
   
 	  console.log(newURL)
+	  
+	 
+	  $.ajax({
+		url: newURL,
+		method: "GET"
+	  }).then(function(picture){
+		//get first search data from api 
+	   
+		console.log(picture);
+		
+		console.log(picture.urls.small);
+		// apply img to app
   
+		var newImage = $("<img>")
+  
+		var selectedImg = picture.urls.small
+		newImage.attr("src", selectedImg)
+	  
+		$("#image-base").append(newImage)
+  
+		console.log()
+		
+		
+		
+		
+	  
+	  })
 	  
 	
   
@@ -168,3 +114,67 @@ $("#searchBtn").on("click", function(event) {
 	//  return false;
   
   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
