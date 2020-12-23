@@ -41,6 +41,7 @@ $("#submit-button").on("click", function(event) {
 	var currentKanji = response[0].kanji.character;
 	//console.log(currentKanji);
 
+	saveKanji(currentKanji);
 	//This call is copied from the KanjiAlive Api, basic search/Kanji
 	//second AJAX call to retrive metadata
 	const settingsTwo = {
@@ -125,6 +126,33 @@ $("#submit-button").on("click", function(event) {
 
 // create call to unsplash
 
+//Create array to store kanji searches and display them on the screen as clickable elements
+var savedKanjiArr = JSON.parse(localStorage.getItem("saved-kanji")) || [];
+
+//on page load, if there is any saved history, make search history buttons
+for (var i=0; i<savedKanjiArr.length; i++) {
+	var buttonEl = $("<button>");
+	$(buttonEl).text(savedKanjiArr[i]);
+	$(buttonEl).addClass("saved-search-button");
+	$("#search-history").prepend(buttonEl);
+}
+
+function saveKanji (savedKanji) {
+	//if the search is not already in the saved kanji array...
+	if (!savedKanjiArr.includes(savedKanji)) {
+		//push saved kanji into array
+		savedKanjiArr.push(savedKanji);
+
+		//display the kanji into the #search-history box
+		var buttonElToo = $("<button>");
+		$(buttonElToo).text(savedKanji);
+		$(buttonElToo).addClass("saved-search-button");
+		$("#search-history").prepend(buttonElToo);
+
+		//add saved kanji searches into local storage
+		localStorage.setItem("saved-kanji", JSON.stringify(savedKanjiArr));
+	}
+};
 
 //TODO: variables ???
 
