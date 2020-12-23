@@ -12,10 +12,33 @@ const settings = {
 	}
 };
 
+//Get a word from the input in english
+//send that to the first AJAX call to retrieve a kanji
+//Send that kanji to the second AJAX call to extract meta data about it
+
+//This call is copied from the KanjiAlive Api, advanced search KEM/english meaning
+//first AJAX call to retrieve kanji from meaning
 $.ajax(settings).done(function (response) {
 	console.log(response);
+	var currentKanji = response[0].kanji.character;
+	console.log(currentKanji);
 
-
+	//This call is copied from the KanjiAlive Api, basic search/Kanji
+	//second AJAX call to retrive metadata
+	const settingsTwo = {
+		"async": true,
+		"crossDomain": true,
+		"url": "https://kanjialive-api.p.rapidapi.com/api/public/kanji/" + currentKanji,
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-key": "67f88684dbmsh6cde93c08d2115ep19d2aejsn2098e6786d5d",
+			"x-rapidapi-host": "kanjialive-api.p.rapidapi.com"
+		}
+	};
+	
+	$.ajax(settingsTwo).done(function (responseTwo) {
+		console.log(responseTwo);
+	});
 
 });
 
@@ -77,7 +100,7 @@ var queryURL = "https://api.unsplash.com/photos/random?client_id=" + authKey + "
 
 //function runQuery(numResults, queryURL){
   
-
+//ajax call to unsplash to get photo
   $.ajax({
       url: queryURL,
       method: "GET"
@@ -87,7 +110,15 @@ var queryURL = "https://api.unsplash.com/photos/random?client_id=" + authKey + "
       console.log(picture);
       
       console.log(picture.urls.small);
-      
+	  //TODO: apply img to app
+
+	  var newImage = $("<img>")
+
+	  var selectedImg = picture.urls.small
+	  newImage.attr("src", selectedImg)
+	
+	  $("#image-base").append(newImage)
+
       console.log()
       
       
