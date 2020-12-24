@@ -16,6 +16,7 @@
 $("#submit-button").on("click", function(event) {
 	event.preventDefault()
 	 $("#image-base").empty()
+	 $("#kanji-base").empty()
 	 queryTerm = $("#user-input").val().toLowerCase();
 	  
 	  console.log(queryTerm);
@@ -59,10 +60,35 @@ $("#submit-button").on("click", function(event) {
 		$.ajax(settingsTwo).done(function (responseTwo) {
 			console.log(responseTwo);
 
-		
-			console.log(responseTwo.kanji.character)
+			//var newImage = $("<img>")
 
-			console.log(responseTwo.kanji.kunyomi.romaji)
+	  		//var selectedImg = picture.urls.small
+	  		//newImage.attr("src", selectedImg)
+	
+			//$("#image-base").append(newImage)
+			
+			var newCharecter = $("<p>")
+			
+			var kanjiCharecter = responseTwo.kanji.character
+			newCharecter.text(kanjiCharecter)
+
+
+			$("#kanji-base").append(newCharecter)
+			
+			//console.log(responseTwo.kanji.character)
+
+			var newCharectertwo = $("<p>")
+			
+			var romajiCharecter= responseTwo.kanji.kunyomi.romaji
+			newCharectertwo.text(romajiCharecter)
+
+
+			$("#kanji-base").append(newCharectertwo)
+			
+
+
+			//var romajiText = responseTwo.kanji.kunyomi.romaji
+			//console.log(responseTwo.kanji.kunyomi.romaji)
 
 			console.log()
 
@@ -154,69 +180,6 @@ function saveKanji (savedKanji) {
 	}
 };
 
-//TODO: variables ???
-
-// var authKey = "Uc5pwx1S972kG1H6z2IAy-29aDh3dWeqJpNz9UCF2v8";
-
-// // var queryTerm = ""
-// //TODO: make search dynamic from user input
-// //var queryURL = "https://api.unsplash.com/photos/random?client_id=" + authKey + "&query=water";
-// var queryURLtwo = "https://api.unsplash.com/photos/random?client_id=" + authKey;
-
-// //TODO: create functions
-// //var numResults =""
-
-// //function runQuery(numResults, queryURL){
-  
-// //ajax call to unsplash to get photo
-
-
-// 	//TODO: create button to grab info from user input
-// $("#submit-button").on("click", function(event) {
-// 	event.preventDefault()
-// 	  $("#image-base").empty()
-  
-// 	  queryTerm = $("#user-input").val();
-	  
-// 	  //console.log(queryTerm);
-  
-// 	  var newURL = queryURLtwo + "&query=" + queryTerm;
-  
-// 	  //console.log(newURL)
-	  
-	 
-// 	  $.ajax({
-// 		url: newURL,
-// 		method: "GET"
-// 	  }).then(function(picture){
-// 		//get first search data from api 
-	   
-// 		//console.log(picture);
-		
-// 		//console.log(picture.urls.small);
-// 		// apply img to app
-  
-// 		var newImage = $("<img>")
-  
-// 		var selectedImg = picture.urls.small
-// 		newImage.attr("src", selectedImg)
-	  
-// 		$("#image-base").append(newImage)
-  
-// 		//console.log()
-		
-		
-		
-		
-	  
-// 	  })
-	  
-	
-  
-  
-// 	//  return false;
-  
-//   })
 
 
 
