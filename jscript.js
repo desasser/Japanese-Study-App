@@ -17,7 +17,7 @@ $("#submit-button").on("click", function(event) {
 	event.preventDefault()
 	 $("#image-base").empty()
 	 queryTerm = $("#user-input").val().toLowerCase();
-	  
+	 
 	  console.log(queryTerm);
   
 	 // var newURL = queryURLtwo + "&query=" + queryTerm;
@@ -139,20 +139,51 @@ for (var i=0; i<savedKanjiArr.length; i++) {
 
 function saveKanji (savedKanji) {
 	//if the search is not already in the saved kanji array...
+	// console.log('saved kanji length',savedKanjiArr.length);
+	
 	if (!savedKanjiArr.includes(savedKanji)) {
 		//push saved kanji into array
 		savedKanjiArr.push(savedKanji);
-
+		
 		//display the kanji into the #search-history box
 		var buttonElToo = $("<button>");
 		$(buttonElToo).text(savedKanji);
 		$(buttonElToo).addClass("saved-search-button");
 		$("#search-history").prepend(buttonElToo);
-
+		
 		//add saved kanji searches into local storage
 		localStorage.setItem("saved-kanji", JSON.stringify(savedKanjiArr));
 	}
+	// console.log('saved kanji length after',savedKanjiArr.length);
+
+
 };
+
+//create clear button, should be shown if there is anything in the array
+var buttonEl = $('<button>');
+buttonEl.text('Clear Searches');
+buttonEl.attr('id','clear-button');
+$('#search-history').append(buttonEl);
+console.log('saved kanji length load',savedKanjiArr.length);
+showClearBtn();
+
+//if there are previous searches saved, show the clear button
+function showClearBtn() {
+	if (savedKanjiArr.length === 0) {
+		$('#clear-button').css('visibility','hidden');
+	} else {
+		$('#clear-button').css('visibility','visible');
+	}
+}
+
+//event listener for clear searches button, clears local storage, saved searches, and saved kanji array
+$('#clear-button').on('click', function() {
+	savedKanjiArr = [];
+	localStorage.clear();
+	$('#search-history').children('button').remove();
+	
+})
+
 
 //TODO: variables ???
 
@@ -217,67 +248,3 @@ function saveKanji (savedKanji) {
 // 	//  return false;
   
 //   })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
