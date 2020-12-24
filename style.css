@@ -6,3 +6,15 @@
     background-color: beige;
     border-radius: 0.5em;
 }
+
+.container{
+    height: 350px;
+    object-fit: contain;
+    text-align: center;
+    
+    
+}
+
+.section{
+box-shadow: 0px 10px 13px -7px #000000, 21px 20px 12px -8px rgba(255,255,255,0.6); 
+}
