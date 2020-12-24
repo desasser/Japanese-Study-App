@@ -16,6 +16,7 @@
 $("#submit-button").on("click", function(event) {
 	event.preventDefault()
 	 $("#image-base").empty()
+	 $("#kanji-base").empty()
 	 queryTerm = $("#user-input").val().toLowerCase();
 	 
 	  console.log(queryTerm);
@@ -59,10 +60,35 @@ $("#submit-button").on("click", function(event) {
 		$.ajax(settingsTwo).done(function (responseTwo) {
 			console.log(responseTwo);
 
-		
-			console.log(responseTwo.kanji.character)
+			//var newImage = $("<img>")
 
-			console.log(responseTwo.kanji.kunyomi.romaji)
+	  		//var selectedImg = picture.urls.small
+	  		//newImage.attr("src", selectedImg)
+	
+			//$("#image-base").append(newImage)
+			
+			var newCharecter = $("<p>")
+			
+			var kanjiCharecter = responseTwo.kanji.character
+			newCharecter.text(kanjiCharecter)
+
+
+			$("#kanji-base").append(newCharecter)
+			
+			//console.log(responseTwo.kanji.character)
+
+			var newCharectertwo = $("<p>")
+			
+			var romajiCharecter= responseTwo.kanji.kunyomi.romaji
+			newCharectertwo.text(romajiCharecter)
+
+
+			$("#kanji-base").append(newCharectertwo)
+			
+
+
+			//var romajiText = responseTwo.kanji.kunyomi.romaji
+			//console.log(responseTwo.kanji.kunyomi.romaji)
 
 			console.log()
 
