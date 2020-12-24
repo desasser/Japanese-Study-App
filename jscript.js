@@ -19,7 +19,7 @@ $("#submit-button").on("click", function(event) {
 	 $("#kanji-base").empty()
 	 queryTerm = $("#user-input").val().toLowerCase();
 	 
-	  console.log(queryTerm);
+	//   console.log(queryTerm);
   
 	 // var newURL = queryURLtwo + "&query=" + queryTerm;
 
@@ -42,7 +42,11 @@ $("#submit-button").on("click", function(event) {
 	var currentKanji = response[0].kanji.character;
 	//console.log(currentKanji);
 
+	//save the kanji returned from the searched meaning to the saved searches
 	saveKanji(currentKanji);
+	console.log('saved kanji length after save function',savedKanjiArr.length);
+	showClearBtn();
+
 	//This call is copied from the KanjiAlive Api, basic search/Kanji
 	//second AJAX call to retrive metadata
 	const settingsTwo = {
@@ -58,7 +62,7 @@ $("#submit-button").on("click", function(event) {
 		
 	
 		$.ajax(settingsTwo).done(function (responseTwo) {
-			console.log(responseTwo);
+			// console.log(responseTwo);
 
 			//var newImage = $("<img>")
 
@@ -170,7 +174,7 @@ function saveKanji (savedKanji) {
 	if (!savedKanjiArr.includes(savedKanji)) {
 		//push saved kanji into array
 		savedKanjiArr.push(savedKanji);
-		
+		console.log('saved kanji length saved',savedKanjiArr.length);
 		//display the kanji into the #search-history box
 		var buttonElToo = $("<button>");
 		$(buttonElToo).text(savedKanji);
@@ -206,8 +210,9 @@ function showClearBtn() {
 $('#clear-button').on('click', function() {
 	savedKanjiArr = [];
 	localStorage.clear();
-	$('#search-history').children('button').remove();
-	
+	$('.saved-search-button').remove();
+	console.log('saved kanji length cleared',savedKanjiArr.length);
+	showClearBtn();
 })
 
 
