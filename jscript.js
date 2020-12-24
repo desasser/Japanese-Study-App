@@ -4,7 +4,7 @@
 const settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://kanjialive-api.p.rapidapi.com/api/public/search/advanced/?kem=parent",
+	"url": "https://kanjialive-api.p.rapidapi.com/api/public/search/advanced/?kem=water",
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-key": "9df5add180mshd864f1707e5c655p1f0599jsn09d6675716fd",
@@ -23,6 +23,7 @@ $.ajax(settings).done(function (response) {
 	var currentKanji = response[0].kanji.character;
 	console.log(currentKanji);
 
+	saveKanji(currentKanji);
 	//This call is copied from the KanjiAlive Api, basic search/Kanji
 	//second AJAX call to retrive metadata
 	const settingsTwo = {
@@ -35,136 +36,165 @@ $.ajax(settings).done(function (response) {
 			"x-rapidapi-host": "kanjialive-api.p.rapidapi.com"
 		}
 	};
-	
 	$.ajax(settingsTwo).done(function (responseTwo) {
 		console.log(responseTwo);
 	});
 
 });
+// create call to unsplash
 
+//Create array to store kanji searches and display them on the screen as clickable elements
+var savedKanjiArr = JSON.parse(localStorage.getItem("saved-kanji")) || [];
 
+//on page load, if there is any saved history, make search history buttons
+for (var i=0; i<savedKanjiArr.length; i++) {
+	var buttonEl = $("<button>");
+	$(buttonEl).text(savedKanjiArr[i]);
+	$(buttonEl).addClass("saved-search-button");
+	$("#search-history").prepend(buttonEl);
+}
 
+function saveKanji (savedKanji) {
+	//if the search is not already in the saved kanji array...
+	if (!savedKanjiArr.includes(savedKanji)) {
+		//push saved kanji into array
+		savedKanjiArr.push(savedKanji);
 
+		//display the kanji into the #search-history box
+		var buttonElToo = $("<button>");
+		$(buttonElToo).text(savedKanji);
+		$(buttonElToo).addClass("saved-search-button");
+		$("#search-history").prepend(buttonElToo);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//TODO:create call to unsplash
-
+		//add saved kanji searches into local storage
+		localStorage.setItem("saved-kanji", JSON.stringify(savedKanjiArr));
+	}
+};
 
 //TODO: variables ???
 
 var authKey = "Uc5pwx1S972kG1H6z2IAy-29aDh3dWeqJpNz9UCF2v8";
 
 // var queryTerm = ""
-
+//TODO: make search dynamic from user input
 var queryURL = "https://api.unsplash.com/photos/random?client_id=" + authKey + "&query=water";
+var queryURLtwo = "https://api.unsplash.com/photos/random?client_id=" + authKey;
 
 //TODO: create functions
 //var numResults =""
 
 //function runQuery(numResults, queryURL){
-  
+
 //ajax call to unsplash to get photo
-  $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(picture){
-      //TODO: get first search data from api 
-     
-      console.log(picture);
-      
-      console.log(picture.urls.small);
-	  //TODO: apply img to app
-
-	  var newImage = $("<img>")
-
-	  var selectedImg = picture.urls.small
-	  newImage.attr("src", selectedImg)
-	
-	  $("#image-base").append(newImage)
-
-      console.log()
-      
-      
-      
-      
-    
-    })
-//}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$("#searchBtn").on("click", function(event) {
+//TODO: create button to grab info from user input
+$("#submit-button").on("click", function (event) {
 	event.preventDefault()
-  
-  
-	  queryTerm = $("#searchplz").val();
-	  
-	  console.log(queryTerm);
-  
-	  var newURL = queryURL + "&q=" + queryTerm;
-  
-	  console.log(newURL)
-  
-	  
-	
-  
-  
+	$("#image-base").empty()
+
+	queryTerm = $("#user-input").val();
+
+	console.log(queryTerm);
+
+	var newURL = queryURLtwo + "&query=" + queryTerm;
+
+	console.log(newURL)
+
+
+	$.ajax({
+		url: newURL,
+		method: "GET"
+	}).then(function (picture) {
+		//get first search data from api 
+
+		console.log(picture);
+
+		console.log(picture.urls.small);
+		// apply img to app
+
+		var newImage = $("<img>")
+
+		var selectedImg = picture.urls.small
+		newImage.attr("src", selectedImg)
+
+		$("#image-base").append(newImage)
+
+		console.log()
+
+
+
+
+
+	})
+
+
+
+
 	//  return false;
-  
-  })
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
