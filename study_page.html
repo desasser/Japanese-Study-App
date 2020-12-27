@@ -1,79 +1,149 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Japanese</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Japanese</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <!---Font Links-->
+  <!---Font Links-->
 
 </head>
 
 
 <body>
-    <!---This is a Navbar with title, page links, drop-down menu, and 2 tester buttons-->
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <!--Navbar icon-->
-                <img src="" width="112" height="28">
-            </a>
+  <!---This is a Navbar with title, page links, drop-down menu, and 2 tester buttons-->
+  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <!--Navbar icon-->
+        <img src="" width="112" height="28">
+      </a>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+      <!---Navbar Mobile Responsivess-->
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <!--Navbar Links-->
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="index.html">
+          Home
+        </a>
+
+        <a class="navbar-item" href="game_page.html">
+          Game Page
+        </a>
+
+        <a class="navbar-item" href="study_page.html">
+          Study Page
+        </a>
+
+        <!---Navbar Dropdown-->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="resources_page.html">
+              Resources
             </a>
+            <a class="navbar-item">
+              About
+            </a>
+            <a class="navbar-item">
+              Meet the Team
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
         </div>
+      </div>
+    </div>
+  </nav>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="index.html">
-                    Home
-                </a>
 
-                <a class="navbar-item" href="game_page.html">
-                    Game Page
-                </a>
+  <section class="hero is-dark">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title animate__animated animate__fadeIn">Study Page</h1>
+        <figure class= "image"><img src=""></figure>
+        </h2>
+      </div>
+    </div>
+  </section>
 
-                <a class="navbar-item" href="study_page.html">
-                    Study Page
-                </a>
 
-                <!---Navbar dropdown-->
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        More
-                    </a>
 
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                            Resources
-                        </a>
-                        <a class="navbar-item">
-                            About
-                        </a>
-                        <a class="navbar-item">
-                            Meet the Team
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            Report an issue
-                        </a>
-                    </div>
-                </div>
+  <!--Made with Bulma Tiles -->
+
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+
+        <div class="tile is-parent">
+          <article class="tile is-child notification" id="random-kanji">
+            <div class="content">
+              <p class="title">Click a Kanji to Review</p>
+              <p class="subtitle">With even more content</p>
+              <div class="content">
+                <!-- Content -->
+
+                <!--Here we can add Bulma Modals to create a pop-up effect with further Kanji info-->
+
+
+                <!-- Content ... -->
+
+              </div>
             </div>
+          </article>
         </div>
-    </nav>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!--Rearrange these tiles-->
 
-    <script src="jscript.js"></script>
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification" id="hiragana-chart">
+            <p class="title">Hiragana</p>
+            <p class="subtitle"></p>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification" id="katakana-chart">
+            <p class="title">Katakana</p>
+            <p class="subtitle"></p>
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/640x480.png">
+            </figure>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification">
+          <p class="title">Wide tile</p>
+          <p class="subtitle">Aligned with the right tile</p>
+          <div class="content">
+            <!-- Content -->
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="jscript.js"></script>
 </body>
 
 </html>
