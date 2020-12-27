@@ -7,6 +7,7 @@
     <title>Study Japanese</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
+    
 
 </head>
 
@@ -25,7 +26,7 @@
                 <div class="container">
                     <div class="navbar-brand">
                         <a class="navbar-item">
-                            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+                            <img src="https://64.media.tumblr.com/899ca388b75eb2e737ee76cea85d132a/1fdf63d8eded61cc-72/s640x960/68eac8eefb29bca2dbb1afeb77ffef9700d7dcef.png" alt="Logo">
                         </a>
                         <span class="navbar-burger" data-target="navbarMenuHeroA">
                             <span></span>
@@ -34,15 +35,15 @@
                         </span>
                     </div>
                     <div id="navbarMenuHeroA" class="navbar-menu">
-                        <div class="navbar-end">
+                        <div class="navbar-end">`
                             <a class="navbar-item" href="index.html">
                                 Home
                             </a>
-            
+
                             <a class="navbar-item" href="game_page.html">
                                 Game Page
                             </a>
-            
+
                             <a class="navbar-item" href="study_page.html">
                                 Study Page
                             </a>
@@ -63,14 +64,17 @@
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title"> Title</h1>
+                <h1 class="title">Game Mode</h1>
                 <h2 class="subtitle">
-                    Subtitle
+                    Test your Kanji knowledge!
                 </h2>
             </div>
         </div>
 
-        <!-- Hero footer: will stick at the bottom -->
+        <!--Scroll down button-->
+        <!-- <button class="scroll-button"><i class="fa-angle-double-down"></i></button> -->
+
+        <!-- Hero footer-->
         <div class="hero-foot">
             <nav class="tabs">
                 <div class="container">
@@ -86,45 +90,97 @@
             </nav>
         </div>
 
-
-
-
         <!--Grid?-->
-
-
-
-        <!--Kanji Game Base-->
 
     </section>
 
-    <!--Containers for the home page-->
+    <!--Containers for the Game page-->
 
     <section class="section">
         <!--Kanji Game Base-->
         <div class="columns">
-            <div class="column level-left is-4">
+            <div class="column">
                 <div class="container" id="kanji-game-base">
                     <p class="title">Kanji Base</p>
                 </div>
             </div>
 
+    </section>
 
-            <!--Answer Options-->
-            <div class="column level-right is-5">
-                <div class="container" id="image-base">
-                    <p class="title">Answers</p>
+    <section class="section">
+        <!--Answer Options-->
+        <div class="column">
+            <div class="container" id="answers-base">
+                <p class="title">Answers</p>
+
+                <!--Answer buttons may populate here-->
+                <!--Answer Buttons are nested in Bulma Magic Tile -->
+                <div class="tile is-ancestor">
+                    <div class="tile">
+                        <div class="tile">
+                            <div class="tile is-parent">
+                                <article class="tile is-child notification is-info">
+
+                                    <div id="container">
+                                        <div class="title">
+                                            <h4 id="questions"></h4>
+                                            <button id="option1" class="answers" data-value="A">Option 1</button>
+                                            <button id="option2" class="answers" data-value="B">Option 2</button>
+                                            <button id="option3" class="answers" data-value="C">Option 3</button>
+                                            <button id="option4" class="answers" data-value="D">Option</button>
+                                        </div>
+
+
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
 
     </section>
 
+    <!--Score Card-->
 
-    <!---Score Card-->
+    <div class="section" id="score-base">
+        <h1>Score</h1>
+    </div>
+
+    <!--This is a game Progress Bar-->
+
+    <progress class="progress is-info" value="15" max="100">45%</progress>
+
+    <!--Use JS to hide all revious game containers and summon the following-->
+
+    <!--Score Card remains on page-->
+    <!--Review right/wrong answers-->
+    
+    <h1 class="title is-1">Now let's review your answers...</h1>
+
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <div class="tile">
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-warning" id="answer-feedback">
+                            <p class="title">Review</p>
+                            <p class="subtitle">Review Tile</p>
+                            <div class="content">
+                                <!-- Content -->
+                            </div>
+                        </article>
+
+
+                        <!---A button -->
+
+                        <button class="button is-large is-link" id="clear-button">Go Back</button>
+
 
 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/244557d995.js" crossorigin="anonymous"></script>
 
     <script src="jscript.js"></script>
 </body>
