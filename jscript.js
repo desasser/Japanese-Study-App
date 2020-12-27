@@ -83,7 +83,7 @@ function fetchApiData(queryTerm) {
 	//empty out any existing data from previous searches from containers
 	$("#image-base").empty()
 	$("#kanji-base").empty()
-
+	
 
 
 	//This call is copied from the KanjiAlive Api, advanced search KEM/english meaning
@@ -101,7 +101,7 @@ function fetchApiData(queryTerm) {
 
 	//first ajax call
 	$.ajax(settings).done(function (response) {
-
+		
 		//currentKanji grabs the kanji character from the english meaning and tracks the english meaning with it
 		var currentKanji = {
 			specificKanji : response[0].kanji.character,
@@ -128,7 +128,7 @@ function fetchApiData(queryTerm) {
 		$.ajax(settingsTwo).done(function (responseTwo) {
 			//creates a new p-tag to display the kanji
 			var newCharecter = $("<p>")
-
+			console.log(responseTwo)
 			//grabs the kanji and displays it
 			var kanjiCharecter = responseTwo.kanji.character
 			newCharecter.text(kanjiCharecter)
@@ -141,6 +141,30 @@ function fetchApiData(queryTerm) {
 			var romajiCharecter = responseTwo.kanji.kunyomi.romaji
 			newCharectertwo.text(romajiCharecter)
 			$("#kanji-base").append(newCharectertwo)
+
+			if ("#animation")
+
+			// audio for pronouciation
+			$("#play").click(function() {
+				
+				const audio = new Audio(responseTwo.examples[5].audio.mp3);
+				audio.play();
+				
+			  });
+
+			
+			
+			var newAnimation = $("<img>")
+
+			//animation of strokes
+			var selectedAnimation = (responseTwo.kanji.strokes.images[0])
+			newAnimation.attr("src", selectedAnimation)
+			$("#animation").append(newAnimation)
+			console.log(selectedAnimation)
+
+			
+			
+			
 		});
 
 	});
@@ -163,8 +187,18 @@ function fetchApiData(queryTerm) {
 		var selectedImg = picture.urls.small
 		newImage.attr("src", selectedImg)
 		$("#image-base").append(newImage)
+
+		
 	})
 };
+
+
+
+
+
+
+
+
 
 //TODO: variables ???
 
