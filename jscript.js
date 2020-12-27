@@ -2,6 +2,8 @@
 $("#submit-button").on("click", function (event) {
 	event.preventDefault()
 
+	//need to clear input field
+	// $("#user-input").val();
 	//kanjialive only accepts searches in lower case
 	queryTerm = $("#user-input").val().toLowerCase();
 
@@ -15,27 +17,27 @@ var savedKanjiArr = JSON.parse(localStorage.getItem("saved-kanji")) || [];
 //on page load, if there is any saved history, make search history buttons
 for (var i = 0; i < savedKanjiArr.length; i++) {
 	var buttonEl = $("<button>");
-	$(buttonEl).text(savedKanjiArr[i]);
+	$(buttonEl).text(savedKanjiArr[i].specificKanji);
 	$(buttonEl).addClass("saved-search-button");
+	$(buttonEl).attr("data-meaning", savedKanjiArr[i].kanjiMeaning);
 	$("#search-history").prepend(buttonEl);
 }
 
 
-//TODO: save the kanji and the search into an object
-//TODO: push the object into an array
-//TODO: check if the searched kanji is in the object already
-function saveKanji(savedKanji, queryTerm) {
+//save the kanji and the search term/english meaning into an object
+//push the object into an array
+//check if the searched kanji is in the object already using arrow functions
+function saveKanji(savedKanji) {
 	//if the search is not already in the saved kanji array...
-	console.log('queryTerm inside saveKanji', queryTerm);
-	if (!savedKanjiArr.includes(savedKanji)) {
+	if (!savedKanjiArr.some(e => e.specificKanji === savedKanji.specificKanji)) {
 		//push saved kanji into array
 		savedKanjiArr.push(savedKanji);
 
 		//display the kanji into the #search-history box
 		var buttonElToo = $("<button>");
-		$(buttonElToo).text(savedKanji);
+		$(buttonElToo).text(savedKanji.specificKanji);
 		$(buttonElToo).addClass("saved-search-button");
-		$(buttonElToo).attr('data-meaning', queryTerm);
+		$(buttonElToo).attr("data-meaning", savedKanji.kanjiMeaning);
 		$("#search-history").prepend(buttonElToo);
 
 		//add saved kanji searches into local storage
@@ -56,7 +58,7 @@ $("#search-history").on("click", "button", function () {
 var buttonEl = $('<button>');
 buttonEl.text('Clear Searches');
 buttonEl.attr('id', 'clear-button');
-$('#search-history').append(buttonEl);
+$('#history').append(buttonEl);
 showClearBtn();
 
 //if there are previous searches saved, show the clear button
@@ -100,11 +102,14 @@ function fetchApiData(queryTerm) {
 	//first ajax call
 	$.ajax(settings).done(function (response) {
 
-		//currentKanji grabs the kanji character from the english meaning
-		var currentKanji = response[0].kanji.character;
+		//currentKanji grabs the kanji character from the english meaning and tracks the english meaning with it
+		var currentKanji = {
+			specificKanji : response[0].kanji.character,
+			kanjiMeaning : queryTerm
+		}
 
 		//save the kanji returned from the searched meaning to the saved searches
-		saveKanji(currentKanji, queryTerm);
+		saveKanji(currentKanji);
 		showClearBtn();
 
 		//This call is copied from the KanjiAlive Api, basic search/Kanji
@@ -112,7 +117,7 @@ function fetchApiData(queryTerm) {
 		const settingsTwo = {
 			"async": true,
 			"crossDomain": true,
-			"url": "https://kanjialive-api.p.rapidapi.com/api/public/kanji/" + currentKanji,
+			"url": "https://kanjialive-api.p.rapidapi.com/api/public/kanji/" + currentKanji.specificKanji,
 			"method": "GET",
 			"headers": {
 				"x-rapidapi-key": "67f88684dbmsh6cde93c08d2115ep19d2aejsn2098e6786d5d",

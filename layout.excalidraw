@@ -5934,10 +5934,10 @@
     {
       "id": "Q22ymS1thGuMiAk22Xe9T",
       "type": "text",
-      "x": 1162.5247331787177,
-      "y": 1118.8357503349894,
-      "width": 482,
-      "height": 64,
+      "x": 956.5247331787177,
+      "y": 1092.014173571504,
+      "width": 683.9999999999999,
+      "height": 90.82157676348548,
       "angle": 0,
       "strokeColor": "#e67700",
       "backgroundColor": "transparent",
@@ -5949,26 +5949,26 @@
       "groupIds": [],
       "strokeSharpness": "sharp",
       "seed": 184107540,
-      "version": 81,
-      "versionNonce": 1121000236,
+      "version": 121,
+      "versionNonce": 657492116,
       "isDeleted": false,
       "boundElementIds": [
         "WhfosYb6xdgffiifIjyDE"
       ],
       "text": "Add hover feature to saved searches to display\nmeaning and pronunciation?",
-      "fontSize": 20,
+      "fontSize": 28.381742738589203,
       "fontFamily": 1,
       "textAlign": "left",
       "verticalAlign": "top",
-      "baseline": 55
+      "baseline": 78.82157676348548
     },
     {
       "id": "WhfosYb6xdgffiifIjyDE",
       "type": "arrow",
-      "x": 1368.5247331787177,
-      "y": 1104.3357503349894,
-      "width": 32,
-      "height": 132,
+      "x": 1276.1973187857802,
+      "y": 1077.5141735715038,
+      "width": 83.96358246069485,
+      "height": 105.17842323651439,
       "angle": 0,
       "strokeColor": "#e67700",
       "backgroundColor": "transparent",
@@ -5980,8 +5980,8 @@
       "groupIds": [],
       "strokeSharpness": "round",
       "seed": 667262484,
-      "version": 26,
-      "versionNonce": 1656913300,
+      "version": 106,
+      "versionNonce": 1253725716,
       "isDeleted": false,
       "boundElementIds": null,
       "points": [
@@ -5990,8 +5990,8 @@
           0
         ],
         [
-          32,
-          -132
+          83.96358246069485,
+          -105.17842323651439
         ]
       ],
       "lastCommittedPoint": null,
