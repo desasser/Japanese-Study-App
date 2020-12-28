@@ -1,7 +1,8 @@
 //event listener for the search button to execute ajax calls and fetch data
 $("#submit-button").on("click", function (event) {
 	event.preventDefault()
-
+	//clear audio and video on new search
+	$("#media-base").empty();
 	//need to clear input field
 	// $("#user-input").val();
 	//kanjialive only accepts searches in lower case
@@ -142,25 +143,30 @@ function fetchApiData(queryTerm) {
 			newCharectertwo.text(romajiCharecter)
 			$("#kanji-base").append(newCharectertwo)
 
-			if ("#animation")
 
-			// audio for pronouciation
+			//created video element for kanji strokes
+			var video = $('<video />', {
+				id: 'video',
+				src: responseTwo.kanji.video.mp4,
+				type: 'video/mp4',
+				controls: true
+			});
+			video.appendTo($("#media-base"));
+
+			//audio for pronouciation of Kanji
+			var buttonAudio = $('<button>');
+			buttonAudio.text('Pronounceation');
+			buttonAudio.attr('id', 'play');
+			$('#media-base').append(buttonAudio);
+			
+			//audio for button click pronounceation
 			$("#play").click(function() {
 				
 				const audio = new Audio(responseTwo.examples[5].audio.mp3);
 				audio.play();
 				
 			  });
-
 			
-			
-			var newAnimation = $("<img>")
-
-			//animation of strokes
-			var selectedAnimation = (responseTwo.kanji.strokes.images[0])
-			newAnimation.attr("src", selectedAnimation)
-			$("#animation").append(newAnimation)
-			console.log(selectedAnimation)
 
 			
 			
@@ -196,70 +202,3 @@ function fetchApiData(queryTerm) {
 
 
 
-
-
-
-
-//TODO: variables ???
-
-// var authKey = "Uc5pwx1S972kG1H6z2IAy-29aDh3dWeqJpNz9UCF2v8";
-
-// // var queryTerm = ""
-// //TODO: make search dynamic from user input
-// //var queryURL = "https://api.unsplash.com/photos/random?client_id=" + authKey + "&query=water";
-// var queryURLtwo = "https://api.unsplash.com/photos/random?client_id=" + authKey;
-
-// //TODO: create functions
-// //var numResults =""
-
-// //function runQuery(numResults, queryURL){
-
-// //ajax call to unsplash to get photo
-
-
-// 	//TODO: create button to grab info from user input
-// $("#submit-button").on("click", function(event) {
-// 	event.preventDefault()
-// 	  $("#image-base").empty()
-
-// 	  queryTerm = $("#user-input").val();
-
-// 	  //console.log(queryTerm);
-
-// 	  var newURL = queryURLtwo + "&query=" + queryTerm;
-
-// 	  //console.log(newURL)
-
-
-// 	  $.ajax({
-// 		url: newURL,
-// 		method: "GET"
-// 	  }).then(function(picture){
-// 		//get first search data from api 
-
-// 		//console.log(picture);
-
-// 		//console.log(picture.urls.small);
-// 		// apply img to app
-
-// 		var newImage = $("<img>")
-
-// 		var selectedImg = picture.urls.small
-// 		newImage.attr("src", selectedImg)
-
-// 		$("#image-base").append(newImage)
-
-// 		//console.log()
-
-
-
-
-
-// 	  })
-
-
-
-
-// 	//  return false;
-
-//   })
