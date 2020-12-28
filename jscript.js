@@ -198,7 +198,161 @@ function fetchApiData(queryTerm) {
 	})
 };
 
+<<<<<<< HEAD
+=======
+//=====================================================================
+//GAME MODE
+
+// Array of objects of kanji with their meaning and 3 incorrect answers and the correct answered marked
+var kanjiGameObject = [{
+	kanji: '蛍',
+	answers: ['mountain', 'spirit', 'orange'],
+	correctAnswer: 'firefly'
+},
+{
+	kanji: '蜜',
+	answers: ['fish', 'train', 'sky'],
+	correctAnswer: 'honey'
+},
+{
+	kanji: '山',
+	answers: ['heart', 'ocean', 'forest'],
+	correctAnswer: 'mountain'
+},
+{
+	kanji: '気',
+	answers: ['ogre', 'plain', 'coffee'],
+	correctAnswer: 'spirit'
+},
+{
+	kanji: '魚',
+	answers: ['water', 'speak', 'jacket'],
+	correctAnswer: 'fish'
+},
+{
+	kanji: '心',
+	answers: ['computer', 'desk', 'bag'],
+	correctAnswer: 'heart'
+},
+{
+	kanji: '店',
+	answers: ['marker', 'game', 'shoes'],
+	correctAnswer: 'shop'
+},
+{
+	kanji: '家',
+	answers: ['pants', 'restaurant', 'book'],
+	correctAnswer: 'house'
+},
+{
+	kanji: '猿',
+	answers: ['sauce', 'menu', 'festival'],
+	correctAnswer: 'monkey'
+},
+{
+	kanji: '雪',
+	answers: ['summer', 'light', 'window'],
+	correctAnswer: 'snow'
+},
+{
+	kanji: '雨',
+	answers: ['heat', 'animal', 'doctor'],
+	correctAnswer: 'rain'
+},
+{
+	kanji: '夏',
+	answers: ['merchant', 'luck', 'dragon'],
+	correctAnswer: 'summer'
+},
+{
+	kanji: '舟',
+	answers: ['tree', 'car', 'office'],
+	correctAnswer: 'boat'
+},
+{
+	kanji: '言',
+	answers: ['drink', 'table', 'notebook'],
+	correctAnswer: 'word'
+},
+{
+	kanji: '本',
+	answers: ['taxi', 'cat', 'food'],
+	correctAnswer: 'book'
+},
+]
+
+console.log(kanjiGameObject.length);
+
+// initialize variable for global scope
+var randomKanji;
+var score = 0;
+var answerP = $("<p>")
+$("#answer-hr").css("visibility", "hidden");
+
+// function to randomly produce a question from the array
+//TODO: Store randomKanji index, check each new random num against the old list and if its there already, pick a new one
+function randomKanjiGame() {
+	// random number to select a question set from the game object
+	randomKanji = Math.floor(Math.random()*kanjiGameObject.length);
+
+	// display the kanji on the page
+	$('#kanji-game-base').children().text(kanjiGameObject[randomKanji].kanji);
+
+	// set the answers into the answers cells
+	$('#option1').text(kanjiGameObject[randomKanji].answers[0]);
+	$('#option2').text(kanjiGameObject[randomKanji].answers[1]);
+	$('#option3').text(kanjiGameObject[randomKanji].answers[2]);
+	$('#option4').text(kanjiGameObject[randomKanji].correctAnswer);
+};
+
+// click event listener for start game button
+$("#start-game").on("click", function() {
+	score = 0;
+	randomKanjiGame();
+
+	// remove start game button when clicked
+	//TODO: $("#start-game").remove();
+});
+
+//TODO: Click event on the list of answers, check 'this' button against the meaning from the object
+$("#answers").on("click","button",function() {
+	console.log($(this).text());
+	console.log(randomKanji);
+	console.log(kanjiGameObject[randomKanji].correctAnswer);
+
+	//check to see if button clicked is correct
+	if ($(this).text() == kanjiGameObject[randomKanji].correctAnswer) {
+		console.log('yay!');
+		score++;
+		answerP.text('Correct!');
+		$("#answer-hr").css("visibility", "visible");
+		$("#answers").append(answerP);
+	} else {
+		console.log('boo!');
+		$("#answer-hr").css("visibility", "visible");
+		answerP.text('Wrong!');
+		$("#answers").append(answerP);
+	}
+>>>>>>> development
+
+	// displays the results and then brings up the next question after 2 seconds, clears previous feedback
+	setTimeout(function(){
+		//TODO: clear out the hr and the response
+		answerP.text('');
+		$("#answer-hr").css("visibility", "hidden");
+		randomKanjiGame();
+	}, 2000);
+})
+
+//TODO: If 'this' button amtches the correct answer, then display CORRECT and increase the score by 1
+//TODO: If 'this' button does not match the correct answers, display INCORRECT and do not increase the score
+//TODO: Store the answers in an object with their answer and the correct answer
+//TODO: Display at the end their answer and the correct answer saying "You answered X incorrect, here is what you answered, here is the correct answer"
+//TODO: Restart quiz button, clear any cached info about the quiz/answers
 
 
-
-
+<<<<<<< HEAD
+=======
+//TODO: BONUS: Randomly pull a kanji from kanjiapi, pull meaning from that, generate three random words (from an array of words or a dictionary api), append the three answers and the meaning in a random order
+//TODO: BONUS: Click event on the list of answers, check 'this' button against the meaning from the kanjiapi
+>>>>>>> development
