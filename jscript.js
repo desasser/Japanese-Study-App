@@ -198,8 +198,6 @@ function fetchApiData(queryTerm) {
 	})
 };
 
-<<<<<<< HEAD
-=======
 //=====================================================================
 //GAME MODE
 
@@ -333,7 +331,6 @@ $("#answers").on("click","button",function() {
 		answerP.text('Wrong!');
 		$("#answers").append(answerP);
 	}
->>>>>>> development
 
 	// displays the results and then brings up the next question after 2 seconds, clears previous feedback
 	setTimeout(function(){
@@ -351,8 +348,5 @@ $("#answers").on("click","button",function() {
 //TODO: Restart quiz button, clear any cached info about the quiz/answers
 
 
-<<<<<<< HEAD
-=======
 //TODO: BONUS: Randomly pull a kanji from kanjiapi, pull meaning from that, generate three random words (from an array of words or a dictionary api), append the three answers and the meaning in a random order
 //TODO: BONUS: Click event on the list of answers, check 'this' button against the meaning from the kanjiapi
->>>>>>> development
