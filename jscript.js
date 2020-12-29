@@ -84,7 +84,7 @@ function fetchApiData(queryTerm) {
 	//empty out any existing data from previous searches from containers
 	$("#image-base").empty()
 	$("#kanji-base").empty()
-	
+
 
 
 	//This call is copied from the KanjiAlive Api, advanced search KEM/english meaning
@@ -102,77 +102,79 @@ function fetchApiData(queryTerm) {
 
 	//first ajax call
 	$.ajax(settings).done(function (response) {
-		
-		//currentKanji grabs the kanji character from the english meaning and tracks the english meaning with it
-		var currentKanji = {
-			specificKanji : response[0].kanji.character,
-			kanjiMeaning : queryTerm
-		}
+		console.log(response);
 
-		//save the kanji returned from the searched meaning to the saved searches
-		saveKanji(currentKanji);
-		showClearBtn();
+		if (response.length === 0) {
+			//TODO: make this not an alert
+			alert('kanji not found');
+		} else {
 
-		//This call is copied from the KanjiAlive Api, basic search/Kanji
-		//second AJAX call to retrive metadata
-		const settingsTwo = {
-			"async": true,
-			"crossDomain": true,
-			"url": "https://kanjialive-api.p.rapidapi.com/api/public/kanji/" + currentKanji.specificKanji,
-			"method": "GET",
-			"headers": {
-				"x-rapidapi-key": "67f88684dbmsh6cde93c08d2115ep19d2aejsn2098e6786d5d",
-				"x-rapidapi-host": "kanjialive-api.p.rapidapi.com"
+
+			//currentKanji grabs the kanji character from the english meaning and tracks the english meaning with it
+			var currentKanji = {
+				specificKanji: response[0].kanji.character,
+				kanjiMeaning: queryTerm
 			}
-		};
-		//second ajax call
-		$.ajax(settingsTwo).done(function (responseTwo) {
-			//creates a new p-tag to display the kanji
-			var newCharecter = $("<p>")
-			console.log(responseTwo)
-			//grabs the kanji and displays it
-			var kanjiCharecter = responseTwo.kanji.character
-			newCharecter.text(kanjiCharecter)
-			$("#kanji-base").append(newCharecter)
 
-			//creates a new p-tag to display the romaji
-			var newCharectertwo = $("<p>")
+			//save the kanji returned from the searched meaning to the saved searches
+			saveKanji(currentKanji);
+			showClearBtn();
 
-			//grabs the romaji and displays it
-			var romajiCharecter = responseTwo.kanji.kunyomi.romaji
-			newCharectertwo.text(romajiCharecter)
-			$("#kanji-base").append(newCharectertwo)
+			//This call is copied from the KanjiAlive Api, basic search/Kanji
+			//second AJAX call to retrive metadata
+			const settingsTwo = {
+				"async": true,
+				"crossDomain": true,
+				"url": "https://kanjialive-api.p.rapidapi.com/api/public/kanji/" + currentKanji.specificKanji,
+				"method": "GET",
+				"headers": {
+					"x-rapidapi-key": "67f88684dbmsh6cde93c08d2115ep19d2aejsn2098e6786d5d",
+					"x-rapidapi-host": "kanjialive-api.p.rapidapi.com"
+				}
+			};
+			//second ajax call
+			$.ajax(settingsTwo).done(function (responseTwo) {
+				//creates a new p-tag to display the kanji
+				var newCharecter = $("<p>")
+				console.log(responseTwo)
+				//grabs the kanji and displays it
+				var kanjiCharecter = responseTwo.kanji.character
+				newCharecter.text(kanjiCharecter)
+				$("#kanji-base").append(newCharecter)
+
+				//creates a new p-tag to display the romaji
+				var newCharectertwo = $("<p>")
+
+				//grabs the romaji and displays it
+				var romajiCharecter = responseTwo.kanji.kunyomi.romaji
+				newCharectertwo.text(romajiCharecter)
+				$("#kanji-base").append(newCharectertwo)
 
 
-			//created video element for kanji strokes
-			var video = $('<video />', {
-				id: 'video',
-				src: responseTwo.kanji.video.mp4,
-				type: 'video/mp4',
-				controls: true
+				//created video element for kanji strokes
+				var video = $('<video />', {
+					id: 'video',
+					src: responseTwo.kanji.video.mp4,
+					type: 'video/mp4',
+					controls: true
+				});
+				video.appendTo($("#media-base"));
+
+				//audio for pronouciation of Kanji
+				var buttonAudio = $('<button>');
+				buttonAudio.text('Pronunciation');
+				buttonAudio.attr('id', 'play');
+				$('#media-base').append(buttonAudio);
+
+				//audio for button click pronounceation
+				$("#play").click(function () {
+
+					const audio = new Audio(responseTwo.examples[5].audio.mp3);
+					audio.play();
+
+				});
 			});
-			video.appendTo($("#media-base"));
-
-			//audio for pronouciation of Kanji
-			var buttonAudio = $('<button>');
-			buttonAudio.text('Pronounceation');
-			buttonAudio.attr('id', 'play');
-			$('#media-base').append(buttonAudio);
-			
-			//audio for button click pronounceation
-			$("#play").click(function() {
-				
-				const audio = new Audio(responseTwo.examples[5].audio.mp3);
-				audio.play();
-				
-			  });
-			
-
-			
-			
-			
-		});
-
+		};
 	});
 
 	//start unsplash calls here
@@ -186,20 +188,26 @@ function fetchApiData(queryTerm) {
 		url: newURL,
 		method: "GET"
 	}).then(function (picture) {
-		//new image element to house the returned image
-		var newImage = $("<img>")
-
-		//url from response for the image, displays on page
-		var selectedImg = picture.urls.small
-		newImage.attr("src", selectedImg)
-		$("#image-base").append(newImage)
-
-		
-	})
+		if (picture.length === 0) {
+			//TODO: make this not an alert and say come back later, youve fetched you're alotted amount of photos, glad you are enjoying the app! no more photos will appear, but you can still enjoy the rest of the app and the kanji
+			alert('too many calls')
+		} else {
+			//new image element to house the returned image
+			var newImage = $("<img>")
+	
+			//url from response for the image, displays on page
+			var selectedImg = picture.urls.small
+			newImage.attr("src", selectedImg)
+			$("#image-base").append(newImage)
+		};
+	});
 };
 
 //=====================================================================
-//GAME MODE
+//=====================================================================
+//=====================================================================
+//=====================================================================
+//GAME MODE - TODO: split this into a new script page
 
 // Array of objects of kanji with their meaning and 3 incorrect answers and the correct answered marked
 var kanjiGameObject = [{
@@ -274,24 +282,31 @@ var kanjiGameObject = [{
 },
 {
 	kanji: '本',
-	answers: ['taxi', 'book', 'cat', 'food'],
+	answers: ['taxi', 'cat', 'food'],
 	correctAnswer: 'book'
 },
 ]
 
-console.log(kanjiGameObject.length);
+//TODO: BONUS: On loadup run a function to fetch 25 random kanji and fetch 75 random words, this is to eliminate downtime (while the user is familiarizing themselves with the page, JS can run in the background to generate this array and begin the quiz/game portion, more efficient)
 
-// initialize variable for global scope
+// initialize variables for global scope
 var randomKanji;
 var score = 0;
+var wrongAnswer = 0;
+var correctAnswer = 0;
 var answerP = $("<p>")
 $("#answer-hr").css("visibility", "hidden");
+$("#answers-base").css("visibility", "hidden");
 
 // function to randomly produce a question from the array
 //TODO: Store randomKanji index, check each new random num against the old list and if its there already, pick a new one
 function randomKanjiGame() {
 	// random number to select a question set from the game object
-	randomKanji = Math.floor(Math.random()*kanjiGameObject.length);
+	randomKanji = Math.floor(Math.random() * kanjiGameObject.length);
+
+	//TODO: BONUS: Create an array containing the list of answers
+	//TODO: BONUS: Shuffle that array, using https://javascript.info/task/shuffle
+	//TODO: BONUS: Then assign the values to each index as needed
 
 	// display the kanji on the page
 	$('#kanji-game-base').children().text(kanjiGameObject[randomKanji].kanji);
@@ -300,49 +315,94 @@ function randomKanjiGame() {
 	$('#option1').text(kanjiGameObject[randomKanji].answers[0]);
 	$('#option2').text(kanjiGameObject[randomKanji].answers[1]);
 	$('#option3').text(kanjiGameObject[randomKanji].answers[2]);
-	$('#option4').text(kanjiGameObject[randomKanji].answers[3]);
+	$('#option4').text(kanjiGameObject[randomKanji].correctAnswer);
 };
 
 // click event listener for start game button
-$("#start-game").on("click", function() {
+$("#start-game").on("click", function () {
 	score = 0;
 	randomKanjiGame();
+	$("#answers-base").css("visibility", "visible");
 
 	// remove start game button when clicked
-	//TODO: $("#start-game").remove();
+	$("#start-game").remove();
 });
 
-//TODO: Click event on the list of answers, check 'this' button against the meaning from the object
-$("#answers").on("click","button",function() {
+// click event on the list of answers, check 'this' button against the meaning from the object
+$("#answers").on("click", "button", function () {
 	console.log($(this).text());
 	console.log(randomKanji);
 	console.log(kanjiGameObject[randomKanji].correctAnswer);
 
-	//check to see if button clicked is correct
+	// check to see if button clicked is correct and track the score, number of right answers, and number of wrong anwers
+	// display the score
 	if ($(this).text() == kanjiGameObject[randomKanji].correctAnswer) {
-		console.log('yay!');
 		score++;
+		correctAnswer++;
+
 		answerP.text('Correct!');
 		$("#answer-hr").css("visibility", "visible");
 		$("#answers").append(answerP);
+		$("#score-span").text(`Score: ${score}`);
 	} else {
-		console.log('boo!');
-		$("#answer-hr").css("visibility", "visible");
+		score--;
+		wrongAnswer++;
+
+		// no negative scores allowed
+		if (score < 0) {
+			score = 0;
+		}
+
 		answerP.text('Wrong!');
+		$("#answer-hr").css("visibility", "visible");
 		$("#answers").append(answerP);
+		$("#score-span").text(`Score: ${score}`);
 	}
 
-	// displays the results and then brings up the next question after 2 seconds, clears previous feedback
-	setTimeout(function(){
-		//TODO: clear out the hr and the response
+	// displays if the answer is right or wrong for 2 seconds
+	setTimeout(function () {
+		// clears out the hr and the response
 		answerP.text('');
 		$("#answer-hr").css("visibility", "hidden");
-		randomKanjiGame();
 	}, 2000);
+
+	// summon gameover screen and end game if score is 10
+	if (score >= 10) {
+		gameOver();
+	}
+
+	// fetches the next question
+	randomKanjiGame();
 })
 
-//TODO: If 'this' button amtches the correct answer, then display CORRECT and increase the score by 1
-//TODO: If 'this' button does not match the correct answers, display INCORRECT and do not increase the score
+function gameOver() {
+	// create and append the restart button
+	var restartButtonEl = $("<button>");
+	restartButtonEl.text("Go Again!");
+	restartButtonEl.attr("id", "restart-button");
+	$("body").append(restartButtonEl);
+
+	// turn off answers
+	$("#answers-base").css("visibility", "hidden");
+
+	//TODO: display summary or results and wrong questions
+}
+
+// restart button event listener
+$("#restart-button").on("click", function () {
+	// reset trackers
+	score = 0;
+	correctAnswer = 0;
+	wrongAnswer = 0;
+
+	// restart game
+	randomKanjiGame();
+
+	// turn on the answers
+	$("#answers-base").css("visibility", "visible");
+
+});
+
 //TODO: Store the answers in an object with their answer and the correct answer
 //TODO: Display at the end their answer and the correct answer saying "You answered X incorrect, here is what you answered, here is the correct answer"
 //TODO: Restart quiz button, clear any cached info about the quiz/answers
