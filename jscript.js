@@ -1,7 +1,8 @@
 //event listener for the search button to execute ajax calls and fetch data
 $("#submit-button").on("click", function (event) {
 	event.preventDefault()
-
+	//clear audio and video on new search
+	$("#media-base").empty();
 	//need to clear input field
 	// $("#user-input").val();
 	//kanjialive only accepts searches in lower case
@@ -83,7 +84,7 @@ function fetchApiData(queryTerm) {
 	//empty out any existing data from previous searches from containers
 	$("#image-base").empty()
 	$("#kanji-base").empty()
-
+	
 
 
 	//This call is copied from the KanjiAlive Api, advanced search KEM/english meaning
@@ -101,7 +102,7 @@ function fetchApiData(queryTerm) {
 
 	//first ajax call
 	$.ajax(settings).done(function (response) {
-
+		
 		//currentKanji grabs the kanji character from the english meaning and tracks the english meaning with it
 		var currentKanji = {
 			specificKanji : response[0].kanji.character,
@@ -128,7 +129,7 @@ function fetchApiData(queryTerm) {
 		$.ajax(settingsTwo).done(function (responseTwo) {
 			//creates a new p-tag to display the kanji
 			var newCharecter = $("<p>")
-
+			console.log(responseTwo)
 			//grabs the kanji and displays it
 			var kanjiCharecter = responseTwo.kanji.character
 			newCharecter.text(kanjiCharecter)
@@ -141,6 +142,35 @@ function fetchApiData(queryTerm) {
 			var romajiCharecter = responseTwo.kanji.kunyomi.romaji
 			newCharectertwo.text(romajiCharecter)
 			$("#kanji-base").append(newCharectertwo)
+
+
+			//created video element for kanji strokes
+			var video = $('<video />', {
+				id: 'video',
+				src: responseTwo.kanji.video.mp4,
+				type: 'video/mp4',
+				controls: true
+			});
+			video.appendTo($("#media-base"));
+
+			//audio for pronouciation of Kanji
+			var buttonAudio = $('<button>');
+			buttonAudio.text('Pronounceation');
+			buttonAudio.attr('id', 'play');
+			$('#media-base').append(buttonAudio);
+			
+			//audio for button click pronounceation
+			$("#play").click(function() {
+				
+				const audio = new Audio(responseTwo.examples[5].audio.mp3);
+				audio.play();
+				
+			  });
+			
+
+			
+			
+			
 		});
 
 	});
@@ -163,9 +193,13 @@ function fetchApiData(queryTerm) {
 		var selectedImg = picture.urls.small
 		newImage.attr("src", selectedImg)
 		$("#image-base").append(newImage)
+
+		
 	})
 };
 
+<<<<<<< HEAD
+=======
 //=====================================================================
 //GAME MODE
 
@@ -299,6 +333,7 @@ $("#answers").on("click","button",function() {
 		answerP.text('Wrong!');
 		$("#answers").append(answerP);
 	}
+>>>>>>> development
 
 	// displays the results and then brings up the next question after 2 seconds, clears previous feedback
 	setTimeout(function(){
@@ -316,5 +351,8 @@ $("#answers").on("click","button",function() {
 //TODO: Restart quiz button, clear any cached info about the quiz/answers
 
 
+<<<<<<< HEAD
+=======
 //TODO: BONUS: Randomly pull a kanji from kanjiapi, pull meaning from that, generate three random words (from an array of words or a dictionary api), append the three answers and the meaning in a random order
 //TODO: BONUS: Click event on the list of answers, check 'this' button against the meaning from the kanjiapi
+>>>>>>> development
