@@ -8,7 +8,7 @@
 }
 
 .container{
-    height: 300px;
+    max-height: 300px;
     object-fit: contain;
     text-align: center;
     
@@ -30,6 +30,8 @@ grid-template-rows: repeat(3, 1fr);
 /* column-gap: 20x;
 row-gap: 15px; */
 justify-content: space-evenly;
+max-height: 500px;
+max-width: 400px;
 }
 
 /*Style the home page search*/
