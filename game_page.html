@@ -7,62 +7,106 @@
     <title>Study Japanese</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
-    
+
 
 </head>
 
 
 <!--Game Page-->
 
-<body>
+<body id="game-body">
+    <div id="page-container">
+        <div id="content-wrap">
+            <!--- Navbar with title, page links, drop-down menu, and 2 tester buttons-->
+            <!-- Different Navbar w/ "Hero Banner" for testing--->
 
-    <!--- Navbar with title, page links, drop-down menu, and 2 tester buttons-->
-    <!-- Different Navbar w/ "Hero Banner" for testing--->
+            <section class="hero is-primary is-medium">
+                <!-- Hero head: will stick at the top -->
+                <div class="hero-head">
+                    <nav class="navbar">
+                        <div class="container">
+                            <div id="game-title">Kanji Game
+                            </div>
+                            <div class="navbar-brand">
+                                <!-- <a class="navbar-item">
+                                <img src="https://64.media.tumblr.com/899ca388b75eb2e737ee76cea85d132a/1fdf63d8eded61cc-72/s640x960/68eac8eefb29bca2dbb1afeb77ffef9700d7dcef.png" alt="Logo">
+                            </a> -->
+                                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div id="navbarMenuHeroA" class="navbar-menu">
 
-    <section class="hero is-primary is-small">
-        <!-- Hero head: will stick at the top -->
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a class="navbar-item">
-                            <img src="https://64.media.tumblr.com/899ca388b75eb2e737ee76cea85d132a/1fdf63d8eded61cc-72/s640x960/68eac8eefb29bca2dbb1afeb77ffef9700d7dcef.png" alt="Logo">
-                        </a>
-                        <span class="navbar-burger" data-target="navbarMenuHeroA">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <div id="navbarMenuHeroA" class="navbar-menu">
-                        <div class="navbar-end">`
-                            <a class="navbar-item" href="index.html">
-                                Home
-                            </a>
 
-                            <a class="navbar-item" href="game_page.html">
-                                Game Page
-                            </a>
 
-                            <a class="navbar-item" href="study_page.html">
-                                Study Page
-                            </a>
-                            <span class="navbar-item">
-                                <a class="button is-primary is-inverted">
-                                    <span class="icon">
-                                        <i class="fab fa-github"></i>
-                                    </span>
-                                    <span>Download</span>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
 
-        <!-- Hero content: will be in the middle -->
-        <!-- <div class="body">
+
+
+
+                                <div class="navbar-end">
+
+                                    <a class="navbar-item" href="index.html">
+                                        Home
+                                    </a>
+
+                                    <section class="hero is-primary is-small">
+                                        <!-- Hero head: will stick at the top -->
+                                        <div class="hero-head">
+                                            <nav class="navbar">
+                                                <div class="container">
+                                                    <div class="navbar-brand">
+                                                        <a class="navbar-item">
+                                                            <img src="https://64.media.tumblr.com/899ca388b75eb2e737ee76cea85d132a/1fdf63d8eded61cc-72/s640x960/68eac8eefb29bca2dbb1afeb77ffef9700d7dcef.png"
+                                                                alt="Logo">
+                                                        </a>
+                                                        <span class="navbar-burger" data-target="navbarMenuHeroA">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </span>
+                                                    </div>
+                                                    <div id="navbarMenuHeroA" class="navbar-menu">
+                                                        <div class="navbar-end">`
+                                                            <a class="navbar-item" href="index.html">
+                                                                Home
+                                                            </a>
+
+                                                            <a class="navbar-item" href="game_page.html">
+                                                                Game Page
+                                                            </a>
+
+                                                            <a class="navbar-item" href="study_page.html">
+                                                                Study Page
+                                                            </a>
+                                                            <span class="navbar-item">
+                                                                <a class="button is-primary is-inverted">
+                                                                    <span class="icon">
+                                                                        <i class="fab fa-github"></i>
+                                                                    </span>
+                                                                    <span>Download</span>
+                                                                </a>
+
+                                                                <a class="navbar-item" href="study_page.html">
+                                                                    Study Page
+                                                                </a>
+                                                                <!-- <span class="navbar-item">
+                                    <a class="button is-primary is-inverted">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Download</span>
+                                    </a> -->
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </nav>
+                                        </div>
+
+                                        <!-- Hero content: will be in the middle -->
+                                        <!-- <div class="body">
             <div class="container has-text-centered">
                 <h1 class="title">Game Mode</h1>
                 <h2 class="subtitle">
@@ -72,11 +116,11 @@
             </div>
         </div> -->
 
-        <!--Scroll down button-->
-        <!-- <button class="scroll-button"><i class="fa-angle-double-down"></i></button> -->
+                                        <!--Scroll down button-->
+                                        <!-- <button class="scroll-button"><i class="fa-angle-double-down"></i></button> -->
 
-        <!-- Hero footer-->
-        <!-- <div class="hero-foot">
+                                        <!-- Hero footer-->
+                                        <!-- <div class="hero-foot">
             <nav class="tabs">
                 <div class="container">
                     <ul>
@@ -91,74 +135,102 @@
             </nav>
         </div> -->
 
-        <!--Grid?-->
+                                        <!--Grid?-->
 
-    </section>
+                                    </section>
 
-    <!--Containers for the Game page-->
+                                    <!--Containers for the Game page-->
 
-    <section class="section">
-        <!--Kanji Game Base-->
-        
-            <div class="column">
-                <div class="container" id="kanji-game-base">
-                    <p class="title">Kanji Base</p>
-                </div>
-            </div>
 
-    </section>
-<br>
-    <section class="section">
-        <!--Answer Options-->
-        
-            <div class="column">
-                <div class="container" id="answers-base">
-                    <p class="title">Answers</p>
+                                    <!--Kanji Game Base-->
 
-                    <!--Answer buttons may populate here-->
-                    <!--Answer Buttons are nested in Bulma Magic Tile -->
-                    
-                        
-                            
-                                
-                                    <article class="tile is-child notification is-info">
-                                       
+
+                                    <div class="container" id="kanji-game-base">
+                                        <p class="title">Kanji Base</p>
+                                        <h4 id="questions">question</h4>
+                                    </div>
+
+
+
+
+
+
+                                    <!--Answer Options-->
+
+
+                                    <div class="container" id="answers-base">
+                                        <p class="title">Answers</p>
+
+                                        <!--Answer buttons may populate here-->
+                                        <!--Answer Buttons are nested in Bulma Magic Tile -->
+
+
+
+
+
+
                                         <div id="container">
                                             <div class="title" id="answers">
                                                 <h4 id="questions"></h4>
-                                                <button id="option1" class="answers" data-value="A">Option 1</button><br>
-                                                <button id="option2" class="answers" data-value="B">Option 2</button><br>
-                                                <button id="option3" class="answers" data-value="C">Option 3</button><br>
+                                                <button id="option1" class="answers" data-value="A">Option
+                                                    1</button><br>
+                                                <button id="option2" class="answers" data-value="B">Option
+                                                    2</button><br>
+                                                <button id="option3" class="answers" data-value="C">Option
+                                                    3</button><br>
                                                 <button id="option4" class="answers" data-value="D">Option 4</button>
                                             </div>
 
 
                                         </div>
-                                    </article>
-                                
-                            
-                        
-                    
+                                        </article>
+                                        <button id="option1" class="answers button is-dark is-pulled-left"
+                                            data-value="B">Option 1</button>
+                                        <br><br>
+
+                                        <button id="option2" class="answers button is-dark is-pulled-left"
+                                            data-value="B">Option 2</button>
+                                        <br><br>
 
 
-    </section>
+                                        <button id="option3" class="answers button is-dark is-pulled-left"
+                                            data-value="C">Option 3</button>
+                                        <br><br>
 
-    <!--Score Card-->
 
-    <!-- <div class="section" id="score-base">
+                                        <button id="option4" class="answers button is-dark is-pulled-left"
+                                            data-value="D">Option 4</button>
+                                        <br><br>
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+
+
+
+
+
+                                <!--Score Card-->
+
+                                <!-- <div class="section" id="score-base">
         <h1>Score</h1>
     </div> -->
 
-    <!--This is a game Progress Bar-->
+                                <!--This is a game Progress Bar-->
 
-    <!-- <progress class="progress is-info" value="15" max="100">45%</progress> -->
+                                <!-- <progress class="progress is-info" value="15" max="100">45%</progress> -->
 
-    <!--Use JS to hide all revious game containers and summon the following-->
+                                <!--Use JS to hide all revious game containers and summon the following-->
 
-    <!--Score Card remains on page-->
-    <!--Review right/wrong answers-->
-    
-    <!-- <h1 class="title is-1">Now let's review your answers...</h1>
+                                <!--Score Card remains on page-->
+                                <!--Review right/wrong answers-->
+
+                                <!-- <h1 class="title is-1">Now let's review your answers...</h1>
 
         <div class="tile is-ancestor">
             <div class="tile is-vertical is-8">
@@ -169,22 +241,34 @@
                             <p class="subtitle">Review Tile</p>
                             <div class="content"> -->
                                 <!-- Content -->
-                            <!-- </div>
+                                <!-- </div>
                         </article> -->
 
 
-                        <!---A button -->
+                                <!---A button -->
 
-                        <!-- <button class="button is-large is-link" id="clear-button">Go Back</button> -->
-
-
+                                <!-- <button class="button is-large is-link" id="clear-button">Go Back</button> -->
 
 
+                            </div>
+                            <footer class="footer-game">
+                                <div class="content has-text-centered">
+                                    <p>
+                                        <strong>Kanji Game</strong> by <a href="">Group 12</a>
+                                    </p>
+                                </div>
+                            </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/244557d995.js" crossorigin="anonymous"></script>
+                        </div>
 
-    <script src="jscript.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <script src="https://kit.fontawesome.com/244557d995.js" crossorigin="anonymous"></script>
+
+                        <script src="jscript.js"></script>
+
+
+
+
 </body>
 
 </html>
