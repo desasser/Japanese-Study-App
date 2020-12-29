@@ -14,11 +14,47 @@
 
 <!--Game Page-->
 
-<body>
-
+<body id="game-body">
+<div id="page-container">
+    <div id="content-wrap">
     <!--- Navbar with title, page links, drop-down menu, and 2 tester buttons-->
     <!-- Different Navbar w/ "Hero Banner" for testing--->
+     
+        <section class="hero is-primary is-medium">
+            <!-- Hero head: will stick at the top -->
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="container">
+                        <div id="game-title">Kanji Game
+                        </div>
+                        <div class="navbar-brand">
+                            <!-- <a class="navbar-item">
+                                <img src="https://64.media.tumblr.com/899ca388b75eb2e737ee76cea85d132a/1fdf63d8eded61cc-72/s640x960/68eac8eefb29bca2dbb1afeb77ffef9700d7dcef.png" alt="Logo">
+                            </a> -->
+                            <span class="navbar-burger" data-target="navbarMenuHeroA">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <div id="navbarMenuHeroA" class="navbar-menu">
+                            
+                            
+                               
+                              
+                                
+                            
+                              
+                            <div class="navbar-end">
+                                
+                                <a class="navbar-item" href="index.html">
+                                    Home
+                                </a>
 
+<<<<<<< HEAD
+                                <a class="navbar-item" href="game_page.html">
+                                    Game Page
+=======
     <section class="hero is-primary is-small">
         <!-- Hero head: will stick at the top -->
         <div class="hero-head">
@@ -53,13 +89,25 @@
                                         <i class="fab fa-github"></i>
                                     </span>
                                     <span>Download</span>
+>>>>>>> development
                                 </a>
-                            </span>
+
+                                <a class="navbar-item" href="study_page.html">
+                                    Study Page
+                                </a>
+                                <!-- <span class="navbar-item">
+                                    <a class="button is-primary is-inverted">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Download</span>
+                                    </a> -->
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </nav>
-        </div>
+                </nav>
+            </div>
 
         <!-- Hero content: will be in the middle -->
         <!-- <div class="body">
@@ -97,22 +145,23 @@
 
     <!--Containers for the Game page-->
 
-    <section class="section">
+    
         <!--Kanji Game Base-->
         
-            <div class="column">
+            
                 <div class="container" id="kanji-game-base">
                     <p class="title">Kanji Base</p>
+                    <h4 id="questions">question</h4>
                 </div>
-            </div>
+                
+           
 
-    </section>
-<br>
-    <section class="section">
+    
+
+    
         <!--Answer Options-->
-<<<<<<< HEAD
         
-            <div class="column">
+            
                 <div class="container" id="answers-base">
                     <p class="title">Answers</p>
 
@@ -122,50 +171,40 @@
                         
                             
                                 
-                                    <article class="tile is-child notification is-info">
+                                   
                                        
-                                        <div id="container">
-                                            <div class="title">
-                                                <h4 id="questions"></h4>
-                                                <button id="option1" class="answers" data-value="A">Option 1</button><br>
-                                                <button id="option2" class="answers" data-value="B">Option 2</button><br>
-                                                <button id="option3" class="answers" data-value="C">Option 3</button><br>
-                                                <button id="option4" class="answers" data-value="D">Option 4</button>
-                                            </div>
-=======
-        <div class="column">
-            <div class="container" id="answers-base">
-                <p class="title">Answers</p>
-
-                <!--Answer buttons may populate here-->
-                <!--Answer Buttons are nested in Bulma Magic Tile -->
-                <div class="tile is-ancestor">
-                    <div class="tile">
-                        <div class="tile">
-                            <div class="tile is-parent">
-                                <article class="tile is-child notification is-info">
-
-                                    <div class="container">
-                                        <div class="title" id="answers">
-                                            <h4 id="questions"></h4>
-                                            <button id="option1" class="answers" data-value="A">Option 1</button>
-                                            <button id="option2" class="answers" data-value="B">Option 2</button>
-                                            <button id="option3" class="answers" data-value="C">Option 3</button>
-                                            <button id="option4" class="answers" data-value="D">Option</button>
-                                            <hr id="answer-hr">
-                                        </div>
->>>>>>> development
-
-
-                                        </div>
-                                    </article>
-                                
+                                        
+                                            
+                                                
+                                                <div class="answers">
+                                                    <button id="option1" class="answers button is-dark is-pulled-left" data-value="A">Option 1</button>
+                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit perspiciatis eum tenetur mollitia quae amet molestiae iusto aperiam quo neque, expedita a nam, enim magni fuga ducimus, consequatur laudantium incidunt!</p>
+                                                    <br><br>
+                                                    
                             
-                        
+                                                    <button id="option2" class="answers button is-dark is-pulled-left" data-value="B">Option 2</button>
+                                                    <br><br>
+                                                    
+                                                       
+                                                    <button id="option3" class="answers button is-dark is-pulled-left" data-value="C">Option 3</button>
+                                                    <br><br>
+                                                    
+                                                        
+                                                    <button id="option4" class="answers button is-dark is-pulled-left" data-value="D">Option 4</button>
+                                                    <br><br>
+                                                    
+                                                </div>
+
+
+
+                                    
+                               
+                </div>           
+                      
                     
 
 
-    </section>
+    
 
     <!--Score Card-->
 
@@ -201,14 +240,26 @@
 
                         <!-- <button class="button is-large is-link" id="clear-button">Go Back</button> -->
 
-
-
-
-
+    
+    </div>
+          <footer class="footer-game">
+            <div class="content has-text-centered">
+                <p>
+                <strong>Kanji Game</strong> by <a href="">Group 12</a> 
+                </p>
+            </div>
+        </footer>
+    
+</div>     
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/244557d995.js" crossorigin="anonymous"></script>
 
     <script src="jscript.js"></script>
+
+
+
+ 
 </body>
 
 </html>
