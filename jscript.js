@@ -172,77 +172,77 @@ function fetchApiData(queryTerm) {
 // Array of objects of kanji with their meaning and 3 incorrect answers and the correct answered marked
 var kanjiGameObject = [{
 	kanji: '蛍',
-	answers: ['mountain', 'spirit', 'orange'],
+	answers: ['mountain', 'spirit', 'orange', 'firefly'],
 	correctAnswer: 'firefly'
 },
 {
 	kanji: '蜜',
-	answers: ['fish', 'train', 'sky'],
+	answers: ['fish', 'honey', 'train', 'sky'],
 	correctAnswer: 'honey'
 },
 {
 	kanji: '山',
-	answers: ['heart', 'ocean', 'forest'],
+	answers: ['mountain', 'heart', 'ocean', 'forest'],
 	correctAnswer: 'mountain'
 },
 {
 	kanji: '気',
-	answers: ['ogre', 'plain', 'coffee'],
+	answers: ['ogre', 'plain', 'spirit', 'coffee'],
 	correctAnswer: 'spirit'
 },
 {
 	kanji: '魚',
-	answers: ['water', 'speak', 'jacket'],
+	answers: ['water', 'fish', 'speak', 'jacket'],
 	correctAnswer: 'fish'
 },
 {
 	kanji: '心',
-	answers: ['computer', 'desk', 'bag'],
+	answers: ['computer', 'desk', 'heart', 'bag'],
 	correctAnswer: 'heart'
 },
 {
 	kanji: '店',
-	answers: ['marker', 'game', 'shoes'],
+	answers: ['shop', 'marker', 'game', 'shoes'],
 	correctAnswer: 'shop'
 },
 {
 	kanji: '家',
-	answers: ['pants', 'restaurant', 'book'],
+	answers: ['pants', 'restaurant', 'book', 'house'],
 	correctAnswer: 'house'
 },
 {
 	kanji: '猿',
-	answers: ['sauce', 'menu', 'festival'],
+	answers: ['sauce', 'monkey', 'menu', 'festival'],
 	correctAnswer: 'monkey'
 },
 {
 	kanji: '雪',
-	answers: ['summer', 'light', 'window'],
+	answers: ['snow', 'summer', 'light', 'window'],
 	correctAnswer: 'snow'
 },
 {
 	kanji: '雨',
-	answers: ['heat', 'animal', 'doctor'],
+	answers: ['rain', 'heat', 'animal', 'doctor'],
 	correctAnswer: 'rain'
 },
 {
 	kanji: '夏',
-	answers: ['merchant', 'luck', 'dragon'],
+	answers: ['merchant', 'summer', 'luck', 'dragon'],
 	correctAnswer: 'summer'
 },
 {
 	kanji: '舟',
-	answers: ['tree', 'car', 'office'],
+	answers: ['tree', 'car', 'office', 'boat'],
 	correctAnswer: 'boat'
 },
 {
 	kanji: '言',
-	answers: ['drink', 'table', 'notebook'],
+	answers: ['word', 'drink', 'table', 'notebook'],
 	correctAnswer: 'word'
 },
 {
 	kanji: '本',
-	answers: ['taxi', 'cat', 'food'],
+	answers: ['taxi', 'book', 'cat', 'food'],
 	correctAnswer: 'book'
 },
 ]
@@ -268,7 +268,7 @@ function randomKanjiGame() {
 	$('#option1').text(kanjiGameObject[randomKanji].answers[0]);
 	$('#option2').text(kanjiGameObject[randomKanji].answers[1]);
 	$('#option3').text(kanjiGameObject[randomKanji].answers[2]);
-	$('#option4').text(kanjiGameObject[randomKanji].correctAnswer);
+	$('#option4').text(kanjiGameObject[randomKanji].answers[3]);
 };
 
 // click event listener for start game button
