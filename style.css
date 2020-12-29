@@ -82,10 +82,79 @@ grid-area: 5 / 2 / 7 / 3 ;
     width: 500px;
 }
 
+/* game page */
+#game-title {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-size: 40px;
+
+}
+.navbar-end{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+
+#option1 #option2 #option3 #option4 {
+    margin: 40px auto;
+}
+
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+    }
+
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+
+
+#game-body, html { 
+    height:100%; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-head {
+    background-color: #ba8759
+}
+
 .title {
     text-align: center;
+    background-color: #FAEBD7
+    
+}
+
+#answers-base {
+    background-color: #FAEBD7
+    
+}
+
+#answer-blocks{
+    box-shadow: 5px 10px;
 }
 
 
 
+#kanji-game-base, #game-body {
+    background-color: #FAEBD7
+
+}
+
+.footer-game {
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:#ba8759
+    
+
+}
 
