@@ -1,10 +1,13 @@
 //event listener for the search button to execute ajax calls and fetch data
 $("#submit-button").on("click", function (event) {
 	event.preventDefault()
+
 	//clear audio and video on new search
 	$("#media-base").empty();
-	//need to clear input field
-	// $("#user-input").val();
+
+	//need to clear input field after submit
+	$("#user-input").val('');
+
 	//kanjialive only accepts searches in lower case
 	queryTerm = $("#user-input").val().toLowerCase();
 
@@ -50,6 +53,7 @@ function saveKanji(savedKanji) {
 $("#search-history").on("click", "button", function () {
 	// var whichKanji = $(this).text();
 	var kanjiMeaning = $(this).data().meaning;
+	$("#media-base").empty();
 
 	//send which Kanji was clicked to the fetchApiData function
 	fetchApiData(kanjiMeaning);
@@ -106,7 +110,7 @@ function fetchApiData(queryTerm) {
 
 		if (response.length === 0) {
 			//TODO: make this not an alert
-			alert('kanji not found');
+			alert('kanji not found, due to the scope of the api, some kanji are not included, please try a different word');
 		} else {
 
 
