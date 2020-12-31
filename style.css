@@ -1,15 +1,18 @@
 .saved-search-button {
-    font-size: 40px;
-    margin: 5px;
-    padding: 0 10px;
-    border: none;
-    background-color: beige;
-    border-radius: 0.5em;
+  font-size: 40px;
+  margin: 5px;
+  padding: 0 10px;
+  border: none;
+  background-color: beige;
+  border-radius: 0.5em;
 }
 
-.saved-search-button:hover {
-    
-}
+/*.container {
+  max-height: 300px;
+  object-fit: contain;
+  text-align: center;
+}*/
+
 
 /*Navbar*/
 .navbar-item{
@@ -83,10 +86,12 @@ background-color:  #FAEBD7;
 
 /*Image base*/
 .box2 {
-    grid-area: 1 / 2 / 5 / 3;
-    height: 400px;
-    width: 500px;
+  grid-area: 1 / 2 / 5 / 3;
+  height: 800px;
+  width: 600px;
 }
+
+
 
 .image{
     max-width: 100%;
@@ -105,75 +110,172 @@ background-color:  #FAEBD7;
 
 /*Search history base*/
 .box4 {
-grid-area: 5 / 2 / 7 / 3 ;
- height: 175px;
- width: 500px;
- 
+  grid-area: 5 / 2 / 7 / 3;
+  height: 200px;
+  width: 600px;
+}
+
+#clear-button {
+  font-size: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #555555;
+  color: white;
+}
+
+/*Style the home page search*/
+
+.field {
+  object-fit: contain;
+  text-align: center;
+  margin: auto;
+  max-width: 500px;
+}
+
+.input {
+  width: 500px;
+}
+
+/*Media styling mitch*/
+
+#play-audio {
+  margin: 40px auto;
+  font-size: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #555555;
+  color: white;
+}
+
+video {
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 220px;
+}
+
+/*Kanji img styling mitch*/
+
+img {
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* game page */
+.box22 {
+    grid-area: 1 / 2 / 5 / 3;
+    height: 400px;
+    width: 600px;
+    background-color: #faebd7;
+  }
+
 #game-title {
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    font-size: 40px;
-
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  font-size: 66px;
+  color: #fffaf0
 }
-.navbar-end{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-
-}
-
-#option1 #option2 #option3 #option4 {
-    margin: 40px auto;
+.navbar-end {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
+.column-game {
+  position: relative;
+  top: 200px;
+}
+
+#start-game {
+  text-align: center;
+  color:#fffaf0
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 #page-container {
-    position: relative;
-    min-height: 100vh;
-    }
-
-#content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
-}
-
-
-#game-body, html { 
-    height:100%; 
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  min-height: 100vh;
 }
 
 .hero-head {
     background-color: #ba8759;
+    height: 160px;
 }
 
-.title {
+
+#score-flip {
     text-align: center;
-    background-color:#c0a58d;
-      
-}
-
-#answers-base {
-    background-color: #FAEBD7;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
     
 }
 
-#answer-blocks{
-    box-shadow: 5px 10px;
+/*html {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}*/
+
+
+.title {
+  text-align: center;
+  opacity: 0.5;
+  
+}
+
+#answers-base {
+    border-style: solid;
+    border-color: #ba8759;
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/41/44/105850c6261c69f.jpg");
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
 }
 
 
+#kanji-game-base {
+    border-style: solid;
+    border-color: #ba8759;
+  text-align: center;
+  position: relative;
+  font-size: 999%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/41/44/105850c6261c69f.jpg");
+}
 
-#kanji-game-base, body {
-    background-color: #FAEBD7
-
+#html2 {
+    background-size: 100%;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url("https://kitote.jp/en/products/images/shoji_standard02.jpg")
+  
+}
+/* literally had to reflip content after i flipped background */
+#option1,
+#option2,
+#option3,
+#option4 {
+  font-size: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #555555;
+  color:#fffaf0;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
 }
 
 /*Study page*/
