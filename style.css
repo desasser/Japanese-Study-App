@@ -93,16 +93,16 @@ background-color:  #FAEBD7;
 /*Kanji base*/
 .box1{
     grid-area: 1 / 1 / 5 / 2;
-    height: 300px;
-    width: 500px;
+    height: 20em;
+    width: 30em;
 
 }
 
 /*Image base*/
 .box2 {
   grid-area: 1 / 2 / 5 / 3;
-  height: 800px;
-  width: 600px;
+  height: 25em;
+  width: 30em;
 }
 
 
@@ -117,16 +117,16 @@ background-color:  #FAEBD7;
 /*Media base*/
 .box3{
     grid-area: 4 / 1 / 8 / 2;
-    height: 350px;
-    width: 500px;
+    height: 18em;
+    width: 30em;
     justify-items: end;
 }
 
 /*Search history base*/
 .box4 {
-  grid-area: 5 / 2 / 7 / 3;
-  height: 200px;
-  width: 600px;
+  grid-area:5 / 2 / 7 / 3;
+  height: 10em;
+  width: 30em;
 }
 
 #clear-button {
