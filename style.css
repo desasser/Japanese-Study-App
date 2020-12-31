@@ -1,6 +1,4 @@
-/* body {
-   
-} */
+
 
 /*Saved search button*/
 
@@ -36,7 +34,7 @@
     object-fit: contain;
     text-align: center;
     margin: auto;
-    padding: 30px;
+    padding: 20px;
     max-width: 600px;
     
 }
@@ -66,7 +64,7 @@ aside {
     font-style: bold;
     font-size: 3em;
     background-color: #B52E2C;
-    margin-right: 3em;
+    margin-right: 2em;
   }
 
 /*Styles the grid for main page landing*/
@@ -88,23 +86,24 @@ align-items: center;
 box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
 justify-content: center;
 background-color:  #FAEBD7;
+object-fit: fill;
 }
 
 /*Kanji base*/
 .box1{
     grid-area: 1 / 1 / 5 / 2;
     height: 20em;
-    width: 30em;
+    width: 27em;
 
 }
 
 /*Image base*/
 .box2 {
-  grid-area: 1 / 2 / 5 / 3;
-  height: 25em;
+  grid-area: 1 / 2 / 6 / 3;
+  height: 22em;
   width: 30em;
+  padding: 10px;
 }
-
 
 
 .image{
@@ -117,15 +116,15 @@ background-color:  #FAEBD7;
 /*Media base*/
 .box3{
     grid-area: 4 / 1 / 8 / 2;
-    height: 18em;
-    width: 30em;
+    height: 20em;
+    width: 27em;
     justify-items: end;
 }
 
 /*Search history base*/
 .box4 {
-  grid-area:5 / 2 / 7 / 3;
-  height: 10em;
+  grid-area: 5 / 2 / 7 / 3;
+  height: 13em;
   width: 30em;
 }
 
@@ -148,6 +147,7 @@ background-color:  #FAEBD7;
 
 .input {
   width: 500px;
+  background-color: #f7ede0;
 }
 
 /*Media styling mitch*/
@@ -187,7 +187,7 @@ img {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  font-size: 66px;
+  font-size: 40px;
   color: #fffaf0
 }
 .navbar-end {
@@ -215,7 +215,7 @@ img {
 
 .hero-head {
     background-color: #ba8759;
-    height: 160px;
+    height: 4em;
 }
 
 
@@ -299,6 +299,7 @@ img {
 
 .is-ancestor{
     justify-content: center;
+    background-color: #FAEBD7;
 }
 
 .is-child{
