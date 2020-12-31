@@ -11,37 +11,55 @@
     
 }
 
-.container{
-    max-height: 300px;
+/*Navbar*/
+.navbar-item{
+    font-size: 25px;
+    color: white;
+}
+
+/*Styles the Search area*/
+
+.field{
     object-fit: contain;
     text-align: center;
+    margin: auto;
+    padding: 30px;
+    max-width: 600px;
     
 }
 
-.image{
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
+.input{
+    width: 500px;
+    height: 58px;
 }
 
+
+.container{
+    object-fit: contain;
+    text-align: center;
+}
+
+
+/*Styles the grid for main page landing*/
 .grid-container {
 display: grid;
 grid-template-columns: 1fr, 3fr;
-grid-template-rows: repeat(5, 1fr);
+grid-template-rows: repeat(auto-fit, minmax(5, 1fr));
 grid-gap: 10px;
 justify-content: center;
 align-content: center;
-grid-gap: 20px;
 }
 
 /*Styles sections*/
 
 .box{
 align-items: center;
-box-shadow:  18px 15px 23px -2px 0,0,0,0.29 rgba(255,255,255,0.6); 
+box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
 justify-content: center;
+background-color:  #FAEBD7;
 }
 
+/*Kanji base*/
 .box1{
     grid-area: 1 / 1 / 5 / 2;
     height: 400px;
@@ -49,36 +67,34 @@ justify-content: center;
 
 }
 
+/*Image base*/
 .box2 {
-    grid-area: 1 / 2 / 4 / 3;
+    grid-area: 1 / 2 / 5 / 3;
     height: 800px;
     width: 600px;
 }
 
-.box3{
-    grid-area: 3 / 1 / 8 / 2;
-    height: 400px;
-    width: 600px;
+.image{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
+/*Media base*/
+.box3{
+    grid-area: 3 / 1 / 8 / 2;
+    height: 450px;
+    width: 600px;
+    justify-items: end;
+}
+
+/*Search history base*/
 .box4 {
-grid-area: 4 / 2 / 7 / 3 ;
+grid-area: 5 / 2 / 7 / 3 ;
  height: 200px;
  width: 600px;
  
-}
-
-/*Style the home page search*/
-
-.field{
-    object-fit: contain;
-    text-align: center;
-    margin: auto;
-    max-width: 600px;
-}
-
-.input{
-    width: 500px;
 }
 
 /* game page */
@@ -121,17 +137,17 @@ grid-area: 4 / 2 / 7 / 3 ;
 }
 
 .hero-head {
-    background-color: #ba8759
+    background-color: #ba8759;
 }
 
 .title {
     text-align: center;
-    background-color: #FAEBD7
+    background-color: #FAEBD7;
     
 }
 
 #answers-base {
-    background-color: #FAEBD7
+    background-color: #FAEBD7;
     
 }
 
@@ -141,19 +157,37 @@ grid-area: 4 / 2 / 7 / 3 ;
 
 
 
-#kanji-game-base, #game-body {
+#kanji-game-base, body {
     background-color: #FAEBD7
 
 }
 
+
 .footer-game {
-    
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background-color:#ba8759
     
-
 }
 
+/*responsiveness*/
+
+/* grid styles ------------------------------------ */
+@media (max-width: 600px) {
+    #page-container{
+      display: grid;
+    }
+  
+    .box {
+       grid-column: span 2;
+       grid-row: span 2;
+    }
+    
+  body {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+}

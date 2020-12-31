@@ -13,85 +13,78 @@
 </head>
 
 <body>
-    <!---This is a Navbar with title, page links, drop-down menu, and 2 tester buttons-->
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <!--Navbar icon-->
-                <img src="" width="112" height="28">
-            </a>
 
-            <!---Navbar Mobile Responsivess-->
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
+    <div id="page-container">
 
-        <!--Navbar Links-->
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="index.html">
-                    Home
-                </a>
+    <!--- Hero Navbar with title, page links, and drop-down menu-->
 
-                <a class="navbar-item" href="game_page.html">
-                    Game Page
-                </a>
+    <section class="hero is-primary is-medium">
 
-                <a class="navbar-item" href="study_page.html">
-                    Study Page
-                </a>
+        <!-- Hero head: will stick at the top -->
 
-                <!---Navbar Dropdown-->
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        More
-                    </a>
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="game-title">Study Japanese
+                    </div>
+                    <div class="navbar-brand">
+                        <span class="navbar-burger" data-target="navbarMenuHeroA">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenuHeroA" class="navbar-menu">
 
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="resources_page.html">
-                            Resources
-                        </a>
-                        <a class="navbar-item">
-                            About
-                        </a>
-                        <a class="navbar-item">
-                            Meet the Team
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            Report an issue
-                        </a>
+                        <div class="navbar-end">
+
+                            <a class="navbar-item" href="index.html">
+                                Home
+                            </a>
+
+                            <a class="navbar-item" href="game_page.html">
+                                Game Page
+                            </a>
+
+                            <a class="navbar-item" href="study_page.html">
+                                Study Page
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </nav>
         </div>
-    </nav>
-
-    <br>
-
-    <section class="field field is-grouped">
-        <!--Here lives the English word Input Form/Submit Button-->
-        <input class="input is-medium" id="user-input" type="text" placeholder="Text input">
-
-        <!--Adds an Icon to input field-->
-        <span class="icon is-small"><i class="fas fa-search"></i></span>
-        </input>
-
-        <button class="button is-warning is-hovered is-medium" id="submit-button">Search
-        </button>
     </section>
 
-    <main class="grid-container">
+    <br>
+<!--     
+        <h1>About</h1>
+        <p>Placeholder Text</p> -->
+
+    <section class="field is-grouped">
+
+        <!--Here lives the English word Input Form/Submit Button-->
+        <input class="input is-large" id="user-input" type="text" placeholder="Search">
+
+        <!--Adds an Icon to input field-->
+
+        <button class="button is-large is-dark">
+            <span class="icon is-large">
+                <i class="fas fa-search"></i>
+            </span>
+            <!-- <span>Search</span> -->
+        </button>
+
+
+    </section>
+
+    <main class="grid-container is-fluid">
 
         <!--Containers for the home page-->
 
         <section class="box box1">
             <!--Image/Glyph-->
-            <div class="columns">
+            <div class="columns is-mobile">
                 <div class="column">
                     <div class="container" id="kanji-base">
                         <p class="title">Kanji Base</p>
@@ -111,7 +104,7 @@
 
         <section class="box box3" id="history">
             <!--Media-->
-            <div class="columns">
+            <div class="columns is-mobile">
                 <div class="column">
                     <div class="container" id="media-base">
                         <p class="title">Media Base</p>
@@ -131,6 +124,17 @@
         </section>
 
     </main>
+
+    <!-- <footer class="footer-game">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Learn Kanji </strong> by <a href="">Group 12</a>
+            </p>
+        </div>
+    </footer> -->
+
+</div>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
