@@ -171,7 +171,7 @@ $("#answers").on("click", "button", function () {
 	}, 2000);
 
 	// summon gameover screen and end game if score is 10
-	if (score >= 10) {
+	if (score >= 1) {
 		gameOver();
 	}
 
@@ -180,11 +180,13 @@ $("#answers").on("click", "button", function () {
 })
 
 function gameOver() {
+    $('#kanji-game-base').children().text('');
 	// create and append the restart button
 	var restartButtonEl = $("<button>");
 	restartButtonEl.text("Go Again!");
-	restartButtonEl.attr("id", "restart-button");
-	$("body").append(restartButtonEl);
+    restartButtonEl.attr("id", "restart-button");
+    restartButtonEl.addClass("button is-dark")
+	$("#kanji-game-base").append(restartButtonEl);
 
 	// turn off answers
 	$("#answers-base").css("visibility", "hidden");

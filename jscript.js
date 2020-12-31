@@ -71,12 +71,8 @@ $("#search-history").on("click", "button", function () {
 //create clear button, should be shown if there is anything in the array
 var buttonEl = $('<button>');
 buttonEl.text('Clear Searches');
-<<<<<<< HEAD
 buttonEl.attr('id', 'clear-button');
 buttonEl.addClass('button is-dark');
-=======
-buttonEl.attr('id', 'clear-button');``
->>>>>>> development
 $('#search-history').append(buttonEl);
 showClearBtn();
 
@@ -112,8 +108,6 @@ function fetchApiData(queryTerm) {
 	//empty out any existing data from previous searches from containers
 	$("#image-base").empty()
 	$("#kanji-base").empty()
-
-
 
 	//This call is copied from the KanjiAlive Api, advanced search KEM/english meaning
 	//first AJAX call to retrieve kanji from meaning

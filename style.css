@@ -267,7 +267,7 @@ img {
 .title {
   text-align: center;
   opacity: 0.5;
-  
+  font-size: 2rem;
 }
 
 #answers-base {
