@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,92 +13,112 @@
 </head>
 
 
-<body>
-    <!---This is a Navbar with title, page links, drop-down menu, and 2 tester buttons-->
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <!--Navbar icon-->
-                <img src="" width="112" height="28">
-            </a>
+<div id="page-container">
 
-            <!---Navbar Mobile Responsivess-->
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-        <!--Navbar Links-->
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="index.html">
-                    Home
-                </a>
-
-                <a class="navbar-item" href="game_page.html">
-                    Game Page
-                </a>
-
-                <a class="navbar-item" href="study_page.html">
-                    Study Page
-                </a>
-
-                <!---Navbar Dropdown-->
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        More
-                    </a>
-
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="resources_page.html">
-                            Resources
-                        </a>
-                        <a class="navbar-item">
-                            About
-                        </a>
-                        <a class="navbar-item">
-                            Meet the Team
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            Report an issue
-                        </a>
+    <section class="hero is-primary is-medium">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="game-title">Study Kanji
                     </div>
+
+                    <div class="navbar-brand">
+
+                        <span class="navbar-burger" data-target="navbarMenuHeroA">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+
+                    </div>
+
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+
+                        <div class="navbar-end">
+
+                            <a class="navbar-item" href="index.html">
+                                Home
+                            </a>
+
+                            <a class="navbar-item" href="game_page.html">
+                                Game Page
+                            </a>
+
+                            <a class="navbar-item" href="study_page.html">
+                                Study Page
+                            </a>
+
+                            <a class="navbar-item" href="resources_page.html">
+                                Resources
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section class="section level">
+
+        <!--Made with Bulma Tiles -->
+
+        <div class="tile is-ancestor is-centered">
+            <div class="tile is-vertical is-8">
+                <div class="tile">
+
+                    <div class="tile is-parent is-5">
+                        <article class="tile is-child notification" id="extra-resources">
+                            <div class="content">
+                                <p class="title">Resources</p>
+                                <p class="subtitle">With even more content</p>
+                                <div class="content">
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="tile is-parent is-vertical is-4">
+                        <article class="tile is-child notification" id="culture-image">
+                            <p class="title">Culture</p>
+                            <p class="subtitle"></p>
+                        </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification" id="exchange-form">
+                            <p class="title">Pen-Pal Program</p>
+                            <p class="subtitle">Sign up for a pen-pal/language exchange</p>
+
+
+
+
+
+                        </article>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </nav>
 
-    <!--Made with Bulma Tiles -->
+    </section>
 
-    <div class="container">
+</div>
 
-    <div class="tile is-ancestor">
-        <div class="tile is-4 is-vertical is-parent">
-          <div class="tile is-child box is-info">
-            <p class="title">Title </p>
-            
-          </div>
-          <div class="tile is-child box is-info">
-            <p class="title">Two</p>
-           
-          </div>
-        </div>
-        <div class="tile is-parent">
-          <div class="tile is-child box is-info">
-            <p class="title">Sign up for a penpal</p>
+</div>
 
-          </div>
-        </div>
-      </div>
-
+<!--Footer-->
+<footer class="footer-game is-fixed-bottom">
+    <div class="content has-text-centered">
+        <p>
+            <strong>Study Kanji</strong> by <a href="">Group 12</a>
+        </p>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</footer>
 
-    <script src="jscript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="jscript.js"></script>
 </body>
 
 </html>
