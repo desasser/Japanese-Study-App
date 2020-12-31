@@ -95,11 +95,17 @@ var kanjiGameObject = [{
 
 // initialize variables for global scope
 var randomKanji;
+var correctAnswerArr = [];
+var randomKanjiArr = [];
+var userAnswerArr = [];
+
+// initialize counters
 var score = 0;
 var wrongAnswer = 0;
 var correctAnswer = 0;
+
+// initialize new html elements
 var answerP = $("<p>")
-$("#answer-hr").css("visibility", "hidden");
 $("#answers-base").css("visibility", "hidden");
 
 // function to randomly produce a question from the array
@@ -113,19 +119,27 @@ function randomKanjiGame() {
 	//TODO: BONUS: Then assign the values to each index as needed
 
 	// display the kanji on the page
-	$('#kanji-game-base').children().text(kanjiGameObject[randomKanji].kanji);
+	$('#kanji-game-display').text(kanjiGameObject[randomKanji].kanji);
 
 	// set the answers into the answers cells
 	$('#option1').text(kanjiGameObject[randomKanji].answers[0]);
 	$('#option2').text(kanjiGameObject[randomKanji].answers[1]);
 	$('#option3').text(kanjiGameObject[randomKanji].answers[2]);
 	$('#option4').text(kanjiGameObject[randomKanji].answers[3]);
+
+    // grab the correct answer from the array and the kanji
+    // randomKanji and new var for just the correct answer
+    correctAnswerArr.push(kanjiGameObject[randomKanji].correctAnswer);
+    randomKanjiArr.push(kanjiGameObject[randomKanji].kanji)
+    console.log('answer', correctAnswerArr);
+    console.log('kanji', randomKanjiArr);
 };
 
 // click event listener for start game button
 $("#start-game").on("click", function () {
 	score = 0;
-	randomKanjiGame();
+    randomKanjiGame();
+    $(".disposable").remove();
 	$("#answers-base").css("visibility", "visible");
 
 	// remove start game button when clicked
@@ -134,9 +148,9 @@ $("#start-game").on("click", function () {
 
 // click event on the list of answers, check 'this' button against the meaning from the object
 $("#answers").on("click", "button", function () {
-	console.log($(this).text());
-	console.log(randomKanji);
-	console.log(kanjiGameObject[randomKanji].correctAnswer);
+    // grab the users input
+    userAnswerArr.push($(this).text());
+    console.log('user input', userAnswerArr);
 
 	// check to see if button clicked is correct and track the score, number of right answers, and number of wrong anwers
 	// display the score
@@ -145,8 +159,7 @@ $("#answers").on("click", "button", function () {
 		correctAnswer++;
 
 		answerP.text('Correct!');
-		$("#answer-hr").css("visibility", "visible");
-		$("#answers").append(answerP);
+		$("#score-flip").append(answerP);
 		$("#score-span").text(`Score: ${score}`);
 	} else {
 		score--;
@@ -158,8 +171,7 @@ $("#answers").on("click", "button", function () {
 		}
 
 		answerP.text('Wrong!');
-		$("#answer-hr").css("visibility", "visible");
-		$("#answers").append(answerP);
+		$("#score-flip").append(answerP);
 		$("#score-span").text(`Score: ${score}`);
 	}
 
@@ -171,8 +183,13 @@ $("#answers").on("click", "button", function () {
 	}, 2000);
 
 	// summon gameover screen and end game if score is 10
-	if (score >= 1) {
-		gameOver();
+	if (score >= 2) {
+        $('#kanji-game-display').text('Fin');
+        $("#answers").css("visibility", "hidden");
+        gameOver();
+
+        return;
+        // display score
 	}
 
 	// fetches the next question
@@ -180,16 +197,25 @@ $("#answers").on("click", "button", function () {
 })
 
 function gameOver() {
-    $('#kanji-game-base').children().text('');
 	// create and append the restart button
 	var restartButtonEl = $("<button>");
-	restartButtonEl.text("Go Again!");
-    restartButtonEl.attr("id", "restart-button");
     restartButtonEl.addClass("button is-dark")
+	restartButtonEl.text("Go Again!");
 	$("#kanji-game-base").append(restartButtonEl);
 
-	// turn off answers
-	$("#answers-base").css("visibility", "hidden");
+    // start review text
+    var reviewP = $('<p>');
+    reviewP.text("Let's Review:");
+    reviewP.addClass("flip review-text");
+    $("#answers-base").prepend(reviewP);
+
+    // review answers list
+    for (var i = 0; i < correctAnswerArr.length; i++) {
+        
+    }
+    var ulEl = $('<ul>');
+    var liEl = $('<li>');
+
 
 	//TODO: display summary or results and wrong questions
 }
@@ -203,10 +229,6 @@ $("#restart-button").on("click", function () {
 
 	// restart game
 	randomKanjiGame();
-
-	// turn on the answers
-	$("#answers-base").css("visibility", "visible");
-
 });
 
 //TODO: Store the answers in an object with their answer and the correct answer

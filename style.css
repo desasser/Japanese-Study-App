@@ -244,6 +244,20 @@ img {
     height: 160px;
 }
 
+.flip {
+    text-align: center;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.review-text {
+    font-size: 30px;
+    font-weight: bold;
+}
 
 #score-flip {
     text-align: center;
@@ -253,7 +267,6 @@ img {
     transform: scaleX(-1);
     filter: FlipH;
     -ms-filter: "FlipH";
-    
 }
 
 /*html {
