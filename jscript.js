@@ -5,14 +5,15 @@ $("#submit-button").on("click", function (event) {
 	//clear audio and video on new search
 	$("#media-base").empty();
 
-	//need to clear input field after submit
-	$("#user-input").val('');
-
 	//kanjialive only accepts searches in lower case
 	queryTerm = $("#user-input").val().toLowerCase();
+	console.log(queryTerm);
 
 	//all code to fetch data from the API
 	fetchApiData(queryTerm);
+
+	//clear input field after submit
+	$("#user-input").val('');
 })
 
 //Create array to store kanji searches and display them on the screen as clickable elements
@@ -198,7 +199,7 @@ function fetchApiData(queryTerm) {
 		} else {
 			//new image element to house the returned image
 			var newImage = $("<img>")
-	
+
 			//url from response for the image, displays on page
 			var selectedImg = picture.urls.small
 			newImage.attr("src", selectedImg)
