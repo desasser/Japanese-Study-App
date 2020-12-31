@@ -53,6 +53,14 @@ justify-content: center;
     grid-area: 1 / 2 / 5 / 3;
     height: 800px;
     width: 600px;
+    
+}
+
+.box22 {
+    grid-area: 1 / 2 / 5 / 3;
+    height: 400px;
+    width: 600px;
+    background-color:#FAEBD7
 }
 
 .box3{
@@ -68,6 +76,9 @@ grid-area: 5 / 2 / 7 / 3 ;
  
 }
 
+#clear-button{
+    background-color: #555555;
+}
 
 /*Style the home page search*/
 
@@ -99,6 +110,20 @@ grid-area: 5 / 2 / 7 / 3 ;
 
 }
 
+.column-game {
+    position:relative; 
+    top:200px;
+}
+
+#start-game {
+    
+        margin: 0;
+        position: relative;
+        top: 50%;
+        left: 40%;
+}
+
+
 #option1 #option2 #option3 #option4 {
     margin: 40px auto;
 }
@@ -126,6 +151,7 @@ grid-area: 5 / 2 / 7 / 3 ;
 }
 
 .title {
+    
     text-align: center;
     background-color: #FAEBD7
     
@@ -142,7 +168,9 @@ grid-area: 5 / 2 / 7 / 3 ;
 
 
 
-#kanji-game-base, #game-body {
+
+
+#kanji-game-base, #game-body, #answers{
     background-color: #FAEBD7
 
 }
@@ -154,7 +182,5 @@ grid-area: 5 / 2 / 7 / 3 ;
     left: 0;
     right: 0;
     background-color:#ba8759
-    
-
 }
 

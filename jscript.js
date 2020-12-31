@@ -8,7 +8,6 @@ $("#submit-button").on("click", function (event) {
 	//need to clear input field after submit
 	$("#user-input").val('');
 
-	//kanjialive only accepts searches in lower case
 	queryTerm = $("#user-input").val().toLowerCase();
 
 	//all code to fetch data from the API
@@ -55,15 +54,15 @@ $("#search-history").on("click", "button", function () {
 	var kanjiMeaning = $(this).data().meaning;
 	$("#media-base").empty();
 
-	//send which Kanji was clicked to the fetchApiData function
+	//send which Kanji was clicked to the fetchApiData function,9/
 	fetchApiData(kanjiMeaning);
 })
 
 //create clear button, should be shown if there is anything in the array
 var buttonEl = $('<button>');
 buttonEl.text('Clear Searches');
-buttonEl.attr('id', 'clear-button');
-$('#history').append(buttonEl);
+buttonEl.attr('id', 'clear-button');``
+$('#search-history').append(buttonEl);
 showClearBtn();
 
 //if there are previous searches saved, show the clear button
@@ -152,7 +151,7 @@ function fetchApiData(queryTerm) {
 				//grabs the romaji and displays it
 				var romajiCharecter = responseTwo.kanji.kunyomi.romaji
 				newCharectertwo.text(romajiCharecter)
-				$("#kanji-base").append(newCharectertwo)
+				$("#kanji-base").append(newCharectertwo, style="font-size:30px")
 
 
 				//created video element for kanji strokes
@@ -202,6 +201,9 @@ function fetchApiData(queryTerm) {
 			//url from response for the image, displays on page
 			var selectedImg = picture.urls.small
 			newImage.attr("src", selectedImg)
+			.width('360px')
+            .height('360px')
+
 			$("#image-base").append(newImage)
 		};
 	});
