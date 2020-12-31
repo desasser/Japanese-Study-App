@@ -15,6 +15,11 @@
 .navbar-item{
     font-size: 25px;
     color: white;
+
+}
+
+.navbar-item:hover{
+    background-color: CF3C3A !important; 
 }
 
 /*Styles the Search area*/
@@ -162,6 +167,7 @@ grid-area: 5 / 2 / 7 / 3 ;
 
 }
 
+/*Footer*/
 
 .footer-game {
     position: absolute;
@@ -172,9 +178,9 @@ grid-area: 5 / 2 / 7 / 3 ;
     
 }
 
-/*responsiveness*/
+/*Responsiveness*/
 
-/* grid styles ------------------------------------ */
+/* Grid */
 @media (max-width: 600px) {
     #page-container{
       display: grid;
@@ -191,3 +197,4 @@ grid-area: 5 / 2 / 7 / 3 ;
   }
 
 }
+

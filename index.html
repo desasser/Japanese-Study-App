@@ -15,125 +15,131 @@
 <body>
 
     <div id="page-container">
+        <div id="content-wrap">
 
-    <!--- Hero Navbar with title, page links, and drop-down menu-->
+            <!--- Hero Navbar with title, page links, and drop-down menu-->
 
-    <section class="hero is-primary is-medium">
+            <section class="hero is-primary is-medium">
 
-        <!-- Hero head: will stick at the top -->
+                <!-- Hero head: will stick at the top -->
 
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div id="game-title">Study Japanese
-                    </div>
-                    <div class="navbar-brand">
-                        <span class="navbar-burger" data-target="navbarMenuHeroA">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="hero-head">
+                    <nav class="navbar">
+                        <div class="container">
+                            <div id="game-title">Study Japanese
+                            </div>
+                            <div class="navbar-brand">
+                                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div id="navbarMenuHeroA" class="navbar-menu">
 
-                        <div class="navbar-end">
+                                <div class="navbar-end">
 
-                            <a class="navbar-item" href="index.html">
-                                Home
-                            </a>
+                                    <a class="navbar-item" href="index.html">
+                                        Home
+                                    </a>
 
-                            <a class="navbar-item" href="game_page.html">
-                                Game Page
-                            </a>
+                                    <a class="navbar-item" href="game_page.html">
+                                        Game Page
+                                    </a>
 
-                            <a class="navbar-item" href="study_page.html">
-                                Study Page
-                            </a>
+                                    <a class="navbar-item" href="study_page.html">
+                                        Study Page
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </nav>
                 </div>
-            </nav>
-        </div>
-    </section>
+            </section>
 
-    <br>
-<!--     
+            <br>
+
+            <!--     
         <h1>About</h1>
+
         <p>Placeholder Text</p> -->
 
-    <section class="field is-grouped">
+            <section class="field is-grouped">
 
-        <!--Here lives the English word Input Form/Submit Button-->
-        <input class="input is-large" id="user-input" type="text" placeholder="Search">
+                <!--Here lives the English word Input Form/Submit Button-->
+                <input class="input is-large" id="user-input" type="text" placeholder="Search">
 
-        <!--Adds an Icon to input field-->
+                <!--Adds an Icon to input field-->
 
-        <button class="button is-large is-dark">
-            <span class="icon is-large">
-                <i class="fas fa-search"></i>
-            </span>
-            <!-- <span>Search</span> -->
-        </button>
+                <button class="button is-large is-dark">
+                    <span class="icon is-large">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <!-- <span>Search</span> -->
+                </button>
 
 
-    </section>
+            </section>
 
-    <main class="grid-container is-fluid">
+            <main class="grid-container is-fluid">
 
-        <!--Containers for the home page-->
+                <!--Containers for the home page-->
 
-        <section class="box box1">
-            <!--Image/Glyph-->
-            <div class="columns is-mobile">
-                <div class="column">
-                    <div class="container" id="kanji-base">
-                        <p class="title">Kanji Base</p>
+                <section class="box box1">
+                    <!--Image/Glyph-->
+                    <div class="columns is-mobile">
+                        <div class="column">
+                            <div class="container" id="kanji-base">
+                                <p class="title">Kanji Base</p>
+                            </div>
+                        </div>
+                </section>
+
+                <section class="box box2">
+                    <!--Image-->
+                    <div class="column">
+                        <div class="container image" id="image-base">
+                            <p class="title">Image Base</p>
+                        </div>
                     </div>
-                </div>
-        </section>
-
-        <section class="box box2">
-            <!--Image-->
-            <div class="column">
-                <div class="container image" id="image-base">
-                    <p class="title">Image Base</p>
-                </div>
-            </div>
-        </section>
+                </section>
 
 
-        <section class="box box3" id="history">
-            <!--Media-->
-            <div class="columns is-mobile">
-                <div class="column">
-                    <div class="container" id="media-base">
-                        <p class="title">Media Base</p>
-                        <div id="animation"></div>
+                <section class="box box3" id="history">
+                    <!--Media-->
+                    <div class="columns is-mobile">
+                        <div class="column">
+                            <div class="container" id="media-base">
+                                <p class="title">Media Base</p>
+                                <div id="animation"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <section class="box box4">
-            <!--Search History-->
-            <div class="column">
-                <div class="container" id="search-history">
-                    <p class="title" id="saved-search-text">Search History</p>
-                </div>
-            </div>
-        </section>
+                <section class="box box4">
+                    <!--Search History-->
+                    <div class="column">
+                        <div class="container" id="search-history">
+                            <p class="title" id="saved-search-text">Search History</p>
+                        </div>
+                    </div>
+                </section>
 
-    </main>
+            </main>
 
-    <!-- <footer class="footer-game">
-        <div class="content has-text-centered">
-            <p>
-                <strong>Learn Kanji </strong> by <a href="">Group 12</a>
-            </p>
         </div>
-    </footer> -->
 
-</div>
+        <footer class="footer-game is-fixed-bottom">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>Kanji Game</strong> by <a href="">Group 12</a>
+                </p>
+            </div>
+        </footer>
+
+
+    </div>
 
 
 
