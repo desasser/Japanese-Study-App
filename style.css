@@ -18,10 +18,6 @@
 
 }
 
-.navbar-item:hover{
-    background-color: CF3C3A !important; 
-}
-
 /*Styles the Search area*/
 
 .field{
@@ -44,15 +40,28 @@
     text-align: center;
 }
 
+/*Aside*/
+aside {
+    width: 15%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: left;
+    font-style: bold;
+    font-size: 3em;
+    background-color: #B52E2C;
+    margin-right: 3em;
+  }
 
 /*Styles the grid for main page landing*/
 .grid-container {
-display: grid;
-grid-template-columns: 1fr, 3fr;
-grid-template-rows: repeat(auto-fit, minmax(5, 1fr));
-grid-gap: 10px;
+display: inline-grid;
+/* grid-template-columns: 1fr, 2fr;
+grid-template-rows: repeat(auto-fit, minmax(5, 1fr)); */
+grid-gap: 10px 10px;
 justify-content: center;
 align-content: center;
+margin: auto;
+
 }
 
 /*Styles sections*/
@@ -67,16 +76,16 @@ background-color:  #FAEBD7;
 /*Kanji base*/
 .box1{
     grid-area: 1 / 1 / 5 / 2;
-    height: 400px;
-    width: 600px;
+    height: 300px;
+    width: 500px;
 
 }
 
 /*Image base*/
 .box2 {
     grid-area: 1 / 2 / 5 / 3;
-    height: 800px;
-    width: 600px;
+    height: 400px;
+    width: 500px;
 }
 
 .image{
@@ -88,17 +97,17 @@ background-color:  #FAEBD7;
 
 /*Media base*/
 .box3{
-    grid-area: 3 / 1 / 8 / 2;
-    height: 450px;
-    width: 600px;
+    grid-area: 4 / 1 / 8 / 2;
+    height: 350px;
+    width: 500px;
     justify-items: end;
 }
 
 /*Search history base*/
 .box4 {
 grid-area: 5 / 2 / 7 / 3 ;
- height: 200px;
- width: 600px;
+ height: 175px;
+ width: 500px;
  
 }
 
@@ -147,8 +156,8 @@ grid-area: 5 / 2 / 7 / 3 ;
 
 .title {
     text-align: center;
-    background-color: #FAEBD7;
-    
+    background-color:#c0a58d;
+      
 }
 
 #answers-base {
@@ -167,6 +176,15 @@ grid-area: 5 / 2 / 7 / 3 ;
 
 }
 
+/*Study page*/
+.tile{
+    background-color: #FAEBD7;
+}
+
+.is-ancestor{
+    justify-content: center;
+}
+
 /*Footer*/
 
 .footer-game {
@@ -181,14 +199,16 @@ grid-area: 5 / 2 / 7 / 3 ;
 /*Responsiveness*/
 
 /* Grid */
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
     #page-container{
       display: grid;
     }
   
     .box {
-       grid-column: span 2;
-       grid-row: span 2;
+       grid-column: span 1;
+       grid-row: span 1;
+       
+       
     }
     
   body {
@@ -197,4 +217,6 @@ grid-area: 5 / 2 / 7 / 3 ;
   }
 
 }
+
+
 
