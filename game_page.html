@@ -7,7 +7,7 @@
     <title>Study Japanese</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
-    
+
 
 </head>
 
@@ -15,100 +15,102 @@
 <!--Game Page-->
 
 <body id="game-body">
-<div id="page-container">
-    <div id="content-wrap">
-    <!--- Navbar with title, page links, drop-down menu, and 2 tester buttons-->
-    <!-- Different Navbar w/ "Hero Banner" for testing--->
-     
-        <section class="hero is-primary is-medium">
-            <!-- Hero head: will stick at the top -->
-            <div class="hero-head">
-                <nav class="navbar">
-                    <div class="container">
-                        <div id="game-title">Kanji Game
-                        </div>
-                        <div class="navbar-brand">
-                            <!-- <a class="navbar-item">
+    <div id="page-container">
+        <div id="content-wrap">
+
+            <!--- Hero Navbar with title, page links, and drop-down menu-->
+
+            <section class="hero is-primary is-medium">
+                <!-- Hero head: will stick at the top -->
+                <div class="hero-head">
+                    <nav class="navbar">
+                        <div class="container">
+                            <div id="game-title">Kanji Game
+                            </div>
+                            <div class="navbar-brand">
+                                <!-- <a class="navbar-item">
                                 <img src="https://64.media.tumblr.com/899ca388b75eb2e737ee76cea85d132a/1fdf63d8eded61cc-72/s640x960/68eac8eefb29bca2dbb1afeb77ffef9700d7dcef.png" alt="Logo">
                             </a> -->
-                            <span class="navbar-burger" data-target="navbarMenuHeroA">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
-                        </div>
-                        <div id="navbarMenuHeroA" class="navbar-menu">
-                        
-                            <div class="navbar-end">
-                                
-                                <a class="navbar-item" href="index.html">
-                                    Home
-                                </a>
-
-                                <a class="navbar-item" href="game_page.html">
-                                    Game Page
-                                </a>
-
-                                <a class="navbar-item" href="study_page.html">
-                                    Study Page
-                                </a>
+                                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
                                 </span>
                             </div>
+
+                            <div id="navbarMenuHeroA" class="navbar-menu">
+
+                                <div class="navbar-end">
+
+                                    <a class="navbar-item" href="index.html">
+                                        Home
+                                    </a>
+
+                                    <a class="navbar-item" href="game_page.html">
+                                        Game Page
+                                    </a>
+
+                                    <a class="navbar-item" href="study_page.html">
+                                        Study Page
+                                    </a>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </nav>
-            </div>
-    </section>
-    <!--Containers for the Game page-->
-        <!--Kanji Game Base-->
-                <div class="container" id="kanji-game-base">
-                    <p class="title">Kanji Base</p>
-                    <!-- <h4 id="questions">question</h4> -->
-                    <button id="start-game">Start Game</button>
+                    </nav>
                 </div>
-        <!--Answer Options-->
-                <div class="container" id="answers-base">
-                    <!-- <p class="title">Answers</p> -->
-                    <!--Answer buttons may populate here-->
-                    <!--Answer Buttons are nested in Bulma Magic Tile -->                     
-                                                <div id="answers">
-                                                    <button id="option1" class="answers button is-dark" data-value="A">Option 1</button>
-                                                    <br><br>
-                                                    
-                            
-                                                    <button id="option2" class="answers button is-dark" data-value="B">Option 2</button>
-                                                    <br><br>
-                                                    
-                                                       
-                                                    <button id="option3" class="answers button is-dark" data-value="C">Option 3</button>
-                                                    <br><br>
-                                                    
-                                                        
-                                                    <button id="option4" class="answers button is-dark" data-value="D">Option 4</button>
-                                                    <br><br>
-                                                    
-                                                </div>
+            </section>
 
-                                                <div>
-                                                    <span id="score-span"></span>
-                                                </div>
+            <!--Containers for the Game page-->
+            <!--Kanji Game Base-->
+            <div class="container" id="kanji-game-base">
+                <p class="title">Kanji Base</p>
+                <!-- <h4 id="questions">question</h4> -->
+                <button id="start-game">Start Game</button>
+            </div>
+            <!--Answer Options-->
+            <div class="container" id="answers-base">
+                <!-- <p class="title">Answers</p> -->
+                <!--Answer buttons may populate here-->
+                <!--Answer Buttons are nested in Bulma Magic Tile -->
+                <div id="answers">
+                    <button id="option1" class="answers button is-dark" data-value="A">Option 1</button>
+                    <br><br>
 
 
-                                    
-                               
-                </div>           
+                    <button id="option2" class="answers button is-dark" data-value="B">Option 2</button>
+                    <br><br>
 
-    </div>
-          <footer class="footer-game">
+
+                    <button id="option3" class="answers button is-dark" data-value="C">Option 3</button>
+                    <br><br>
+
+
+                    <button id="option4" class="answers button is-dark" data-value="D">Option 4</button>
+                    <br><br>
+
+                </div>
+
+                <div>
+                    <span id="score-span"></span>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+        <footer class="footer-game is-fixed-bottom">
             <div class="content has-text-centered">
                 <p>
-                <strong>Kanji Game</strong> by <a href="">Group 12</a> 
+                    <strong>Kanji Game</strong> by <a href="">Group 12</a>
                 </p>
             </div>
         </footer>
-    
-</div>     
-    
+
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/244557d995.js" crossorigin="anonymous"></script>
 
@@ -116,7 +118,7 @@
 
 
 
- 
+
 </body>
 
 </html>

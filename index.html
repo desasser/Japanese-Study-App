@@ -13,132 +13,141 @@
 </head>
 
 <body>
-    <!---This is a Navbar with title, page links, drop-down menu, and 2 tester buttons-->
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <!--Navbar icon-->
-                <img src="" width="112" height="28">
-            </a>
 
-            <!---Navbar Mobile Responsivess-->
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
+    <div id="page-container">
 
-        <!--Navbar Links-->
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="index.html">
-                    Home
-                </a>
+        <section class="hero is-primary is-medium">
+            <!-- Hero head: will stick at the top -->
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="container">
+                        <div id="game-title">Study Kanji
 
-                <a class="navbar-item" href="game_page.html">
-                    Game Page
-                </a>
+                        </div>
 
-                <a class="navbar-item" href="study_page.html">
-                    Study Page
-                </a>
+                        <div class="navbar-brand">
 
-                <!---Navbar Dropdown-->
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        More
-                    </a>
+                            <span class="navbar-burger" data-target="navbar-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
 
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="resources_page.html">
-                            Resources
-                        </a>
-                        <a class="navbar-item">
-                            About
-                        </a>
-                        <a class="navbar-item">
-                            Meet the Team
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            Report an issue
-                        </a>
+                        </div>
+
+                        <div id="navbarMenuHeroA" class="navbar-menu">
+
+                            <div class="navbar-end">
+
+                                <a class="navbar-item" href="index.html">
+                                    Home
+                                </a>
+
+                                <a class="navbar-item" href="game_page.html">
+                                    Game Page
+                                </a>
+
+                                <a class="navbar-item" href="study_page.html">
+                                    Study Page
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </nav>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <br>
+        <br>
 
-    <section class="field field is-grouped">
+        <section class="field is-grouped">
 
-        <!--Here lives the English word Input Form/Submit Button-->
-        <input class="input is-medium has-icons-left" id="user-input" type="text" placeholder="Text input">
+            <!--Here lives the English word Input Form/Submit Button-->
+            <input class="input is-large" id="user-input" type="text" placeholder="Search">
 
-        <!--Adds an Icon to input field-->
-        <span class="icon is-small">
-            <i class="fas fa-search"></i>
-        </span>
-        </input>
-        <button class="button is-warning is-hovered is-medium" id="submit-button">Search
-        </button>
-    </section>
+            <!--Adds an Icon to input field-->
 
-    <main class="grid-container">
+            <button class="button is-large is-danger">
+                <span class="icon is-large">
+                    <i class="fas fa-search"></i>
+                </span>
+                <!-- <span>Search</span> -->
+            </button>
 
-        <!--Containers for the home page-->
+        </section>
 
-        <section class="box box1">
-            <!--Image/Glyph-->
-            <div class="columns">
+        <aside>
+            <h1>Placeholder</h1>
+            <h3>Welcome, User.</h3>
+
+        </aside>
+
+        <main class="grid-container is-fluid">
+
+            <!--Containers for the home page-->
+
+            <section class="box box1">
+                <!--Image/Glyph-->
+                <div class="columns is-mobile">
+                    <div class="column">
+                        <div class="container" id="kanji-base">
+                            <p class="title">Kanji Base</p>
+                        </div>
+                    </div>
+            </section>
+
+            <section class="box box2">
+                <!--Image-->
                 <div class="column">
-                    <div class="container" id="kanji-base">
-                        <p class="title">Kanji Base</p>
+                    <div class="container image" id="image-base">
+                        <p class="title">Image Base</p>
                     </div>
                 </div>
-        </section>
+            </section>
 
-        <section class="box box2">
-            <!--Image-->
-            <div class="column">
-                <div class="container image" id="image-base">
-                    <p class="title">Image Base</p>
+
+            <section class="box box3" id="history">
+                <!--Media-->
+                <div class="columns is-mobile">
+                    <div class="column">
+                        <div class="container" id="media-base">
+                            <p class="title">Media Base</p>
+                            <div id="animation"></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-
-        <section class="box box3" id="history">
-            <!--Media-->
-            <div class="columns">
+            <section class="box box4">
+                <!--Search History-->
                 <div class="column">
-                    <div class="container" id="media-base">
-                        <p class="title">Media Base</p>
-                        <div id="animation"></div>
+                    <div class="container" id="search-history">
+                        <p class="title" id="saved-search-text">Search History</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="box box4">
-            <!--Search History-->
-            <div class="column">
-                <div class="container" id="search-history">
-                    <p class="title" id="saved-search-text">Search History</p>
-                </div>
-            </div>
-        </section>
+        </main>
 
-    </main>
+
+
+        <footer class="footer-game is-fixed-bottom">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>Study Kanji</strong> by <a href="">Group 12</a>
+                </p>
+            </div>
+        </footer>
+
+
+    </div>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/244557d995.js" crossorigin="anonymous"></script>
 
     <script src="jscript.js"></script>
+    <!-- <script src="bulma.js"></script> -->
 </body>
 
 </html>
