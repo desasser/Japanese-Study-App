@@ -1,3 +1,9 @@
+/* body {
+   
+} */
+
+/*Saved search button*/
+
 .saved-search-button {
   font-size: 40px;
   margin: 5px;
@@ -7,11 +13,10 @@
   border-radius: 0.5em;
 }
 
-/*.container {
-  max-height: 300px;
-  object-fit: contain;
-  text-align: center;
-}*/
+/* .saved-search-button:hover {
+    
+} */
+
 
 
 /*Navbar*/
@@ -19,6 +24,10 @@
     font-size: 25px;
     color: white;
 
+}
+
+.navbar-item:hover{
+    background-color: #B52E2C !important;
 }
 
 /*Styles the Search area*/
@@ -35,8 +44,13 @@
 .input{
     width: 500px;
     height: 58px;
+    background-color: seashell;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
 }
 
+.button{
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
+}
 
 .container{
     object-fit: contain;
@@ -79,16 +93,16 @@ background-color:  #FAEBD7;
 /*Kanji base*/
 .box1{
     grid-area: 1 / 1 / 5 / 2;
-    height: 300px;
-    width: 500px;
+    height: 20em;
+    width: 30em;
 
 }
 
 /*Image base*/
 .box2 {
   grid-area: 1 / 2 / 5 / 3;
-  height: 800px;
-  width: 600px;
+  height: 25em;
+  width: 30em;
 }
 
 
@@ -103,16 +117,16 @@ background-color:  #FAEBD7;
 /*Media base*/
 .box3{
     grid-area: 4 / 1 / 8 / 2;
-    height: 350px;
-    width: 500px;
+    height: 18em;
+    width: 30em;
     justify-items: end;
 }
 
 /*Search history base*/
 .box4 {
-  grid-area: 5 / 2 / 7 / 3;
-  height: 200px;
-  width: 600px;
+  grid-area:5 / 2 / 7 / 3;
+  height: 10em;
+  width: 30em;
 }
 
 #clear-button {
@@ -190,7 +204,7 @@ img {
 
 #start-game {
   text-align: center;
-  color:#fffaf0
+  color:#fffaf0;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -287,6 +301,11 @@ img {
     justify-content: center;
 }
 
+.is-child{
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
+    margin: none;
+}
+
 /*Footer*/
 
 .footer-game {
@@ -294,7 +313,8 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color:#ba8759
+    background-color:#ba8759;
+    /* position: sticky; */
     
 }
 
