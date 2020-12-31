@@ -158,7 +158,7 @@ function fetchApiData(queryTerm) {
 				newCharectertwo.attr('id', 'Romanji-size');
 				$("#kanji-base").append(newCharectertwo)
 				
-				$("p").css({"font-size": "666%"});
+				$("#Kanji-size").css({"font-size": "666%"});
 				$('#Romanji-size').css({"font-size": "300%"})
 				
 				//created video element for kanji strokes
