@@ -4,6 +4,7 @@ $("#submit-button").on("click", function (event) {
 
 	//clear audio and video on new search
 	$("#media-base").empty();
+	$("#media-base-two").empty();
 
 	//kanjialive only accepts searches in lower case
 	queryTerm = $("#user-input").val().toLowerCase();
@@ -55,16 +56,16 @@ $("#search-history").on("click", "button", function () {
 	// var whichKanji = $(this).text();
 	var kanjiMeaning = $(this).data().meaning;
 	$("#media-base").empty();
-
-	//send which Kanji was clicked to the fetchApiData function
+	$("#media-base-two").empty();
+	//send which Kanji was clicked to the fetchApiData function,9/
 	fetchApiData(kanjiMeaning);
 })
 
 //create clear button, should be shown if there is anything in the array
 var buttonEl = $('<button>');
 buttonEl.text('Clear Searches');
-buttonEl.attr('id', 'clear-button');
-$('#history').append(buttonEl);
+buttonEl.attr('id', 'clear-button');``
+$('#search-history').append(buttonEl);
 showClearBtn();
 
 //if there are previous searches saved, show the clear button
@@ -145,17 +146,21 @@ function fetchApiData(queryTerm) {
 				//grabs the kanji and displays it
 				var kanjiCharecter = responseTwo.kanji.character
 				newCharecter.text(kanjiCharecter)
+				newCharecter.attr('id', 'Kanji-size');
 				$("#kanji-base").append(newCharecter)
 
-				//creates a new p-tag to display the romaji
-				var newCharectertwo = $("<p>")
-
+				//creates a new span-tag to display the romaji
+				var newCharectertwo = $("<div>")
+				
 				//grabs the romaji and displays it
 				var romajiCharecter = responseTwo.kanji.kunyomi.romaji
 				newCharectertwo.text(romajiCharecter)
+				newCharectertwo.attr('id', 'Romanji-size');
 				$("#kanji-base").append(newCharectertwo)
-
-
+				
+				$("p").css({"font-size": "666%"});
+				$('#Romanji-size').css({"font-size": "300%"})
+				
 				//created video element for kanji strokes
 				var video = $('<video />', {
 					id: 'video',
@@ -168,11 +173,11 @@ function fetchApiData(queryTerm) {
 				//audio for pronouciation of Kanji
 				var buttonAudio = $('<button>');
 				buttonAudio.text('Pronunciation');
-				buttonAudio.attr('id', 'play');
-				$('#media-base').append(buttonAudio);
+				buttonAudio.attr('id', 'play-audio');
+				$('#media-base-two').append(buttonAudio);
 
 				//audio for button click pronounceation
-				$("#play").click(function () {
+				$("#play-audio").click(function () {
 
 					const audio = new Audio(responseTwo.examples[5].audio.mp3);
 					audio.play();
@@ -193,6 +198,7 @@ function fetchApiData(queryTerm) {
 		url: newURL,
 		method: "GET"
 	}).then(function (picture) {
+			console.log(picture)
 		if (picture.length === 0) {
 			//TODO: make this not an alert and say come back later, youve fetched you're alotted amount of photos, glad you are enjoying the app! no more photos will appear, but you can still enjoy the rest of the app and the kanji
 			alert('too many calls')
@@ -203,7 +209,10 @@ function fetchApiData(queryTerm) {
 			//url from response for the image, displays on page
 			var selectedImg = picture.urls.small
 			newImage.attr("src", selectedImg)
+			.width('450px')
+            .height('340px')
 			$("#image-base").append(newImage)
+			
 		};
 	});
 };
@@ -300,6 +309,7 @@ var score = 0;
 var wrongAnswer = 0;
 var correctAnswer = 0;
 var answerP = $("<p>")
+answerP.attr("id", "score-flip");
 $("#answer-hr").css("visibility", "hidden");
 $("#answers-base").css("visibility", "hidden");
 
