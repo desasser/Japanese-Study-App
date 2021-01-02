@@ -4,14 +4,9 @@
 // than the length of the questions array, pick a new value
 
 
-// FIRST CONDITION - doesnt allow questions back to back
-// SECOND CONDITION - checks if the ranval length < total questions length
-// FINAL CONDITION - if ranval length > total questions, restart using questions
-// BONUS - include multiples of the total questions length - currentSet track multiples of that
-// BONUS - remove correctly answered questions from the pool
+
 
 // HINTS - for if your stuck
-// End Game button to break cycle
 
 // Array of objects of kanji with their meaning and 3 incorrect answers and the correct answered marked
 var kanjiGameObject = [{
@@ -108,15 +103,55 @@ var correctAnswer = 0;
 var answerP = $("<p>")
 $("#answers-base").css("visibility", "hidden");
 
+//TODO: 
+// FIRST CONDITION - doesnt allow questions back to back
+// SECOND CONDITION - checks if the ranval length < total questions length
+// FINAL CONDITION - if ranval length > total questions, restart using questions
+//TODO: BONUS: Include multiples of the total questions length - currentSet track multiples of that
+//TODO: BONUS: Remove correctly answered questions from the pool
+//TODO: BONUS: Create an array containing the list of answers
+//TODO: BONUS: Shuffle that array, using https://javascript.info/task/shuffle
+//TODO: BONUS: Then assign the values to each index as needed
 // function to randomly produce a question from the array
-//TODO: Store randomKanji index, check each new random num against the old list and if its there already, pick a new one
 function randomKanjiGame() {
     // random number to select a question set from the game object
     randomKanji = Math.floor(Math.random() * kanjiGameObject.length);
 
-    //TODO: BONUS: Create an array containing the list of answers
-    //TODO: BONUS: Shuffle that array, using https://javascript.info/task/shuffle
-    //TODO: BONUS: Then assign the values to each index as needed
+
+
+
+    // // while randomKanji is included in the array and the array length is less than that of the game questions or the last kanji chosen is the same as the new kanji, get a new random kanji
+    // while (randomKanjiArr.includes(kanjiGameObject[randomKanji].kanji) && randomKanjiArr.length <= kanjiGameObject.length || randomKanjiArr.length-1 === kanjiGameObject[randomKanji].kanji) {
+        
+    //     if (randomKanjiArr.length >= kanjiGameObject.length) {
+    //         // once each question has been used once, exits the loop, now allowing for duplicates and repeates
+    //         break;
+    //     }
+    // };
+
+    var notRepeat = false;
+
+    while (notRepeat === false) {
+        // if the last value chosen is the same as the new value
+        if (randomKanjiArr[randomKanjiArr.length-1] === kanjiGameObject[randomKanji].kanji) {
+            // get a new value
+            randomKanji = Math.floor(Math.random() * kanjiGameObject.length);
+        } 
+        // if the new value is inside the old array and the length of new array is less than the total number of questions in the game object
+        // ie not every kanji has been displayed yet
+        else if (randomKanjiArr.includes(kanjiGameObject[randomKanji].kanji) && randomKanjiArr.length <= kanjiGameObject.length) {
+            // get a new value
+            randomKanji = Math.floor(Math.random() * kanjiGameObject.length);
+        } 
+        // new kanji is not inside the old array, nor is it a duplicate, and it has not previously been asked, exit the loop
+        else {
+            //TODO: Advantage or disadvantage to using break vs notRepeat = true and resetting the value on restart?
+            break;
+        };
+    };
+
+    // if the old array is a multiple, x, of the length of the game object
+    // then allow for x-instances of the value
 
     // display the kanji on the page
     $('#kanji-game-display').text(kanjiGameObject[randomKanji].kanji);
@@ -153,9 +188,9 @@ $("#start-game").on("click", function () {
 function endGameButton() {
     var endButton = $("<button>");
     endButton.text("End Game");
-    endButton.addClass("button is-dark flip is-align-content-flex-end disposable");
+    endButton.addClass("button is-dark is-align-content-flex-end disposable");
     endButton.attr("id", "end-game");
-    $("#answers-base").append(endButton);
+    $("#kanji-game-base").append(endButton);
 
     $("#end-game").on("click", function () {
         $('#kanji-game-display').text('Fin');
@@ -249,7 +284,6 @@ function gameOver() {
     reviewP.addClass("flip review-text");
     $("#answers-base").prepend(reviewP);
 
-    //TODO: WHY DOES THIS ONLY WORK INSIDE THIS FUNCTION?
     // restart button event listener
     $("#restart-button").on("click", function () {
 

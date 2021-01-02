@@ -27,9 +27,16 @@ for (var i = 0; i < savedKanjiArr.length; i++) {
 	$(buttonEl).text(savedKanjiArr[i].specificKanji);
 	$(buttonEl).addClass("saved-search-button");
 	$(buttonEl).attr("data-meaning", savedKanjiArr[i].kanjiMeaning);
+	var dataSpan = $("<span>");
+	dataSpan.text(savedKanjiArr[i].kanjiMeaning);
+	dataSpan.addClass("tooltip-text");
+	buttonEl.append(dataSpan);
 	$("#search-history").prepend(buttonEl);
 }
 
+for (let index = 0; index < array.length; index++) {
+	saveKanji(savedKanjiArr[i]);
+}
 
 //save the kanji and the search term/english meaning into an object
 //push the object into an array
@@ -42,9 +49,13 @@ function saveKanji(savedKanji) {
 
 		//display the kanji into the #search-history box
 		var buttonElToo = $("<button>");
-		$(buttonElToo).text(savedKanji.specificKanji);
-		$(buttonElToo).addClass("saved-search-button");
-		$(buttonElToo).attr("data-meaning", savedKanji.kanjiMeaning);
+		buttonElToo.text(savedKanji.specificKanji);
+		buttonElToo.addClass("saved-search-button");
+		buttonElToo.attr("data-meaning", savedKanji.kanjiMeaning);
+		var dataSpan = $("<span>");
+		dataSpan.text(savedKanji.kanjiMeaning);
+		dataSpan.addClass("tooltip-text");
+		buttonElToo.append(dataSpan);
 		$("#search-history").prepend(buttonElToo);
 
 		//add saved kanji searches into local storage
@@ -167,16 +178,16 @@ function fetchApiData(queryTerm) {
 
 				//creates a new span-tag to display the romaji
 				var newCharectertwo = $("<div>")
-				
+
 				//grabs the romaji and displays it
 				var romajiCharecter = responseTwo.kanji.kunyomi.romaji
 				newCharectertwo.text(romajiCharecter)
 				newCharectertwo.attr('id', 'Romanji-size');
 				$("#kanji-base").append(newCharectertwo)
-				
-				$("#Kanji-size").css({"font-size": "666%"});
-				$('#Romanji-size').css({"font-size": "300%"})
-				
+
+				$("#Kanji-size").css({ "font-size": "666%" });
+				$('#Romanji-size').css({ "font-size": "300%" })
+
 				//created video element for kanji strokes
 				var video = $('<video />', {
 					id: 'video',
@@ -214,7 +225,7 @@ function fetchApiData(queryTerm) {
 		url: newURL,
 		method: "GET"
 	}).then(function (picture) {
-			console.log(picture)
+		console.log(picture)
 		if (picture.length === 0) {
 			// display failed search modal
 			$("#failed-search-pic").css('display', 'block');
@@ -225,10 +236,10 @@ function fetchApiData(queryTerm) {
 			//url from response for the image, displays on page
 			var selectedImg = picture.urls.small
 			newImage.attr("src", selectedImg)
-			.width('450px')
-            .height('340px')
+				.width('450px')
+				.height('340px')
 			$("#image-base").append(newImage)
-			
+
 		};
 	});
 };
