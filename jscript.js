@@ -34,9 +34,10 @@ for (var i = 0; i < savedKanjiArr.length; i++) {
 	$("#search-history").prepend(buttonEl);
 }
 
-for (let index = 0; index < array.length; index++) {
-	saveKanji(savedKanjiArr[i]);
-}
+// TODO: FIX THIS
+// for (let index = 0; index < array.length; index++) {
+// 	saveKanji(savedKanjiArr[i]);
+// }
 
 //save the kanji and the search term/english meaning into an object
 //push the object into an array
@@ -177,13 +178,10 @@ function fetchApiData(queryTerm) {
 				$("#kanji-base").append(newCharecter)
 
 				//creates a new span-tag to display the romaji
-<<<<<<< HEAD
 				var newCharectertwo = $("<div>")
 
-=======
 				var newCharectertwo = $("<textarea>")
 				
->>>>>>> development
 				//grabs the romaji and displays it
 				var romajiCharecter = responseTwo.kanji.kunyomi.romaji
 				newCharectertwo.text(romajiCharecter)
