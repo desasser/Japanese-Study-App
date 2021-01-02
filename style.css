@@ -316,6 +316,23 @@ img {
     margin: none;
 }
 
+#study-section {
+  height: 100vh;
+  width: 100vw;
+}
+
+#hiragana-chart {
+  justify-content: center;
+  
+
+}
+
+#katakana-chart {
+  justify-content: center;
+ 
+
+}
+
 /*Footer*/
 
 .footer-game {

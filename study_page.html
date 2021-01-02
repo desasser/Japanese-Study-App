@@ -59,7 +59,7 @@
   </section>
 
 
-  <section class="hero is-small is-dark">
+  <!-- <section class="hero is-small is-dark">
     <div class="hero-body">
       <div class="container">
         <h1 class="animate__animated animate__fadeIn" style="font-size:2vw">Study Page</h1>
@@ -67,7 +67,7 @@
         </h2>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <div id="page-container">
 
@@ -75,9 +75,9 @@
 
       <!--Made with Bulma Tiles -->
 
-      <div class="tile is-ancestor is-centered">
+      <div class="tile is-ancestor is-centered" id="study-section">
         <div class="tile is-vertical is-8">
-          <div class="tile">
+          <div class="tile is parent">
 
             <div class="tile is-parent is-5">
               <article class="tile is-child notification" id="random-kanji">
@@ -90,24 +90,25 @@
               </article>
             </div>
 
-            <div class="tile is-parent is-vertical is-4">
-              <article class="tile is-child notification" id="hiragana-chart">
-                <p class="title">Hiragana</p>
-                <p class="subtitle"></p>
-              </article>
+            <div class="tile is-parent is-5 is-vertical">
+                <article class="tile is-child box" id="hiragana-chart">
+                  <p class="title">Hiragana</p>
+                  <p class="subtitle"></p>
+                </article>
+            
+             
+              
+                  <div class="tile is-child box" id="katakana-chart">
+                    <p class="title">Katakana</p>
+                    <p class="subtitle"></p>
+
+                  </div>
+                  
             </div>
-
-            <article class="tile is-child notification" id="katakana-chart">
-              <p class="title">Katakana</p>
-              <p class="subtitle"></p>
-            </article>
-
           </div>
         </div>
       </div>
-    </section>
-
-    <!--Footer-->
+      <!--Footer-->
     <footer class="footer-game is-fixed-bottom">
       <div class="content has-text-centered">
         <p>
@@ -115,6 +116,9 @@
         </p>
       </div>
     </footer>
+    </section>
+
+    
 
   </div>
 
