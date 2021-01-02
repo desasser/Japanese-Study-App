@@ -177,8 +177,13 @@ function fetchApiData(queryTerm) {
 				$("#kanji-base").append(newCharecter)
 
 				//creates a new span-tag to display the romaji
+<<<<<<< HEAD
 				var newCharectertwo = $("<div>")
 
+=======
+				var newCharectertwo = $("<textarea>")
+				
+>>>>>>> development
 				//grabs the romaji and displays it
 				var romajiCharecter = responseTwo.kanji.kunyomi.romaji
 				newCharectertwo.text(romajiCharecter)
