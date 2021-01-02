@@ -34,20 +34,21 @@
     object-fit: contain;
     text-align: center;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
     max-width: 600px;
     
 }
 
 .input{
     width: 500px;
-    height: 58px;
+    height: 55px;
     background-color: seashell;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
 }
 
 .button{
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
+    height: 55px;
 }
 
 .container{
@@ -92,7 +93,7 @@ object-fit: fill;
 /*Kanji base*/
 .box1{
     grid-area: 1 / 1 / 5 / 2;
-    height: 20em;
+    height: 15em;
     width: 27em;
 
 }
@@ -100,7 +101,7 @@ object-fit: fill;
 /*Image base*/
 .box2 {
   grid-area: 1 / 2 / 6 / 3;
-  height: 22em;
+  height: 25em;
   width: 30em;
   padding: 10px;
 }
@@ -116,16 +117,56 @@ object-fit: fill;
 /*Media base*/
 .box3{
     grid-area: 4 / 1 / 8 / 2;
-    height: 20em;
+    height: 15em;
     width: 27em;
     justify-items: end;
 }
 
 /*Search history base*/
 .box4 {
-  grid-area: 5 / 2 / 7 / 3;
-  height: 13em;
-  width: 30em;
+    grid-area: 5 / 2 / 7 / 3 ;
+    height: 225px;
+    width: 500px;
+}
+
+/* Modal flavor, copied from w3 schools, we should customize */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+  /* Modal Content/Box copied from w3 schools, we should customize */
+.modal-content {
+    background-color: #faebd7;
+    border-radius: 0.5em;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+  /* The Close Button, copied from w3 schools, we should customize */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* The Close Button, copied from w3 schools, we should customize */
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #clear-button {
@@ -187,7 +228,7 @@ img {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  font-size: 40px;
+  font-size: 37px;
   color: #fffaf0
 }
 .navbar-end {
@@ -213,11 +254,38 @@ img {
   min-height: 100vh;
 }
 
+
 .hero-head {
-    background-color: #ba8759;
+    background-color: #92643b;
     height: 4em;
 }
 
+.flip {
+    text-align: center;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.list-text {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.tally-text {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.review-text {
+    font-size: 30px;
+    font-weight: bold;
+}
 
 #score-flip {
     text-align: center;
@@ -227,7 +295,6 @@ img {
     transform: scaleX(-1);
     filter: FlipH;
     -ms-filter: "FlipH";
-    
 }
 
 /*html {
@@ -241,12 +308,12 @@ img {
 .title {
   text-align: center;
   opacity: 0.5;
-  
+  font-size: 2rem;
 }
 
 #answers-base {
-    border-style: solid;
-    border-color: #ba8759;
+  border-style: solid;
+  border-color: #ba8759;
   background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/41/44/105850c6261c69f.jpg");
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
@@ -260,8 +327,8 @@ img {
 
 
 #kanji-game-base {
-    border-style: solid;
-    border-color: #ba8759;
+  border-style: solid;
+  border-color: #ba8759;
   text-align: center;
   position: relative;
   font-size: 999%;
@@ -270,10 +337,11 @@ img {
 }
 
 #html2 {
-    background-size: 100%;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url("https://kitote.jp/en/products/images/shoji_standard02.jpg")
-  
+  background-size: 100%;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url("https://www.blendswap.com/blend_previews/23992/0/0?u=2019-12-20%2021:17:18");
+  background-size: cover; 
 }
+
 /* literally had to reflip content after i flipped background */
 #option1,
 #option2,
@@ -293,13 +361,24 @@ img {
 }
 
 /*Study page*/
+
+.study_title{
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.section{
+ padding: 0px;
+}
+
 .tile{
     background-color: #FAEBD7;
+    height: 30em;
 }
 
 .is-ancestor{
     justify-content: center;
-    background-color: #FAEBD7;
+    /* background-color: #FAEBD7; */
 }
 
 .is-child{
@@ -314,8 +393,7 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color:#ba8759;
-    /* position: sticky; */
+    background-color: #92643b;
     
 }
 

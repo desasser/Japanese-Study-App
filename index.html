@@ -76,11 +76,27 @@
 
         </section>
 
-        <aside>
+        <!-- modal for failed searches, kanji api -->
+        <div class="modal" id="failed-search">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>The word you searched for was not found.</p>
+                <p>This search function has limited scope, for now. Please try searching a different word.</p>
+            </div>
+        </div>
+
+        <!-- modal for failed searches, photo api -->
+        <div class="modal" id="failed-search-pic">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>You have fetched the maximum number of photos you can within an hour. We are so glad you are enjoying the app, so while no more photos will appear for now, the remainder of this app will continue to function. Please enjoy the rest of the features!</p>
+            </div>
+        </div>
+
+        <!-- <aside>
             <h1>Placeholder</h1>
             <h3>Welcome, User.</h3>
-
-        </aside>
+        </aside> -->
 
         <main class="grid-container is-fluid">
 
@@ -132,10 +148,10 @@
 
 
 
-        <footer class="footer-game is-fixed-bottom">
+        <footer class="footer-game is-fixed-bottom" style="position: sticky">
             <div class="content has-text-centered">
                 <p>
-                    <strong>Study Kanji</strong> by <a href="">Group 12</a>
+                    <strong>Study Kanji</strong> by <a href="" style="color:lightgray">Group 12</a>
                 </p>
             </div>
         </footer>
