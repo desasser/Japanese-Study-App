@@ -1,11 +1,3 @@
-// push the randomized index into an array of numbers
-// compare that array of numbers and see if the new randomized value is
-// included (includes()) and the length of the randomized values is less
-// than the length of the questions array, pick a new value
-
-
-
-
 // HINTS - for if your stuck
 
 // Array of objects of kanji with their meaning and 3 incorrect answers and the correct answered marked
@@ -98,6 +90,7 @@ var userAnswerArr = [];
 var score = 0;
 var wrongAnswer = 0;
 var correctAnswer = 0;
+var setCount = 0;
 
 // initialize new html elements
 var answerP = $("<p>")
@@ -118,29 +111,32 @@ function randomKanjiGame() {
     randomKanji = Math.floor(Math.random() * kanjiGameObject.length);
 
     var notRepeat = false;
+    var kanjiCount = 0;
 
     while (notRepeat === false) {
+        // filters the kanji array to see how many times an item has been displayed and returns the length of the filtered array for comparison
+        kanjiCount = randomKanjiArr.filter((v) => (v === kanjiGameObject[randomKanji].kanji)).length;
+        
         // if the last value chosen is the same as the new value
-        if (randomKanjiArr[randomKanjiArr.length-1] === kanjiGameObject[randomKanji].kanji) {
+        if (randomKanjiArr[randomKanjiArr.length - 1] === kanjiGameObject[randomKanji].kanji) {
             // get a new value
             randomKanji = Math.floor(Math.random() * kanjiGameObject.length);
-        } 
+        }
         // if the new value is inside the old array and the length of new array is less than the total number of questions in the game object
         // ie not every kanji has been displayed yet
-        else if (randomKanjiArr.includes(kanjiGameObject[randomKanji].kanji) && randomKanjiArr.length <= kanjiGameObject.length) {
+        else if (randomKanjiArr.includes(kanjiGameObject[randomKanji].kanji) && randomKanjiArr.length < kanjiGameObject.length) {
             // get a new value
             randomKanji = Math.floor(Math.random() * kanjiGameObject.length);
-        } 
+        }
+        // if array of saved kanji is longer than the array of questions and the number of times the random kanji appears in the array is less than or equal to the set count
+        else if (randomKanjiArr.length >= kanjiGameObject.length && kanjiCount > setCount) {
+            randomKanji = Math.floor(Math.random() * kanjiGameObject.length);
+        }
         // new kanji is not inside the old array, nor is it a duplicate, and it has not previously been asked, exit the loop
         else {
-            //TODO: Advantage or disadvantage to using break vs notRepeat = true and resetting the value on restart?
-            break;
+            notRepeat = true;
         };
     };
-
-    // TODO: Multiples
-    // if the old array is a multiple, x, of the length of the game object
-    // then allow for x-instances of the value
 
     // display the kanji on the page
     $('#kanji-game-display').text(kanjiGameObject[randomKanji].kanji);
@@ -155,6 +151,11 @@ function randomKanjiGame() {
     // randomKanji and new var for just the correct answer
     correctAnswerArr.push(kanjiGameObject[randomKanji].correctAnswer);
     randomKanjiArr.push(kanjiGameObject[randomKanji].kanji)
+
+    // track how many times the game set is played through for multiple unique rounds
+    setCount = Math.floor(randomKanjiArr.length/kanjiGameObject.length);
+
+    // display answers for testing
     console.log('answer', correctAnswerArr);
     console.log('kanji', randomKanjiArr);
 };
@@ -188,8 +189,8 @@ function endGameButton() {
         gameOver();
 
         return;
-    })
-}
+    });
+};
 
 
 // click event on the list of answers, check 'this' button against the meaning from the object
@@ -237,11 +238,11 @@ $("#answers").on("click", "button", function () {
 
         return;
         // display score
-    }
+    };
 
     // fetches the next question
     randomKanjiGame();
-})
+});
 
 function gameOver() {
     // create and append the restart button
@@ -258,7 +259,7 @@ function gameOver() {
         var liEl = $('<li>');
         liEl.text(`Kanji: ${randomKanjiArr[i]}, Correct Answer: ${correctAnswerArr[i]}, Your Answer: ${userAnswerArr[i]}`);
         ulEl.append(liEl);
-    }
+    };
 
     var answerTallyP = $('<p>');
     answerTallyP.text(`Total Correct Answers: ${correctAnswer},  Total Wrong Answers: ${wrongAnswer}`);
@@ -266,6 +267,7 @@ function gameOver() {
 
     $("#answers-base").prepend(ulEl);
     $("#answers-base").prepend(answerTallyP);
+    $("#answers-base").css("overflow","auto");
 
     // start review text
     var reviewP = $('<p>');
@@ -280,6 +282,7 @@ function gameOver() {
         score = 0;
         correctAnswer = 0;
         wrongAnswer = 0;
+        notRepeat = false;
 
         // reset answer review arrays
         correctAnswerArr = [];
@@ -288,6 +291,9 @@ function gameOver() {
 
         // remove text
         reviewP.remove();
+
+        // reset scrolling
+        $("#answers-base").css("overflow","visible");
 
         // reset visibility
         $("#answers").css("visibility", "visible");
@@ -300,4 +306,4 @@ function gameOver() {
         // reset end game button
         endGameButton();
     });
-}
+};
