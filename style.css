@@ -57,7 +57,7 @@
 }
 
 /*Aside*/
-aside {
+/* aside {
     width: 15%;
     padding-left: 15px;
     margin-left: 15px;
@@ -66,21 +66,18 @@ aside {
     font-size: 3em;
     background-color: #B52E2C;
     margin-right: 2em;
-  }
+  } */
 
 /*Styles the grid for main page landing*/
 .grid-container {
 display: inline-grid;
-/* grid-template-columns: 1fr, 2fr;
-grid-template-rows: repeat(auto-fit, minmax(5, 1fr)); */
 grid-gap: 10px 10px;
 justify-content: center;
 align-content: center;
 margin: auto;
-
 }
 
-/*Styles sections*/
+/*Styles landing page sections*/
 
 .box{
 align-items: center;
@@ -95,7 +92,6 @@ object-fit: fill;
     grid-area: 1 / 1 / 5 / 2;
     height: 25em;
     width: 30em;
-
 }
 
 textarea {
