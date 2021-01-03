@@ -117,18 +117,6 @@ function randomKanjiGame() {
     // random number to select a question set from the game object
     randomKanji = Math.floor(Math.random() * kanjiGameObject.length);
 
-
-
-
-    // // while randomKanji is included in the array and the array length is less than that of the game questions or the last kanji chosen is the same as the new kanji, get a new random kanji
-    // while (randomKanjiArr.includes(kanjiGameObject[randomKanji].kanji) && randomKanjiArr.length <= kanjiGameObject.length || randomKanjiArr.length-1 === kanjiGameObject[randomKanji].kanji) {
-        
-    //     if (randomKanjiArr.length >= kanjiGameObject.length) {
-    //         // once each question has been used once, exits the loop, now allowing for duplicates and repeates
-    //         break;
-    //     }
-    // };
-
     var notRepeat = false;
 
     while (notRepeat === false) {
@@ -150,6 +138,7 @@ function randomKanjiGame() {
         };
     };
 
+    // TODO: Multiples
     // if the old array is a multiple, x, of the length of the game object
     // then allow for x-instances of the value
 
@@ -312,12 +301,3 @@ function gameOver() {
         endGameButton();
     });
 }
-
-
-//TODO: Store the answers in an object with their answer and the correct answer
-//TODO: Display at the end their answer and the correct answer saying "You answered X incorrect, here is what you answered, here is the correct answer"
-//TODO: Restart quiz button, clear any cached info about the quiz/answers
-
-
-//TODO: BONUS: Randomly pull a kanji from kanjiapi, pull meaning from that, generate three random words (from an array of words or a dictionary api), append the three answers and the meaning in a random order
-//TODO: BONUS: Click event on the list of answers, check 'this' button against the meaning from the kanjiapi
