@@ -93,11 +93,21 @@ object-fit: fill;
 /*Kanji base*/
 .box1{
     grid-area: 1 / 1 / 5 / 2;
-    height: 15em;
-    width: 27em;
+    height: 25em;
+    width: 30em;
 
 }
 
+textarea {
+    width: 100%;
+    height: 100%; /* optional change it to your height */
+    padding: 15px;
+    background: transparent;
+    color: #555555;
+    vertical-align: middle; /* removes whitespace as textarea is inline element */
+    border: 0;
+    text-align: center;
+  }
 /*Image base*/
 .box2 {
   grid-area: 1 / 2 / 6 / 3;
@@ -116,17 +126,17 @@ object-fit: fill;
 
 /*Media base*/
 .box3{
-    grid-area: 4 / 1 / 8 / 2;
-    height: 15em;
-    width: 27em;
+    grid-area: 5 / 1 / 8 / 2;
+    height: 25em;
+    width: 30em;
     justify-items: end;
 }
 
 /*Search history base*/
 .box4 {
-    grid-area: 5 / 2 / 7 / 3 ;
-    height: 225px;
-    width: 500px;
+  grid-area:5 / 2 / 7 / 3;
+  height: 25em;
+  width: 30em;
 }
 
 /* Modal flavor, copied from w3 schools, we should customize */
@@ -338,7 +348,7 @@ img {
 
 #html2 {
   background-size: 100%;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url("https://www.blendswap.com/blend_previews/23992/0/0?u=2019-12-20%2021:17:18");
+  background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url("https://cdn.pixabay.com/photo/2015/09/24/17/16/words-955946_1280.jpg");
   background-size: cover; 
 }
 
@@ -384,6 +394,23 @@ img {
 .is-child{
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
     margin: none;
+}
+
+#study-section {
+  height: 100vh;
+  width: 100vw;
+}
+
+#hiragana-chart {
+  justify-content: center;
+  
+
+}
+
+#katakana-chart {
+  justify-content: center;
+ 
+
 }
 
 /*Footer*/

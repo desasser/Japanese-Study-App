@@ -59,13 +59,13 @@
   </section>
 
 
-  <section class="hero is-small is-dark" style="background-color: #faebd7">
+  <!-- <section class="hero is-small is-dark">
     <div class="hero-body">
       <div class="container">
         <h1 class="study_title animate__animated animate__fadeIn" style="color: gray">Study Page</h1>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <main class="study-grid">
   <div id="page-container" style="background-color: #faebd7;">
@@ -74,9 +74,9 @@
 
       <!--Made with Bulma Tiles -->
 
-      <div class="tile is-ancestor is-centered">
-        <div class="tile is-8">
-          <div class="tile">
+      <div class="tile is-ancestor is-centered" id="study-section">
+        <div class="tile is-vertical is-8">
+          <div class="tile is parent">
 
             <div class="tile is-parent is-4">
               <article class="tile is-child notification" id="random-kanji">
@@ -89,18 +89,21 @@
               </article>
             </div>
 
-            <div class="tile is-parent is-6">
-              <article class="tile is-child notification" id="hiragana-chart">
-                <p class="title">Hiragana</p>
-                <p class="subtitle"></p>
-              </article>
+            <div class="tile is-parent is-5 is-vertical">
+                <article class="tile is-child box" id="hiragana-chart">
+                  <p class="title">Hiragana</p>
+                  <p class="subtitle"></p>
+                </article>
+            
+             
+              
+                  <div class="tile is-child box" id="katakana-chart">
+                    <p class="title">Katakana</p>
+                    <p class="subtitle"></p>
+
+                  </div>
+                  
             </div>
-
-            <article class="tile is-child notification" id="katakana-chart">
-              <p class="title">Katakana</p>
-              <p class="subtitle"></p>
-            </article>
-
           </div>
         </div>
       </div>
@@ -115,6 +118,9 @@
         </p>
       </div>
     </footer>
+    </section>
+
+    
 
   </div>
 
