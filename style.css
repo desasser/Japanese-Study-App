@@ -33,14 +33,44 @@
 }
 
 /*Navbar*/
+.hero-head {
+  background-color: #92643b;
+  /* background-color:#333333; */
+  height: 4em;
+}
+
 .navbar-item{
     font-size: 25px;
     color: white;
+    background-color: #92643b;
 
 }
 
+
 .navbar-item:hover{
     background-color: #B52E2C !important;
+    color:white !important;
+    
+}
+
+
+.navbar-burger{
+  background-color: #ba8759;
+  right: 0;
+  top: 0;
+  position: absolute;
+  max-width: 100%;
+  }
+
+/* .navbar-burger:hover{
+  background-color: #B52E2C !important;
+} */
+
+.navbar-end {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 /*Styles the Search area*/
@@ -58,12 +88,19 @@
     width: 500px;
     height: 55px;
     background-color: seashell;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
+
 .button{
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
     height: 55px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.button:hover{
+  background-color:#B52E2C  !important;
 }
 
 .container{
@@ -71,31 +108,16 @@
     text-align: center;
 }
 
-/*Aside*/
-aside {
-    width: 15%;
-    padding-left: 15px;
-    margin-left: 15px;
-    float: left;
-    font-style: bold;
-    font-size: 3em;
-    background-color: #B52E2C;
-    margin-right: 2em;
-  }
-
 /*Styles the grid for main page landing*/
 .grid-container {
-display: inline-grid;
-/* grid-template-columns: 1fr, 2fr;
-grid-template-rows: repeat(auto-fit, minmax(5, 1fr)); */
+display: grid;
 grid-gap: 10px 10px;
 justify-content: center;
 align-content: center;
 margin: auto;
-
 }
 
-/*Styles sections*/
+/*Styles landing page sections*/
 
 .box{
 align-items: center;
@@ -110,7 +132,6 @@ object-fit: fill;
     grid-area: 1 / 1 / 5 / 2;
     height: 25em;
     width: 30em;
-
 }
 
 textarea {
@@ -137,6 +158,7 @@ textarea {
     max-height: 100%;
     display: block;
     object-fit: cover;
+
 }
 
 /*Media base*/
@@ -242,6 +264,7 @@ img {
 
 /* game page */
 .box22 {
+    display: grid;
     grid-area: 1 / 2 / 5 / 3;
     height: 400px;
     width: 600px;
@@ -254,14 +277,10 @@ img {
   margin-left: auto;
   text-align: center;
   font-size: 37px;
-  color: #fffaf0
+  color: #fffaf0;
+  letter-spacing: 1.5px;
 }
-.navbar-end {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
+
 
 .column-game {
   position: relative;
@@ -279,11 +298,6 @@ img {
   min-height: 100vh;
 }
 
-
-.hero-head {
-    background-color: #92643b;
-    height: 4em;
-}
 
 .flip {
     text-align: center;
@@ -442,12 +456,12 @@ img {
 /*Footer*/
 
 .footer-game {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     left: 0;
     right: 0;
     background-color: #92643b;
-    
+    width: 100%;
 }
 
 /*Responsiveness*/
@@ -456,12 +470,12 @@ img {
 @media (max-width: 1200px) {
     #page-container{
       display: grid;
+      
     }
   
     .box {
        grid-column: span 1;
        grid-row: span 1;
-       
        
     }
     
@@ -480,4 +494,12 @@ img {
     display: block;
     width: 400px;
 	border: solid 2px green;
-	background-color:#fff;
+  background-color:#fff;
+  
+@media only screen and (max-width: 1000px) {
+  .navbar-burger{
+    display: grid;
+    grid: 1, 2, 2, 1
+  }
+  
+}

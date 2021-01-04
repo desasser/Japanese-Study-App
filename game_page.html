@@ -15,96 +15,101 @@
 <!--Game Page-->
 
 <body id="game-body">
-            <section class="hero is-primary is-medium">
-                <!-- Hero head: will stick at the top -->
-                <div class="hero-head">
-                    <nav class="navbar">
-                        <div class="container">
-                            <div id="game-title"><u>Kanji Game</u>
-                            </div>
-                            <div class="navbar-brand">
-                                <!-- <a class="navbar-item">
-                                    <img src="https://64.media.tumblr.com/899ca388b75eb2e737ee76cea85d132a/1fdf63d8eded61cc-72/s640x960/68eac8eefb29bca2dbb1afeb77ffef9700d7dcef.png" alt="Logo">
-                                </a> -->
-                                <span class="navbar-burger" data-target="navbarMenuHeroA">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </span>
-                            </div>
-                            <div id="navbarMenuHeroA" class="navbar-menu">
-                            
-                                <div class="navbar-end">
-                                    
-                                    <a class="navbar-item" href="index.html">
-                                        Home
-                                    </a>
+    <section class="hero is dark-is-small">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    
 
-                                    <a class="navbar-item" href="game_page.html">
-                                        Game Page
-                                    </a>
+                    <a id="game-title" href="#home">Study Kanji</a>
+                    
 
-                                    <a class="navbar-item" href="study_page.html">
-                                        Study Page
-                                    </a>
-                                    </span>
-                                </div>
-                            </div>
+                        <!-- <a id="game-title" onclick="href='/index.html'" href="/index.html">HTML Tutorial</h1> -->
+
+                        <div class="navbar-brand">
+
+                            <span class="navbar-burger" data-target="navbarMenuHeroA">
+                                <span class="burger-item"></span>
+                                <span class="burger-item"></span>
+                                <span class="burger-item"></span>
+                            </span>
+
                         </div>
-                    </nav>
+
+
+
+                        <div id="navbarMenuHeroA" class="navbar-menu">
+
+                            <div class="navbar-end">
+
+                                <a class="navbar-item" href="index.html">
+                                    Home
+                                </a>
+
+                                <a class="navbar-item" href="game_page.html">
+                                    Game Page
+                                </a>
+
+                                <a class="navbar-item" href="study_page.html">
+                                    Study Page
+                                </a>
+
+                            </div>
+
+                        </div>
                 </div>
-            </section>
-                <!--Containers for the Game page-->
-            <main class="column-game">
-                <div class="columns is-mobile is-centered">
-                    <div class="box box22" id="kanji-game-base">
-                    
-                        <div class="column">
-                            <p class="title disposable">Kanji Will Appear Here</p>
-                            <span id="kanji-game-display"></span>
-                            <button class="button is-dark" id="start-game">Start Game</button>
-                        </div>
-                    </div>
-                    <!--Answer Options-->
-                    <div class="box box22" id="answers-base"> 
-                        <div class="column" id="answers">
-                            <button id="option1" class="answers button is-dark " data-value="A">Option 1</button>
-                            <br><br>
-                            
-
-                            <button id="option2" class="answers button is-dark" data-value="B">Option 2</button>
-                            <br><br>
-                            
-                                
-                            <button id="option3" class="answers button is-dark" data-value="C">Option 3</button>
-                            <br><br>
-                            
-                                
-                            <button id="option4" class="answers button is-dark" data-value="D">Option 4</button>
-                            <br><br>
-
-                            <div id="score-flip">
-                                <span id="score-span"></span>
-                            </div>   
-                        </div>
-                    </div>
-
-                </div>
-                    
-
-                    
-            </main>           
-
+            </nav>
+        </div>
+    </section>
     
-        <footer class="footer-game">
-            <div class="content has-text-centered" style="position: sticky">
+    <!--Containers for the Game page-->
+    <main class="column-game">
+        <div class="columns is-mobile is-centered">
+            <div class="box box22" id="kanji-game-base">
+
+                <div class="column">
+                    <p class="title disposable">Kanji Will Appear Here</p>
+                    <span id="kanji-game-display"></span>
+                    <button class="button is-dark" id="start-game">Start Game</button>
+                </div>
+            </div>
+            <!--Answer Options-->
+            <div class="box box22" id="answers-base">
+                <div class="column" id="answers">
+                    <button id="option1" class="answers button is-dark " data-value="A">Option 1</button>
+                    <br><br>
+
+
+                    <button id="option2" class="answers button is-dark" data-value="B">Option 2</button>
+                    <br><br>
+
+
+                    <button id="option3" class="answers button is-dark" data-value="C">Option 3</button>
+                    <br><br>
+
+
+                    <button id="option4" class="answers button is-dark" data-value="D">Option 4</button>
+                    <br><br>
+
+                    <div id="score-flip">
+                        <span id="score-span"></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <ooter class="footer-game is-fixed-bottom" style="position: sticky">
+            <div class="content has-text-centered">
                 <p>
-                <strong>Kanji Game</strong> by <a href=""style="color:lightgray">G12</a> 
+                    <strong>Study Kanji</strong> by <a href="" style="color:lightgray">Group 12</a>
                 </p>
             </div>
         </footer>
+f
+    </main>
 
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/244557d995.js" crossorigin="anonymous"></script>
