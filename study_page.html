@@ -1,71 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Japanese</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study Japanese</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!---Font Links-->
+  </head>
 
-  <!---Font Links-->
-
-</head>
-
-
-<body>
-  <div id="page-container">
-    <section class="hero is dark-is-small">
-      <!-- Hero head: will stick at the top -->
-      <div class="hero-head">
+  <body>
+    <div id="page-container">
+      <section class="hero is dark-is-small">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
           <nav class="navbar">
-              <div class="container">
-                  
+            <div class="container">
+              <a id="game-title" href="#home">Study Kanji</a>
 
-                  <a id="game-title" href="#home">Study Kanji</a>
-                  
+              <!-- <a id="game-title" onclick="href='/index.html'" href="/index.html">HTML Tutorial</h1> -->
 
-                      <!-- <a id="game-title" onclick="href='/index.html'" href="/index.html">HTML Tutorial</h1> -->
-
-                      <div class="navbar-brand">
-
-                          <span class="navbar-burger" data-target="navbarMenuHeroA">
-                              <span class="burger-item"></span>
-                              <span class="burger-item"></span>
-                              <span class="burger-item"></span>
-                          </span>
-
-                      </div>
-
-
-
-                      <div id="navbarMenuHeroA" class="navbar-menu">
-
-                          <div class="navbar-end">
-
-                              <a class="navbar-item" href="index.html">
-                                  Home
-                              </a>
-
-                              <a class="navbar-item" href="game_page.html">
-                                  Game Page
-                              </a>
-
-                              <a class="navbar-item" href="study_page.html">
-                                  Study Page
-                              </a>
-
-                          </div>
-
-                      </div>
+              <div class="navbar-brand">
+                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                  <span class="burger-item"></span>
+                  <span class="burger-item"></span>
+                  <span class="burger-item"></span>
+                </span>
               </div>
+
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item" href="index.html"> Home </a>
+
+                  <a class="navbar-item" href="game_page.html"> Game Page </a>
+
+                  <a class="navbar-item" href="study_page.html"> Study Page </a>
+                </div>
+              </div>
+            </div>
           </nav>
-      </div>
-  </section>
-
-
-    <!-- <section class="hero is-small is-dark">
+        </div>
+      </section>
+      
+      <!-- <section class="hero is-small is-dark">
     <div class="hero-body">
       <div class="container">
         <h1 class="study_title animate__animated animate__fadeIn" style="color: gray">Study Page</h1>
@@ -73,65 +58,64 @@
     </div>
   </section> -->
 
-    <main class="study-grid">
+      <main class="study-grid is-desktop">
+        <div id="page-container" style="background-color: #faebd7">
+          <section class="section level">
+            <!--Made with Bulma Tiles -->
 
-      <section class="section level">
+            <div class="tile is-ancestor is-centered" id="study-section">
+              <div class="tile is-vertical is-8">
+                <div class="tile is parent">
+                  <div class="tile is-parent is-4">
+                    <article
+                      class="tile is-child notification"
+                      id="random-kanji"
+                    >
+                      <div class="content">
+                        <p class="title">Click a Kanji to Review</p>
+                        <canvas id="study-canvas"> </canvas>
+                      </div>
+                    </article>
+                  </div>
 
-        <!--Made with Bulma Tiles -->
+                  <div class="tile is-parent is-5 is-vertical">
+                    <article class="tile is-child box" id="hiragana-chart">
+                      <p class="title">Hiragana</p>
 
-        <div class="tile is-ancestor is-centered" id="study-section">
-          <div class="tile is-vertical is-8">
-            <div class="tile is parent">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Table_hiragana.svg/2560px-Table_hiragana.svg.png"
+                      />
+                    </article>
 
-              <div class="tile is-parent is-4">
-                <article class="tile is-child notification" id="random-kanji">
-                  <div class="content">
-                    <p class="title">Click a Kanji to Review</p>
-                    <p class="subtitle">With even more content</p>
-                    <div class="content">
+                    <div class="tile is-child box" id="katakana-chart">
+                      <p class="title">Katakana</p>
+                      <figure class="image is-5by3">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Table_katakana.svg/768px-Table_katakana.svg.png"
+                        />
+                      </figure>
                     </div>
                   </div>
-                </article>
-              </div>
-
-              <div class="tile is-parent is-5 is-vertical">
-                <article class="tile is-child box" id="hiragana-chart">
-                  <p class="title">Hiragana</p>
-                  <p class="subtitle"></p>
-                </article>
-
-
-
-                <div class="tile is-child box" id="katakana-chart">
-                  <p class="title">Katakana</p>
-                  <p class="subtitle"></p>
-
                 </div>
-
               </div>
             </div>
-          </div>
+          </section>
         </div>
-      </section>
-    </main>
+      </main>
 
-    <!--Footer-->
-    <footer class="footer-game is-fixed-bottom" style="position: sticky">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Study Kanji</strong> by <a href="" style="color:lightgray">Group 12</a>
-        </p>
-      </div>
-    </footer>
+      <!--Footer-->
+      <footer class="footer-game is-fixed-bottom" style="position: sticky">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Study Kanji</strong> by
+            <a href="" style="color: lightgray">Group 12</a>
+          </p>
+        </div>
+      </footer>
+    </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-  <script src="jscript.js"></script>
-
-</body>
-
+    <script src="jscript.js"></script>
+  </body>
 </html>
