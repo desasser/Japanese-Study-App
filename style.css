@@ -46,6 +46,9 @@
 
 }
 
+.sectionFlavor {
+  min-height: 10vh;
+}
 
 .navbar-item:hover{
     background-color: #B52E2C !important;
@@ -281,10 +284,20 @@ img {
   letter-spacing: 1.5px;
 }
 
+.study-grid {
+  min-height: 85vh;
+}
+
+.index-height {
+  min-height: 85vh;
+}
 
 .column-game {
   position: relative;
   top: 200px;
+  min-height: 85vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 #start-game {
@@ -295,7 +308,7 @@ img {
 
 #page-container {
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 
@@ -432,14 +445,10 @@ img {
 
 #hiragana-chart {
   justify-content: center;
-  
-
 }
 
 #katakana-chart {
   justify-content: center;
- 
-
 }
 
 /*Footer*/
@@ -451,6 +460,7 @@ img {
     right: 0;
     background-color: #92643b;
     width: 100%;
+    min-height: 5vh;
 }
 
 /*Responsiveness*/
