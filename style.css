@@ -16,7 +16,7 @@
 
 .saved-search-button .tooltip-text {
   visibility: hidden;
-  width: 100px;
+  width: 200px;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -348,7 +348,6 @@ img {
   transform: scaleX(-1);
   filter: FlipH;
   -ms-filter: "FlipH";
-  overflow: auto;
 }
 
 
