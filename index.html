@@ -22,37 +22,44 @@
             <div class="hero-head">
                 <nav class="navbar">
                     <div class="container">
-                        <div id="game-title" href="index.html">Study Kanji
-                        </div>
+                        
 
-                        <div class="navbar-brand">
+                        <a id="game-title" href="#home">Study Kanji</a>
+                        
 
-                            <span class="navbar-burger" data-target="navbarMenuHeroA">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
+                            <!-- <a id="game-title" onclick="href='/index.html'" href="/index.html">HTML Tutorial</h1> -->
 
-                        </div>
+                            <div class="navbar-brand">
 
-                        <div id="navbarMenuHeroA" class="navbar-menu">
-
-                            <div class="navbar-end">
-
-                                <a class="navbar-item" href="index.html">
-                                    Home
-                                </a>
-
-                                <a class="navbar-item" href="game_page.html">
-                                    Game Page
-                                </a>
-
-                                <a class="navbar-item" href="study_page.html">
-                                    Study Page
-                                </a>
+                                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                                    <span class="burger-item"></span>
+                                    <span class="burger-item"></span>
+                                    <span class="burger-item"></span>
+                                </span>
 
                             </div>
-                        </div>
+
+
+
+                            <div id="navbarMenuHeroA" class="navbar-menu">
+
+                                <div class="navbar-end">
+
+                                    <a class="navbar-item" href="index.html">
+                                        Home
+                                    </a>
+
+                                    <a class="navbar-item" href="game_page.html">
+                                        Game Page
+                                    </a>
+
+                                    <a class="navbar-item" href="study_page.html">
+                                        Study Page
+                                    </a>
+
+                                </div>
+
+                            </div>
                     </div>
                 </nav>
             </div>
@@ -63,11 +70,11 @@
         <section class="field is-grouped">
 
             <!--Here lives the English word Input Form/Submit Button-->
-            <input class="input is-large is-danger" id="user-input" type="text" placeholder="Search">
+            <input class="input is-large is-dark" id="user-input" type="text" placeholder="Search">
 
             <!--Adds an Icon to input field-->
 
-            <button class="button is-large is-danger" id="submit-button">
+            <button class="button is-large is-dark" id="submit-button">
                 <span class="icon is-large">
                     <i class="fas fa-search"></i>
                 </span>
@@ -89,7 +96,9 @@
         <div class="modal" id="failed-search-pic">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>You have fetched the maximum number of photos you can within an hour. We are so glad you are enjoying the app, so while no more photos will appear for now, the remainder of this app will continue to function. Please enjoy the rest of the features!</p>
+                <p>You have fetched the maximum number of photos you can within an hour. We are so glad you are enjoying
+                    the app, so while no more photos will appear for now, the remainder of this app will continue to
+                    function. Please enjoy the rest of the features!</p>
             </div>
         </div>
 
@@ -102,7 +111,7 @@
                 <div class="columns is-mobile">
                     <div class="column">
                         <div class="container" id="kanji-base">
-                            <p class="title">Kanji Base</p>
+                            <p class="title">Kanji</p>
                         </div>
                     </div>
             </section>
@@ -111,7 +120,7 @@
                 <!--Image-->
                 <div class="column">
                     <div class="container image" id="image-base">
-                        <p class="title">Image Base</p>
+                        <p class="title">Image</p>
                     </div>
                 </div>
             </section>
@@ -122,7 +131,7 @@
                 <div class="columns is-mobile">
                     <div class="column">
                         <div class="container" id="media-base">
-                            <p class="title">Media Base</p>
+                            <p class="title">Animation</p>
                         </div>
                         <div class="container" id="media-base-two">
                         </div>
@@ -140,7 +149,8 @@
             </section>
         </main>
     </div>
-    
+
+    </div>
     <footer class="footer-game is-fixed-bottom" style="position: sticky">
         <div class="content has-text-centered">
             <p>
@@ -153,7 +163,7 @@
     <script src="https://kit.fontawesome.com/244557d995.js" crossorigin="anonymous"></script>
 
     <script src="jscript.js"></script>
-    <!-- <script src="bulma.js"></script> -->
+    <script src="bulma.js"></script>
 </body>
 
 </html>
