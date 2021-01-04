@@ -284,74 +284,74 @@ function fetchApiData(queryTerm) {
     //     }
 	// }, 0);
 	
-	$(function(){
+	// $(function(){
 
-		var canvas=document.getElementById("study-canvas");
-		var ctx=canvas.getContext("2d");
+	// 	var canvas=document.getElementById("study-canvas");
+	// 	var ctx=canvas.getContext("2d");
 	
-		var canvasOffset=$("#study-canvas").offset();
-		var offsetX=canvasOffset.left;
-		var offsetY=canvasOffset.top;
+	// 	var canvasOffset=$("#study-canvas").offset();
+	// 	var offsetX=canvasOffset.left;
+	// 	var offsetY=canvasOffset.top;
 	
-		function handleMouseDown(e){
-		  mouseX=parseInt(e.clientX-offsetX);
-		  mouseY=parseInt(e.clientY-offsetY);
-		  $("#downlog").html("Down: "+ mouseX + " / " + mouseY);
+	// 	function handleMouseDown(e){
+	// 	  mouseX=parseInt(e.clientX-offsetX);
+	// 	  mouseY=parseInt(e.clientY-offsetY);
+	// 	  $("#downlog").html("Down: "+ mouseX + " / " + mouseY);
 	
-		  // Put your mousedown stuff here
-		  canvas.addEventListener('mousedown', function(e) {
-			this.down = true;   
-			this.X = e.pageX ;
-			this.Y = e.pageY ;
-		}, 0);
+	// 	  // Put your mousedown stuff here
+	// 	  canvas.addEventListener('mousedown', function(e) {
+	// 		this.down = true;   
+	// 		this.X = e.pageX ;
+	// 		this.Y = e.pageY ;
+	// 	}, 0);
 	
-		}
+	// 	}
 	
-		function handleMouseUp(e){
-		  mouseX=parseInt(e.clientX-offsetX);
-		  mouseY=parseInt(e.clientY-offsetY);
-		  $("#uplog").html("Up: "+ mouseX + " / " + mouseY);
+	// 	function handleMouseUp(e){
+	// 	  mouseX=parseInt(e.clientX-offsetX);
+	// 	  mouseY=parseInt(e.clientY-offsetY);
+	// 	  $("#uplog").html("Up: "+ mouseX + " / " + mouseY);
 	
-		  // Put your mouseup stuff here
-		  canvas.addEventListener('mouseup', function() {
-			this.down = false;          
-		}, 0);
-		}
+	// 	  // Put your mouseup stuff here
+	// 	  canvas.addEventListener('mouseup', function() {
+	// 		this.down = false;          
+	// 	}, 0);
+	// 	}
 	
-		// function handleMouseOut(e){
-		//   mouseX=parseInt(e.clientX-offsetX);
-		//   mouseY=parseInt(e.clientY-offsetY);
-		//   $("#outlog").html("Out: "+ mouseX + " / " + mouseY);
+	// 	// function handleMouseOut(e){
+	// 	//   mouseX=parseInt(e.clientX-offsetX);
+	// 	//   mouseY=parseInt(e.clientY-offsetY);
+	// 	//   $("#outlog").html("Out: "+ mouseX + " / " + mouseY);
 	
-		//   // Put your mouseOut stuff here
-		// }
+	// 	//   // Put your mouseOut stuff here
+	// 	// }
 	
-		function handleMouseMove(e){
-		  mouseX=parseInt(e.clientX-offsetX);
-		  mouseY=parseInt(e.clientY-offsetY);
-		  $("#movelog").html("Move: "+ mouseX + " / " + mouseY);
+	// 	function handleMouseMove(e){
+	// 	  mouseX=parseInt(e.clientX-offsetX);
+	// 	  mouseY=parseInt(e.clientY-offsetY);
+	// 	  $("#movelog").html("Move: "+ mouseX + " / " + mouseY);
 	
-		  // Put your mousemove stuff here
-		  canvas.addEventListener('mousemove', function(e) {
+	// 	  // Put your mousemove stuff here
+	// 	  canvas.addEventListener('mousemove', function(e) {
 
-			if(this.down) {
-				 with(ctx) {
-					beginPath();
-					moveTo(this.X, this.Y);
-					lineTo(e.pageX , e.pageY );
-					ctx.lineWidth=1;
-					stroke();
-				 }
-				 this.X = e.pageX ;
-				 this.Y = e.pageY ;
-			}
-		}, 0);
+	// 		if(this.down) {
+	// 			 with(ctx) {
+	// 				beginPath();
+	// 				moveTo(this.X, this.Y);
+	// 				lineTo(e.pageX , e.pageY );
+	// 				ctx.lineWidth=1;
+	// 				stroke();
+	// 			 }
+	// 			 this.X = e.pageX ;
+	// 			 this.Y = e.pageY ;
+	// 		}
+	// 	}, 0);
 	
-		}
+	// 	}
 	
-		$("#study-canvas").mousedown(function(e){handleMouseDown(e);});
-		$("#study-canvas").mousemove(function(e){handleMouseMove(e);});
-		$("#study-canvas").mouseup(function(e){handleMouseUp(e);});
-		// $("#study-canvas").mouseout(function(e){handleMouseOut(e);});
+	// 	$("#study-canvas").mousedown(function(e){handleMouseDown(e);});
+	// 	$("#study-canvas").mousemove(function(e){handleMouseMove(e);});
+	// 	$("#study-canvas").mouseup(function(e){handleMouseUp(e);});
+	// 	// $("#study-canvas").mouseout(function(e){handleMouseOut(e);});
 	
-	}); // end $(function(){});
+	// }); // end $(function(){});

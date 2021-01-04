@@ -36,7 +36,7 @@
 .hero-head {
   background-color: #92643b;
   /* background-color:#333333; */
-  height: 4em;
+  height: 5em;
 }
 
 .navbar-item{
@@ -47,7 +47,7 @@
 }
 
 .sectionFlavor {
-  min-height: 10vh;
+  min-height: 15vh;
 }
 
 .navbar-item:hover{
@@ -417,11 +417,8 @@ img {
 
 .tile{
     background-color: #FAEBD7;
-    height: 30em;
+    height: 40em;
 }
-
-
-
 
 .is-ancestor{
     justify-content: center;
@@ -440,20 +437,21 @@ img {
 
 #hiragana-chart {
   justify-content: center;
-}
-
-#random-kanji {
-  
-
-
+  /* height: 80vh; */
+  margin-right: 5px !important;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
 }
 
 #katakana-chart {
   justify-content: center;
+  /* height: 80vh; */
+  margin-left: 5px !important;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
 }
 
 /*Footer*/
-
 .footer-game {
     /* position: absolute; */
     bottom: 0;
@@ -465,7 +463,6 @@ img {
 }
 
 /*Responsiveness*/
-
 /* Grid */
 @media (max-width: 1200px) {
     #page-container{

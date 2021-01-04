@@ -225,7 +225,7 @@ $("#answers").on("click", "button", function () {
     }, 2000);
 
     // summon gameover screen and end game if score is 10
-    if (score >= 2) {
+    if (score >= 5) {
         $('#kanji-game-display').text('Fin');
         $("#answers").css("visibility", "hidden");
         $(".disposable").remove();
