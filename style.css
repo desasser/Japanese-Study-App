@@ -311,7 +311,6 @@ img {
   /* min-height: 100vh; */
 }
 
-
 .flip {
     text-align: center;
     -moz-transform: scaleX(-1);
@@ -349,14 +348,6 @@ img {
     -ms-filter: "FlipH";
 }
 
-/*html {
-  height: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}*/
-
-
 .title {
   text-align: center;
   opacity: 0.5;
@@ -392,6 +383,7 @@ img {
   background-size: 100%;
   background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url("https://cdn.pixabay.com/photo/2015/09/24/17/16/words-955946_1280.jpg");
   background-size: cover; 
+  
 }
 
 /* literally had to reflip content after i flipped background */
@@ -428,6 +420,9 @@ img {
     height: 30em;
 }
 
+
+
+
 .is-ancestor{
     justify-content: center;
     /* background-color: #FAEBD7; */
@@ -445,6 +440,12 @@ img {
 
 #hiragana-chart {
   justify-content: center;
+}
+
+#random-kanji {
+  
+
+
 }
 
 #katakana-chart {
@@ -485,6 +486,16 @@ img {
 
 }
 
+
+
+#study-canvas{
+  padding: 0;
+    margin: auto;
+    display: block;
+    width: 400px;
+	border: solid 2px green;
+  background-color:#fff;
+  
 @media only screen and (max-width: 1000px) {
   .navbar-burger{
     display: grid;
