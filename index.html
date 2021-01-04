@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Japanese</title>
+    <title>Study Japanese - Landing Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
     <!-- <link rel="icon" href="/images/favicon-16x16.png" type="image/png" sizes="any"> -->
@@ -17,147 +17,143 @@
 
     <div id="page-container">
 
-        <section class="hero is dark-is-small">
+        <section class="hero is dark-is-small sectionFlavor">
             <!-- Hero head: will stick at the top -->
             <div class="hero-head">
                 <nav class="navbar">
                     <div class="container">
-                        
+
 
                         <a id="game-title" href="#home">Study Kanji</a>
-                        
-
-                            <!-- <a id="game-title" onclick="href='/index.html'" href="/index.html">HTML Tutorial</h1> -->
-
-                            <div class="navbar-brand">
-
-                                <span class="navbar-burger" data-target="navbarMenuHeroA">
-                                    <span class="burger-item"></span>
-                                    <span class="burger-item"></span>
-                                    <span class="burger-item"></span>
-                                </span>
-
-                            </div>
 
 
+                        <!-- <a id="game-title" onclick="href='/index.html'" href="/index.html">HTML Tutorial</h1> -->
 
-                            <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-brand">
 
-                                <div class="navbar-end">
+                            <span class="navbar-burger" data-target="navbarMenuHeroA">
+                                <span class="burger-item"></span>
+                                <span class="burger-item"></span>
+                                <span class="burger-item"></span>
+                            </span>
 
-                                    <a class="navbar-item" href="index.html">
-                                        Home
-                                    </a>
+                        </div>
 
-                                    <a class="navbar-item" href="game_page.html">
-                                        Game Page
-                                    </a>
 
-                                    <a class="navbar-item" href="study_page.html">
-                                        Study Page
-                                    </a>
 
-                                </div>
+                        <div id="navbarMenuHeroA" class="navbar-menu">
+
+                            <div class="navbar-end">
+
+                                <a class="navbar-item" href="index.html">
+                                    Home
+                                </a>
+
+                                <a class="navbar-item" href="game_page.html">
+                                    Game Page
+                                </a>
+
+                                <a class="navbar-item" href="study_page.html">
+                                    Study Page
+                                </a>
 
                             </div>
+
+                        </div>
                     </div>
                 </nav>
             </div>
         </section>
 
         <br>
+        <div class="index-height">
 
-        <section class="field is-grouped">
 
-            <!--Here lives the English word Input Form/Submit Button-->
-            <input class="input is-large is-dark" id="user-input" type="text" placeholder="Search">
+            <section class="field is-grouped">
 
-            <!--Adds an Icon to input field-->
+                <!--Here lives the English word Input Form/Submit Button-->
+                <input class="input is-large is-dark" id="user-input" type="text" placeholder="Search">
 
-            <button class="button is-large is-dark" id="submit-button">
-                <span class="icon is-large">
-                    <i class="fas fa-search"></i>
-                </span>
-                <!-- <span>Search</span> -->
-            </button>
+                <!--Adds an Icon to input field-->
 
-        </section>
+                <button class="button is-large is-dark" id="submit-button">
+                    <span class="icon is-large">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <!-- <span>Search</span> -->
+                </button>
 
-        <!-- modal for failed searches, kanji api -->
-        <div class="modal" id="failed-search">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>The word you searched for was not found.</p>
-                <p>This search function has limited scope, for now. Please try searching a different word.</p>
+            </section>
+
+            <!-- modal for failed searches, kanji api -->
+            <div class="modal" id="failed-search">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>The word you searched for was not found.</p>
+                    <p>This search function has limited scope, for now. Please try searching a different word.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- modal for failed searches, photo api -->
-        <div class="modal" id="failed-search-pic">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>You have fetched the maximum number of photos you can within an hour. We are so glad you are enjoying
-                    the app, so while no more photos will appear for now, the remainder of this app will continue to
-                    function. Please enjoy the rest of the features!</p>
+            <!-- modal for failed searches, photo api -->
+            <div class="modal" id="failed-search-pic">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>You have fetched the maximum number of photos you can within an hour. We are so glad you are
+                        enjoying
+                        the app, so while no more photos will appear for now, the remainder of this app will continue to
+                        function. Please enjoy the rest of the features!</p>
+                </div>
             </div>
-        </div>
 
-        <main class="grid-container">
+            <main class="grid-container">
 
-            <!--Containers for the home page-->
+                <!--Containers for the home page-->
 
-            <section class="box box1">
-                <!--Image/Glyph-->
-                <div class="columns is-mobile">
+                <section class="box box1">
+                    <!--Image/Glyph-->
+                    <div class="columns is-mobile">
+                        <div class="column">
+                            <div class="container" id="kanji-base">
+                                <p class="title">Kanji</p>
+                            </div>
+                        </div>
+                </section>
+
+                <section class="box box2">
+                    <!--Image-->
                     <div class="column">
-                        <div class="container" id="kanji-base">
-                            <p class="title">Kanji</p>
+                        <div class="container image" id="image-base">
+                            <p class="title">Image</p>
                         </div>
                     </div>
-            </section>
+                </section>
 
-            <section class="box box2">
-                <!--Image-->
-                <div class="column">
-                    <div class="container image" id="image-base">
-                        <p class="title">Image</p>
+
+                <section class="box box3" id="history">
+                    <!--Media-->
+                    <div class="columns is-mobile">
+                        <div class="column">
+                            <div class="container" id="media-base">
+                                <p class="title">Animation</p>
+                            </div>
+                            <div class="container" id="media-base-two">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-
-            <section class="box box3" id="history">
-                <!--Media-->
-                <div class="columns is-mobile">
+                <section class="box box4">
+                    <!--Search History-->
                     <div class="column">
-                        <div class="container" id="media-base">
-                            <p class="title">Animation</p>
-                        </div>
-                        <div class="container" id="media-base-two">
+                        <div class="container" id="search-history">
+                            <p class="title" id="saved-search-text">Search History</p>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section class="box box4">
-                <!--Search History-->
-                <div class="column">
-                    <div class="container" id="search-history">
-                        <p class="title" id="saved-search-text">Search History</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    </div>
-    <footer class="footer-game is-fixed-bottom" style="position: sticky">
-        <div class="content has-text-centered">
-            <p>
-                <strong>Study Kanji</strong> by <a href="" style="color:lightgray">Group 12</a>
-            </p>
+                </section>
+            </main>
         </div>
-    </footer>
+    </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/244557d995.js" crossorigin="anonymous"></script>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Study Japanese</title>
+    <title>Study Japanese - Study Page</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
@@ -64,58 +64,47 @@
             <!--Made with Bulma Tiles -->
 
             <div class="tile is-ancestor is-centered" id="study-section">
-              <div class="tile is-vertical is-8">
-                <div class="tile is parent">
-                  <div class="tile is-parent is-4">
-                    <article
-                      class="tile is-child notification"
-                      id="random-kanji"
-                    >
-                      <div class="content">
-                        <p class="title">Click a Kanji to Review</p>
-                        <canvas id="study-canvas"> </canvas>
-                      </div>
-                    </article>
-                  </div>
-
-                  <div class="tile is-parent is-5 is-vertical">
+              <div class="tile is-vertical is-10">
+                <div class="tile is-parent">
+                  
+                  <!-- <div class="tile is-parent is-5 is-vertical"> -->
                     <article class="tile is-child box" id="hiragana-chart">
                       <p class="title">Hiragana</p>
-
-                      <img
+                        <img
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Table_hiragana.svg/2560px-Table_hiragana.svg.png"
-                      />
+                        />
                     </article>
-
+                    
                     <div class="tile is-child box" id="katakana-chart">
                       <p class="title">Katakana</p>
-                      <figure class="image is-5by3">
                         <img
-                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Table_katakana.svg/768px-Table_katakana.svg.png"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Table_katakana.svg/768px-Table_katakana.svg.png"
                         />
-                      </figure>
                     </div>
-                  </div>
+                    <!-- <div class="tile is-parent is-4">
+                      <article
+                        class="tile is-child notification"
+                        id="random-kanji"
+                      >
+                        <div class="content">
+                          <p class="title">Click a Kanji to Review</p>
+                          <canvas id="study-canvas"> </canvas>
+                        </div>
+                      </article>
+                    </div> -->
+                  <!-- </div> -->
                 </div>
               </div>
+
             </div>
           </section>
         </div>
       </main>
-
-      <!--Footer-->
-      <footer class="footer-game is-fixed-bottom" style="position: sticky">
-        <div class="content has-text-centered">
-          <p>
-            <strong>Study Kanji</strong> by
-            <a href="" style="color: lightgray">Group 12</a>
-          </p>
-        </div>
-      </footer>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="jscript.js"></script>
+    <script src="bulma.js"></script>
   </body>
 </html>

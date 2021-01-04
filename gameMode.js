@@ -96,15 +96,10 @@ var setCount = 0;
 var answerP = $("<p>")
 $("#answers-base").css("visibility", "hidden");
 
-//TODO: 
-// FIRST CONDITION - doesnt allow questions back to back
-// SECOND CONDITION - checks if the ranval length < total questions length
-// FINAL CONDITION - if ranval length > total questions, restart using questions
-//TODO: BONUS: Include multiples of the total questions length - currentSet track multiples of that
-//TODO: BONUS: Remove correctly answered questions from the pool
 //TODO: BONUS: Create an array containing the list of answers
 //TODO: BONUS: Shuffle that array, using https://javascript.info/task/shuffle
 //TODO: BONUS: Then assign the values to each index as needed
+
 // function to randomly produce a question from the array
 function randomKanjiGame() {
     // random number to select a question set from the game object
@@ -230,7 +225,7 @@ $("#answers").on("click", "button", function () {
     }, 2000);
 
     // summon gameover screen and end game if score is 10
-    if (score >= 2) {
+    if (score >= 5) {
         $('#kanji-game-display').text('Fin');
         $("#answers").css("visibility", "hidden");
         $(".disposable").remove();
