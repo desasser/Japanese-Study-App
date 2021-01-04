@@ -336,12 +336,12 @@ img {
     -ms-filter: "FlipH";
 }
 
-/*html {
+/* html {
   height: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}*/
+} */
 
 
 
@@ -381,6 +381,7 @@ img {
   background-size: 100%;
   background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url("https://cdn.pixabay.com/photo/2015/09/24/17/16/words-955946_1280.jpg");
   background-size: cover; 
+  
 }
 
 /* literally had to reflip content after i flipped background */
