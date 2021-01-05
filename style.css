@@ -416,13 +416,11 @@ img {
 }
 
 .tile{
-    background-color: #FAEBD7;
     height: 40em;
 }
 
 .is-ancestor{
     justify-content: center;
-    /* background-color: #FAEBD7; */
 }
 
 .is-child{
