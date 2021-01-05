@@ -1,13 +1,23 @@
 # Japanese-Study-App
 # Unit 7: Project 1
 
+## Links
+
+<br>
+Live Site - https://desasser.github.io/Japanese-Study-App/
+<br>
+GitHub Repo - https://github.com/desasser/Japanese-Study-App
+
+<br>
+<br>
+
 ## Overview
 
 Welcome to group DMV's project 1 application "The Kanji App". This app is designed for those looking to learn Japanese in a simple and user friendly way. Understanding the Kanji is a very basic stepping stone as an introduction to the language and in this readme you will understand how to navagate and use our app with ease.
 
 
 ## Navagation
-navigation of application at top of page/for smaller devices look for dop down menu of links
+Navigation of application at top of page/for smaller devices look for dop down menu of links
 
 
 
@@ -17,12 +27,27 @@ The Landing page contains the bulk of what the application has to offer. Startin
 
 Future features- We hope to implement a more robust Api resource for our Kanji's as the library currently used is limited
 
+<br>
+<br>
+
+<img src="Landing Page Image.JPG" alt="Kanji Search Landing Page">
+
+<br>
+<br>
+
 ## Game page
 
 The game page contains a mini study game. To begin click the start button and your on your way to a little mind exercise in identifying Kanji's. A large kanji will appear and your job is to guess the correct phrase assoiciated with the Kanji. Upon a correct answer a message will appear telling you you were correct and a score increment increase of 1. The oppopsite will occur if a wrong answer is click and your score will go down by 1. When win condition is met (?)5 correct answers a game over page will be displayed in the left side of the game letting you know what Kanji's you had gotten correct and which ones were wrong.
 
 Future features- We hope to have a more dynamically generated game library
 
+<br>
+<br>
+
+<img src="Game Page Image.JPG" alt="Game Mode Landing Page">
+
+<br>
+<br>
 
 ## Study Page
 
@@ -30,8 +55,13 @@ This page contains the Katakana and Hirigana syllable charts for ease of view an
 
 Future features- We hope to implement either a dynamically interactive Charts with cliock funtions or a more feasible early term solution to be to add a space for interactive drawing with touch/mouse to practice drawing the kanji's
 
+<br>
+<br>
 
+<img src="Study Page Image.JPG" alt="Study Page Landing Page">
 
+<br>
+<br>
 
 ## Resources
 * [Agile Methodology](https://en.wikipedia.org/wiki/Agile_software_development)
